@@ -22,6 +22,22 @@ function App() {
   ).length;
   const totalTodos = todos.length;
 
+  console.log('Log 1');
+
+  // React.useEffect(() => {
+  //   console.log('Loooooooog 2');
+  // });
+
+  // React.useEffect(() => {
+  //   console.log('Loooooooog 2');
+  // }, []);
+
+  React.useEffect(() => {
+    console.log('Loooooooog 2');
+  }, [totalTodos]);
+
+  console.log('Log 3');
+
   const searchedTodos = todos.filter(
     (todo) => {
       const todoText = todo.text.toLowerCase();
