@@ -10,6 +10,8 @@
           "meta[name=theme-color]"
         ]
       }
-    ]
+    ],
+    "meta-viewport": "off",
+    "apple-touch-icons": "off"
   }
 }
