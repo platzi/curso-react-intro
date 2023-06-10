@@ -41,3 +41,14 @@ function useLocalStorage(itemName, initialValue) {
     }
 }
 export { useLocalStorage }
+
+//We made a variable with array to create properties
+//const defaultTodos = [
+  //{text: 'I am Venezuela', completed: false},
+  //{text: 'I am Col', completed: false},
+  //{text: 'I am Ven', completed: false},
+  //{text: 'I am Colombia', completed: false},
+  //{text: 'estates derivation', completed: false},
+//]
+//localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
+//localStorage.removeItem('TODOS_V1')

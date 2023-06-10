@@ -8,47 +8,40 @@ import { CreateTodoButton } from '../Components/CreateTodoButton'
 import { TodosLoading } from '../Components/TodosLoading'
 import { TodosError} from '../Components/TodosError'
 import { TodosCreate} from '../Components/TodosCreate'
+import { TodoContext } from "../Components/TodoContext";
 
-function AppUI({
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    filteredTodos,
-    todoCompleted,
-    todoDelete,
-    loading,
-    error
-}) {
+function AppUI() {
+    const {
+        loading,
+        error,
+        filteredTodos,
+        todoCompleted,
+        todoDelete
+    } = React.useContext(TodoContext);
 return (
     <>
-    <TodoCounter
-        completed={completedTodos}
-        total={totalTodos}
-    />
+    <TodoCounter/>
     <TodoImage />
-    <TodoSearch
-        searchValue={searchValue} //propiedad y states
-        setSearchValue={setSearchValue}/>
+    <TodoSearch />
     <TodoList>
-    {loading && 
+        {loading && 
         <>
             <TodosLoading />
             <TodosLoading />
             <TodosLoading />
         </>
-    }
-    {(!loading && filteredTodos.length === 0 ) && <TodosCreate />}
-    {error && <TodosError />}
-
-    {filteredTodos.map((todo => (
-        <TodoItem 
-        key={todo.text} 
-        text={todo.text}
-        completed={todo.completed}
-        onComplete={() => todoCompleted(todo.text)}
-        onDelete={() => todoDelete(todo.text)}/>
-        )))}
+        }
+        {(!loading && filteredTodos.length === 0 ) && <TodosCreate />}
+        {error && <TodosError />}
+    
+        {filteredTodos.map((todo => (
+            <TodoItem 
+            key={todo.text} 
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => todoCompleted(todo.text)}
+            onDelete={() => todoDelete(todo.text)}/>
+            )))}
     </TodoList>
     <CreateTodoButton />
     </>
