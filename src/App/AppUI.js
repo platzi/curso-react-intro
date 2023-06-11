@@ -10,6 +10,7 @@ import { TodosError} from '../Components/TodosError'
 import { TodosCreate} from '../Components/TodosCreate'
 import { TodoContext } from "../Components/TodoContext";
 import { Modal } from '../Components/Modal'
+import { TodoForm } from '../Components/TodoForm'
 
 function AppUI() {
     const {
@@ -49,7 +50,7 @@ return (
     <CreateTodoButton />
     {openModal && (
         <Modal>
-            Add TODO
+            <TodoForm />
         </Modal>
     )}
     </>

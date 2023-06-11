@@ -1,9 +1,12 @@
-/*.modal {
-    background-color: #FAFAFA;
-    position: relative;
+.modal {
+    background-color: rgba(32,35,41,.8);
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    margin-top: 24px;
-}*/
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
