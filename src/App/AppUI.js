@@ -20,7 +20,6 @@ function AppUI() {
         todoCompleted,
         todoDelete,
         openModal,
-        
     } = React.useContext(TodoContext);
 return (
     <>
