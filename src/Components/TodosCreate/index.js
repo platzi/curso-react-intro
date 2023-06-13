@@ -3,8 +3,8 @@ import './TodosCreate.css'
 
 function TodosCreate() {
     return (
-        <div>
-            <p>¡Create your firts TODOs!</p>
+        <div className='TodoCreate'>
+            <p className='TodoCreate-p'>¡¡¡ Create your new To Do !!!</p>
         </div>
     )
 }

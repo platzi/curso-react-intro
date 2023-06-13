@@ -23,11 +23,12 @@ const onCancel = () => {
 }
     return (
         <form onSubmit={onSubmit}>
-            <label>Writing your new TODOs</label>
+            <label>Create your new To Do</label>
             <textarea
-            placeholder='Study React'
+            placeholder='Study React...'
             value={newTodoValue}
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
         <div className='TodoForm-buttonContainer'>
             <button
             type="button"

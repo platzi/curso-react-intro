@@ -3,9 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 48px;
-    width: 48px;
-    font-size: 24px;
+    height: 40px;
+    width: 40px;
     font-weight: bold;
 }
 .Icon-container-check {

@@ -1,0 +1,15 @@
+.TodoCongratulation {
+    /*background-color: #8fc8d88e;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+} 
+.Congratulation {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(221, 126, 63);
+}
+.Congratulation:hover {
+    transform: rotate(224deg);
+}

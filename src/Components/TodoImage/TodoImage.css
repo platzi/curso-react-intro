@@ -1,8 +1,9 @@
-/*.TodoImage {
-    position: relative;
+.TodoImage {
+    position: absolute;
+    left: 0;
     width: 150px;
     height: 150px;
-}*/
+}
 .TodoImage-img {
     width: 100px;
     height: 80px;

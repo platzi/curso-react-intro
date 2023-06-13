@@ -1,18 +1,9 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.8;
-  text-align: center;
-  color: #aaa5a5;
-  background: black;
+  background: #F2F4F5;
+  color: #1E1E1F;
+  font-family: cursive;
 }
 #root {
   margin: 0 24px;
