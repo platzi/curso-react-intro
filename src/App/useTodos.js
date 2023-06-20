@@ -1,17 +1,19 @@
 import React from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
-const TodoContext = React.createContext()//we create context
-function TodoProvider({children}) {
+
+function useTodos() {
     const {
         item: todos,
         saveItem: saveTodos,
+        sincronizeItem: sincronizeTodos,
         loading,
         error,
     } = useLocalStorage('TODOS_V1', [])
     const [searchValue, setSearchValue] = React.useState('')
-    const [openModal, setOpenModal] = React.useState(true)
-    //estates derivation
+    const [openModal, setOpenModal] = React.useState(false)
+    const [congratulation, setCongratulation ] = React.useState(false)
+    //estates derivations
     const completedTodos = todos.filter(todo => !!todo.completed).length
     const totalTodos = todos.length
     const filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
@@ -36,23 +38,22 @@ function TodoProvider({children}) {
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
     }
-        return (
-            <TodoContext.Provider value={{
-                loading,
-                error,
-                completedTodos,
-                totalTodos,
-                searchValue,
-                setSearchValue,
-                filteredTodos,
-                todoCompleted,
-                todoDelete,
-                openModal,
-                setOpenModal,
-                addTodo,
-            }}>
-                {children}
-            </TodoContext.Provider>
-        )
-    }
-export { TodoContext, TodoProvider }
+    return {
+            loading,
+            error,
+            completedTodos,
+            totalTodos,
+            searchValue,
+            setSearchValue,
+            filteredTodos,
+            todoCompleted,
+            todoDelete,
+            openModal,
+            setOpenModal,
+            addTodo,
+            congratulation,
+            setCongratulation,
+            sincronizeTodos
+        }
+    }     
+export { useTodos }

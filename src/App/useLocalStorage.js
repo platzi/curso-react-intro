@@ -4,6 +4,7 @@ import React from "react"
 //Custom Hooks
 function useLocalStorage(itemName, initialValue) {
      //create state for localStorage
+    const [sincronizedItem, setSincronizedItem] = React.useState(true)
     const [item, setItem] = React.useState(initialValue)
     const [loading, setLoading] = React.useState(true)
     const [error, setError] = React.useState(false)
@@ -18,26 +19,37 @@ function useLocalStorage(itemName, initialValue) {
                     parsedItem = initialValue
                 } else {
                     parsedItem = JSON.parse(localStorageItem)
-                    setItem(parsedItem)
                 }
+                setItem(parsedItem)
                 setLoading(false)
-            } catch(err) {
-            setError(true)
+                setSincronizedItem(true)
+            } catch(error) {
+            setError(error)
             }
-        }, 4000)
-    }, [itemName, initialValue])
+        }, 3000)
+    }, [sincronizedItem,itemName,initialValue])
 
 
     //function actualized localStorage y State
-    function saveItem(newItem) {
-        localStorage.setItem(itemName, JSON.stringify(newItem))
-        setItem(newItem) //guardant los primeros todos en localStorage y en el estate
+    const saveItem = (newItem) => {
+        try {
+            const stringifiedItem = JSON.stringify(newItem)
+            localStorage.setItem(itemName, stringifiedItem)
+            setItem(newItem);
+        } catch(error) {
+        setError(error);
+        }
+    }
+    const sincronizeItem = () => {
+        setLoading(true)
+        setSincronizedItem(false)
     }
     return {
         item, 
         saveItem,
         loading,
         error,
+        sincronizeItem
     }
 }
 export { useLocalStorage }
