@@ -4,45 +4,40 @@ import { TodoList } from "./TodoList";
 import {TodoItem} from "./TodoItem";
 import { CreateButton } from "./CreateButton";
 import React from "react";
-const todo =[{
-    text:"visitar alemania", completed: false
-},
-{
-  text:"completar el curso fullstack", completed: false
-},
-{
-  text:"renderizar un array", completed: true
-},
-{
-  text:"agregar todo", completed: true
-},]
+
+const localStorageTodos = localStorage.getItem("TODOS_V1")
+let parsedTodos;
+if(!localStorageTodos){
+  localStorage.setItem("TODOS_V1",JSON.stringify([]))
+  parsedTodos = []
+}else{
+  parsedTodos = JSON.parse(localStorageTodos)
+}
 
 
 function App() {
-  const [todos, setTodos] = React.useState(todo)
+  const [todos, setTodos] = React.useState(parsedTodos)
   const [state, setState] = React.useState("")
   const newtodo = todos.filter(e=>e.text.toLocaleLowerCase().includes(state.toLocaleLowerCase()))
   //tolocalelowercase no distingue entre acentos
-  const completedTodo = (i)=>{
-    const newT = [...todos,]
-    const find = newT.findIndex(e=> e.text === i)
-    newT[find].completed = true
-   return setTodos(newT)
+  const savedTodos = (newTodos)=>{
+      localStorage.setItem("TODOS_V1", JSON.stringify(newTodos))
+      setTodos(newTodos)
   }
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
-      (todo) => todo.text == text
+      (todo) => todo.text === text
     );
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    savedTodos(newTodos);
   };
 
   const deleteTodo = (i)=>{
     const newT = [...todos,]
     const find = newT.findIndex(e=> e.text === i)
     newT.splice(find, 1)
-     setTodos(newT)
+    savedTodos(newT)
   }
   return (
     
