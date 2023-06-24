@@ -1,5 +1,5 @@
 import React from "react"
-import "./todoFilter.css"
+import "../../styles/todoFilter.css"
 const TodoFilter = ({setState})=>{
 
     return(

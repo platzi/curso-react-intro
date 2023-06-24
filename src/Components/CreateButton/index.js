@@ -1,4 +1,4 @@
-import "./buttonStyle.css"
+import "../../styles/buttonStyle.css"
 
 const CreateButton = ()=>{
 

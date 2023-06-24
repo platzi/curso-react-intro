@@ -1,4 +1,4 @@
-import "./nameCounter.css"
+import "../../styles/nameCounter.css"
 const NameCounter = ({total, completed})=>{
 
 

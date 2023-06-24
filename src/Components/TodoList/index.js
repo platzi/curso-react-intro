@@ -1,4 +1,4 @@
-import "./todoList.css"
+import "../../styles/todoList.css"
 
 const TodoList = (props)=>{
 

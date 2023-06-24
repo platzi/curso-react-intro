@@ -1,6 +1,6 @@
-import CompleteIcon from "./completeIcon.js";
-import DeleteIcon from "./deleteIcon.js";
-import "./todoItem.css";
+import CompleteIcon from "../todoIcon/completeIcon.js";
+import DeleteIcon from "../todoIcon/deleteIcon.js";
+import "../../styles/todoItem.css";
 
 const TodoItem = ({element, completed,onComplete, onDelete})=>{
     return(
