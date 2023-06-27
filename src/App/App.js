@@ -3,13 +3,17 @@ import {useLocalStorage} from "../hooks/useLocalStorage"
 import { Logica } from "./logica";
 
 function App() {
-  const [todos, saveItem] = useLocalStorage("TODOS_V1",[])
+  const {item,
+    saveItem,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V1",[])
   const [state, setState] = React.useState("")
-  const newtodo = todos.filter(e=>e.text.toLocaleLowerCase().includes(state.toLocaleLowerCase()))
+  const newtodo = item.filter(e=>e.text.toLocaleLowerCase().includes(state.toLocaleLowerCase()))
   //tolocalelowercase no distingue entre acentos
 
   const completeTodo = (text) => {
-    const newTodos = [...todos];
+    const newTodos = [...item];
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
     );
@@ -18,14 +22,14 @@ function App() {
   };
 
   const deleteTodo = (i)=>{
-    const newT = [...todos,]
+    const newT = [...item,]
     const find = newT.findIndex(e=> e.text === i)
     newT.splice(find, 1)
     saveItem(newT)
   }
   //se separan entre statefull y stateless
   return (
- <Logica todos={todos} completeTodo={completeTodo} deleteTodo={deleteTodo} newtodo={newtodo} setState={setState} />
+ <Logica todos={item} completeTodo={completeTodo} deleteTodo={deleteTodo} newtodo={newtodo} setState={setState} loading={loading} error={error} />
    
   );
 }

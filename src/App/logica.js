@@ -3,16 +3,36 @@ import { TodoFilter } from "../Components/TodoFilter/index";
 import { TodoList } from "../Components/TodoList/index";
 import {TodoItem} from "../Components/TodoItem/index";
 import { CreateButton } from "../Components/CreateButton/index";
+import {TodosLoading} from "./TodosLoading"
+import {TodosError} from "./TodosError"
+import {EmptyTodos} from "./EmptyTodos"
 
-const Logica = ({todos,completeTodo,deleteTodo,newtodo,setState})=>{
+const Logica = ({todos,completeTodo,deleteTodo,newtodo,setState, loading, error})=>{
     return(  <>
         <NameCounter total={todos.length} completed={todos.filter(e=> !!e.completed ).length}/>
        <TodoFilter setState={setState}/>
        <TodoList>
-       </TodoList>
-       {newtodo.map(e=> (<TodoItem element={e} key={e.text} completed={e.completed} onComplete={()=>completeTodo(e.text)}
-       onDelete={()=>deleteTodo(e.text)}/> ))}
+       {loading && (
+          <>
+            <TodosLoading />
+            <TodosLoading />
+            <TodosLoading />
+          </>
+        )}
+        {error && <TodosError/>}
+        {(!loading && newtodo.length === 0) && <EmptyTodos />}
+
+        {newtodo.map(todo => (
+          <TodoItem
+            key={todo.text}
+            element={todo}
+            completed={todo.completed}
+            oncomplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        ))}
        <CreateButton/>
+       </TodoList>
     </>)
 }
 
