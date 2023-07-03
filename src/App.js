@@ -5,7 +5,7 @@ import {TodoSearch} from "./TodoSearch"
 import {TodoList} from "./TodoList"
 import {CreateTodoButton} from "./CreateTodoButton"
 import { TodoItem } from './TodoItem';
-import React from 'react';
+import React, { useState }  from 'react';
 
 const defaultTodos = [
   {text :"cortar" , completed: true},
@@ -17,11 +17,22 @@ const defaultTodos = [
 ]
 
 function App() {
-  return (
-    <React.Fragment>
+  const [todos, setTodos] = useState(defaultTodos);
+  const [searchValue , setSearchValue ] = useState("")
 
-      <TodoCounter completed={12} total={22} />
-      <TodoSearch/>
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log("searchValue",searchValue)
+
+  return (
+    <>
+
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <TodoList>
         {defaultTodos.map(todo => (
@@ -32,7 +43,7 @@ function App() {
 
       <CreateTodoButton/>
 
-    </React.Fragment>
+    </>
   );
 }
 
