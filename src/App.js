@@ -7,6 +7,7 @@ import { TodoItem } from './TodoItem';
 
 
 
+
 const defaultTodos =[
   {text: 'cortar cebolla', completed: true},
   {text: 'completar el curso de React', completed: false},
