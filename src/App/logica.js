@@ -1,3 +1,4 @@
+import React from 'react'
 import {NameCounter} from "../Components/NameCounter/index";
 import { TodoFilter } from "../Components/TodoFilter/index";
 import { TodoList } from "../Components/TodoList/index";
@@ -6,10 +7,13 @@ import { CreateButton } from "../Components/CreateButton/index";
 import {TodosLoading} from "./TodosLoading"
 import {TodosError} from "./TodosError"
 import {EmptyTodos} from "./EmptyTodos"
+import { TodoContext } from "../Contexts/todoContext";
+import { Modal } from './Modal';
+const Logica = ()=>{
+  const {completeTodo,deleteTodo,searchedTodos,setState, loading, error, openModal, setOpenModal} = React.useContext(TodoContext)
 
-const Logica = ({todos,completeTodo,deleteTodo,newtodo,setState, loading, error})=>{
     return(  <>
-        <NameCounter total={todos.length} completed={todos.filter(e=> !!e.completed ).length}/>
+        <NameCounter />
        <TodoFilter setState={setState}/>
        <TodoList>
        {loading && (
@@ -20,9 +24,9 @@ const Logica = ({todos,completeTodo,deleteTodo,newtodo,setState, loading, error}
           </>
         )}
         {error && <TodosError/>}
-        {(!loading && newtodo.length === 0) && <EmptyTodos />}
+        {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
 
-        {newtodo.map(todo => (
+        {searchedTodos.map(todo => (
           <TodoItem
             key={todo.text}
             element={todo}
@@ -31,7 +35,11 @@ const Logica = ({todos,completeTodo,deleteTodo,newtodo,setState, loading, error}
             onDelete={() => deleteTodo(todo.text)}
           />
         ))}
-       <CreateButton/>
+       <CreateButton abrir={setOpenModal}/>
+
+       {
+        openModal && <Modal>funcinoa el portal</Modal>
+       }
        </TodoList>
     </>)
 }

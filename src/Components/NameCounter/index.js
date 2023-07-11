@@ -1,10 +1,13 @@
+import React from 'react'
 import "../../styles/nameCounter.css"
-const NameCounter = ({total, completed})=>{
+import { TodoContext } from '../../Contexts/todoContext'
 
+const NameCounter = ()=>{
+  const {completedTodos, totalTodos} = React.useContext(TodoContext)
 
     return(
       <h1 className="TodoCounter">
-        has completado  {completed} de {total} ToDo's
+        has completado  {completedTodos} de {totalTodos} ToDo's
       </h1>
     )    
   

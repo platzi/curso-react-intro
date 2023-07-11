@@ -1,9 +1,11 @@
 import React from "react"
 import "../../styles/todoFilter.css"
-const TodoFilter = ({setState})=>{
-
+import { TodoContext } from "../../Contexts/todoContext"
+const TodoFilter = ()=>{
+    const {   searchValue,
+        setSearchValue,} = React.useContext(TodoContext)
     return(
-   <> <input className="TodoSearch" placeholder="escribe algo" onChange={(e)=>setState(e.target.value)}/></>
+   <> <input className="TodoSearch" placeholder="escribe algo" value={searchValue} onChange={(e)=>setSearchValue(e.target.value)}/></>
     )    
   
 }

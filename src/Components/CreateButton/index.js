@@ -1,9 +1,9 @@
 import "../../styles/buttonStyle.css"
 
-const CreateButton = ()=>{
+const CreateButton = ({abrir})=>{
 
     return(
-      <button className="CreateTodoButton">+</button>
+      <button className="CreateTodoButton" onClick={()=>{abrir(e=>!e)}}>+</button>
     )    
   
   }
