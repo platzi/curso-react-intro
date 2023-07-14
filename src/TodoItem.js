@@ -1,15 +1,31 @@
 import './TodoItem.css';
+import { IconName } from "react-icons/bs";
 
-function TodoItem(props) {
+function TodoItem({
+  completed,
+  text,
+  onComplete,
+  onDelete,
+}) {
     return (
       <li className='TodoItem'>
-        <span className={`Icon Icon-check
-         ${props.completed && "Icon-check--active"}`}>V</span>
+        <span 
+          className={`Icon Icon-check
+          ${completed && "Icon-check--active"}`}
+          onClick={onComplete}
+         >
+          V
+         </span>
         <p className={`TodoItem-p 
-         ${props.completed && "TodoItem-p--complete"}`}>
-          {props.text}
+         ${completed && "TodoItem-p--complete"}`}>
+          {text}
         </p>
-        <span className='Icon Icon-delete'>X</span>
+        <span 
+          className='Icon Icon-delete'
+          onClick={onDelete}
+        >
+         X
+        </span>
       </li>
     )
   }
