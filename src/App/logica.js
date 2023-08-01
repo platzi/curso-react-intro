@@ -8,6 +8,7 @@ import {TodosLoading} from "./TodosLoading"
 import {TodosError} from "./TodosError"
 import {EmptyTodos} from "./EmptyTodos"
 import { TodoContext } from "../Contexts/todoContext";
+import { TodoForm } from '../Components/todoForm/todoForm';
 import { Modal } from './Modal';
 const Logica = ()=>{
   const {completeTodo,deleteTodo,searchedTodos,setState, loading, error, openModal, setOpenModal} = React.useContext(TodoContext)
@@ -38,9 +39,11 @@ const Logica = ()=>{
        <CreateButton abrir={setOpenModal}/>
 
        {
-        openModal && <Modal>funcinoa el portal</Modal>
+        openModal && <Modal> <TodoForm/></Modal>
        }
+         
        </TodoList>
+    
     </>)
 }
 
