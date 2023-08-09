@@ -30,13 +30,13 @@ textarea {
     width: calc(100% - 25px);
 }
   
-  textarea::placeholder {
+textarea::placeholder {
     color: #A5A5A5;
     font-family: 'Montserrat';
     font-weight: 400;
 }
   
-  textarea:focus {
+textarea:focus {
     outline-color: #61DAFA;
 }
   

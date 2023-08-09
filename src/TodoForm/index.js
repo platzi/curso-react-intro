@@ -30,6 +30,7 @@ function TodoForm() {
         placeholder="Cortar cebolla para el almuerzo"
         value={newTodoValue}
         onChange={onChange}
+        required
       />
       <div className="TodoForm-buttonContainer">
         <button
