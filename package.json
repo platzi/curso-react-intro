@@ -32,6 +32,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "C:/Users/USER/curso-react-intro/build/"
-  
+  "homepage": "https://leoandrest.github.io/curso-react-intro",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
