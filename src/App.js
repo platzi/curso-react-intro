@@ -4,6 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <TodoList name={'christian'}>
+      </TodoList>
+      {/* clase 2 creando la aplicacion  */}
+      <TodoList name={'Juan'} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,6 +23,16 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+function TodoList(props){
+  return (
+<div>
+  <h1>Tarea 34</h1>
+  <p> tu nombre es {props.name}</p>
+</div>
+
   );
 }
 
