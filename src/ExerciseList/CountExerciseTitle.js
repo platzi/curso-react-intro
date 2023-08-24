@@ -14,7 +14,7 @@ function CountExerciseTitle(){
     } = React.useContext(ContextGlobal)
     return(
         <h1 style={styleTitle}>
-            Has completado {completedExercise} de {totalExercise} ejercicios
+            Has completado {completedExercise} de {totalExercise} Ejercicios
         </h1>
     )
 }
