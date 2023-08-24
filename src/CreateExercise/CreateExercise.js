@@ -27,7 +27,7 @@ const styleButtonAdd = {
 
 function TitleCreateExercise(){
     return(
-        <h2 style={StyleTitleCreateExercise}>Agregar ejercicio</h2>
+        <h2 style={StyleTitleCreateExercise}>Agregar Ejercicio</h2>
     )
 }
 export {TitleCreateExercise}
