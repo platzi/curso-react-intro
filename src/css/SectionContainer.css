@@ -17,6 +17,7 @@
   background-color: var(--yelowed-white);
   padding: 1rem;
   gap: 2rem;
+  height: 100%;
 }
 
 .principal-container,

@@ -25,7 +25,7 @@ function App() {
 
       <div className="body-wrapper">
         <SectionContainer className={"principal-container"}>
-          <SimpleText type={"header"} text={"Texto de prueba"} />
+          <SimpleText type={"header"} text={"Create a new TODO"} />
           <SectionContainer className={"secondary-container"}>
             <div className="button-input">
               <CreateTodoInput />
@@ -42,7 +42,7 @@ function App() {
         </SectionContainer>
 
         <SectionContainer className="principal-container">
-          <SimpleText type={"header"} text={"Texto de prueba"} />
+          <SimpleText type={"header"} text={"Actual TODOs"} />
           <SectionContainer className={"secondary-container"}>
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
