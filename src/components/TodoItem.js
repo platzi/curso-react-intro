@@ -1,10 +1,22 @@
-function TodoItem(props) {
+import { ImgItem } from "./ImgItem";
+import { SimpleText } from "./SimpleText";
+import check from "./../img/check.svg";
+import deleteBlack from "./../img/cancel-black.svg";
+import deleteRed from "./../img/cancel-red.svg";
+
+import "./../css/TodoItem.css";
+
+function TodoItem({ text, completed }) {
   return (
-    <li>
-      <span>V</span>
-      <p>{props.text}</p>
-      <span>X</span>
-    </li>
+    <div className="TodoItem">
+      <div className="TodoItem--checkbox">
+        <ImgItem className={"check-img"} url={check} />
+      </div>
+      <div className="TodoItem--textbox">
+        <SimpleText type={"light-text"} text={`${text}`} />
+      </div>
+      <div className="TodoItem--delete"></div>
+    </div>
   );
 }
 

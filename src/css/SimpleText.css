@@ -1,7 +1,11 @@
-.TodoCounter {
+.header {
   font-size: 4rem;
   text-align: center;
   margin: 0;
   padding: 2rem;
   font-weight: bold;
+}
+
+.light-text {
+  font-size: 2rem;
 }

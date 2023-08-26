@@ -1,26 +1,57 @@
 import { TodoCounter } from "./components/TodoCounter";
-import { TodoSearch } from "./components/TodoSearch";
-import { TodoList } from "./components/TodoList";
+import { CreateTodoInput } from "./components/CreateTodoInput";
 import { TodoItem } from "./components/TodoItem";
 import { CreateTodoButton } from "./components/CreateTodoButton";
+import { SectionContainer } from "./components/SectionContainer";
+import { SimpleText } from "./components/SimpleText";
+import { ImgItem } from "./components/ImgItem";
 import React from "react";
+import programmer from "./img/programmer.svg";
+import sendImg from "./img/send.svg";
 import "./css/body.css";
-
-const defaultTodos = [
-  { text: "Cortar Cebolla", completed: true },
-  { text: "Website en React", completed: false },
-  { text: "Website using node", completed: false },
-  { text: "SISII", completed: false },
-];
+import "./css/button-input.css";
+// const defaultTodos = [
+//   { text: "Cortar Cebolla", completed: true },
+//   { text: "Website en React", completed: false },
+//   { text: "Website using node", completed: false },
+//   { text: "SISII", completed: false },
+// ];
 
 function App() {
   return (
     // <React.Fragment>
     <>
-      <TodoCounter completed={16} total={20} />
-      <TodoSearch />
+      <TodoCounter completed={16} />
 
-      <TodoList>
+      <div className="body-wrapper">
+        <SectionContainer className={"principal-container"}>
+          <SimpleText type={"header"} text={"Texto de prueba"} />
+          <SectionContainer className={"secondary-container"}>
+            <div className="button-input">
+              <CreateTodoInput />
+              <CreateTodoButton>
+                <ImgItem className="send-img" url={sendImg} />
+              </CreateTodoButton>
+            </div>
+            <SimpleText
+              type={"light-text"}
+              text={"I gotta study how to use react :)"}
+            />
+            <ImgItem className="programmer-img" url={programmer} />
+          </SectionContainer>
+        </SectionContainer>
+
+        <SectionContainer className="principal-container">
+          <SimpleText type={"header"} text={"Texto de prueba"} />
+          <SectionContainer className={"secondary-container"}>
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+          </SectionContainer>
+        </SectionContainer>
+      </div>
+
+      {/* <TodoList>
         {defaultTodos.map((todo) => (
           <TodoItem
             key={todo.text}
@@ -28,9 +59,7 @@ function App() {
             completed={todo.completed}
           />
         ))}
-      </TodoList>
-
-      <CreateTodoButton />
+      </TodoList> */}
     </>
     // </React.Fragment>
   );

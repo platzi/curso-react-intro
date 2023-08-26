@@ -1,0 +1,42 @@
+:root {
+  --darker-blue: #146c78;
+  --lighter-blue: #0e91a1;
+  --light-green: #7dce94;
+  --yelowed-white: #efede7;
+  --white: #ffffff;
+  --black: #252525;
+}
+
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  border: 1px solid var(--black);
+  border-radius: 12px;
+  width: 100%;
+  height: 4rem;
+}
+
+.TodoItem--checkbox {
+  border: 1px solid var(--black);
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.TodoItem--delete {
+  width: 2rem;
+  height: 2rem;
+  background: url("../img/cancel-black.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.TodoItem--delete:hover {
+  background: url("../img/cancel-red.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}

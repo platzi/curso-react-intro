@@ -1,0 +1,29 @@
+:root {
+  --darker-blue: #146c78;
+  --lighter-blue: #0e91a1;
+  --light-green: #7dce94;
+  --yelowed-white: #efede7;
+  --white: #ffffff;
+  --black: #252525;
+}
+
+.principal-container {
+  padding: 1rem;
+  background-color: var(--light-green);
+  border: 1px solid var(--black);
+}
+
+.secondary-container {
+  background-color: var(--yelowed-white);
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.principal-container,
+.secondary-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  align-items: center;
+  width: 100%;
+}
