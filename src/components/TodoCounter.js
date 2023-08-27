@@ -4,7 +4,7 @@ function TodoCounter({ completed, total }) {
   return (
     <h1 className="TodoCounter">
       {total == 0
-        ? `Congratulations, you have no left TODOs :)`
+        ? `Congratulations, you have no left TODOs :D`
         : ` You have completed ${completed} of ${total} total TODOs`}
     </h1>
   );
