@@ -10,6 +10,10 @@
   font-size: 2rem;
 }
 
+.crossed-line {
+  text-decoration: line-through;
+}
+
 @media (max-width: 768px) {
   .header {
     font-size: 3rem;

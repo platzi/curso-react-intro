@@ -50,3 +50,7 @@
   background-size: cover;
   cursor: pointer;
 }
+
+.inactive {
+  display: none !important;
+}

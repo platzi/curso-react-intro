@@ -8,10 +8,16 @@ function TodoItem({ text, completed }) {
   return (
     <div className="TodoItem">
       <div className="TodoItem--checkbox">
-        <ImgItem className={"check-img"} url={check} />
+        <ImgItem
+          className={`check-img ${!completed ? "inactive" : ""}`}
+          url={check}
+        />
       </div>
       <div className="TodoItem--textbox">
-        <SimpleText type={"light-text"} text={`${text}`} />
+        <SimpleText
+          type={`light-text ${completed ? "crossed-line" : ""}`}
+          text={`${text}`}
+        />
       </div>
       <div className="TodoItem--delete"></div>
     </div>

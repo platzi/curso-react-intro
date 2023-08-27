@@ -12,6 +12,7 @@
   background-color: var(--light-green);
   border: 1px solid var(--black);
   max-height: 80vh;
+  gap: 1rem;
 }
 
 .secondary-container {
@@ -20,7 +21,6 @@
   gap: 2rem;
   height: 100%;
   overflow: auto;
-  justify-content: space-evenly;
 }
 
 .principal-container,
@@ -30,21 +30,4 @@
   border-radius: 12px;
   align-items: center;
   width: 100%;
-}
-
-@media (max-width: 768px) {
-  .secondary-container {
-  }
-}
-@media (max-width: 1024px) {
-  .secondary-container {
-  }
-}
-@media (max-width: 1200px) {
-  .secondary-container {
-  }
-}
-@media (min-width: 480px) {
-  .secondary-container {
-  }
 }
