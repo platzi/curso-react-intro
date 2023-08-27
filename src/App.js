@@ -10,18 +10,24 @@ import programmer from "./img/programmer.svg";
 import sendImg from "./img/send.svg";
 import "./css/body.css";
 import "./css/button-input.css";
-// const defaultTodos = [
-//   { text: "Cortar Cebolla", completed: true },
-//   { text: "Website en React", completed: false },
-//   { text: "Website using node", completed: false },
-//   { text: "SISII", completed: false },
-// ];
+import { TodoInputSearch } from "./components/TodoInputSearch";
+const defaultTodos = [
+  { text: "Cortar Cebolla", completed: true },
+  { text: "Website en React", completed: true },
+  { text: "Website using node", completed: true },
+  { text: "SISII", completed: false },
+];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
   return (
     // <React.Fragment>
     <>
-      <TodoCounter completed={16} />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
 
       <div className="body-wrapper">
         <SectionContainer className={"principal-container"}>
@@ -43,7 +49,32 @@ function App() {
 
         <SectionContainer className="principal-container">
           <SimpleText type={"header"} text={"Actual TODOs"} />
+          <TodoInputSearch />
           <SectionContainer className={"secondary-container"}>
+            <TodoItem text={"Prueba de Todoitem"} completed={true} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={true} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={true} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem
@@ -52,13 +83,6 @@ function App() {
               }
               completed={false}
             />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
           </SectionContainer>
         </SectionContainer>
       </div>
