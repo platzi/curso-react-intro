@@ -46,6 +46,18 @@ function App() {
           <SectionContainer className={"secondary-container"}>
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem
+              text={
+                " Texto demasiasdo grandeTexto demasiasdoTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandes grande"
+              }
+              completed={false}
+            />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
+            <TodoItem text={"Prueba de Todoitem"} completed={false} />
             <TodoItem text={"Prueba de Todoitem"} completed={false} />
           </SectionContainer>
         </SectionContainer>

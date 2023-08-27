@@ -18,3 +18,14 @@ body {
   gap: 3rem;
   margin: 0 3rem;
 }
+
+.inactive {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .body-wrapper {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 2fr;
+  }
+}

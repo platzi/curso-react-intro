@@ -11,3 +11,23 @@
   top: -15px;
   width: 5rem;
 }
+
+@media (max-width: 768px) {
+  .programmer-img {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .programmer-img {
+    width: 25rem;
+  }
+}
+@media (max-width: 1200px) {
+  .programmer-img {
+    width: 30rem;
+  }
+}
+@media (min-width: 480px) {
+  .programmer-img {
+  }
+}

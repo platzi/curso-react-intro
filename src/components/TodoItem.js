@@ -1,8 +1,6 @@
 import { ImgItem } from "./ImgItem";
 import { SimpleText } from "./SimpleText";
 import check from "./../img/check.svg";
-import deleteBlack from "./../img/cancel-black.svg";
-import deleteRed from "./../img/cancel-red.svg";
 
 import "./../css/TodoItem.css";
 
