@@ -11,6 +11,7 @@ import sendImg from "./img/send.svg";
 import "./css/body.css";
 import "./css/button-input.css";
 import { TodoInputSearch } from "./components/TodoInputSearch";
+
 const defaultTodos = [
   { text: "Cortar Cebolla", completed: true },
   { text: "Website en React", completed: true },
@@ -20,9 +21,29 @@ const defaultTodos = [
 
 function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
+
+  const searchedTodos = todos.filter((todo) => {
+    const todoText = todo.text.toLowerCase();
+    const searchText = searchValue.toLowerCase();
+    return todoText.includes(searchText);
+  });
+
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text == text);
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text == text);
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
 
   return (
     // <React.Fragment>
@@ -49,53 +70,23 @@ function App() {
 
         <SectionContainer className="principal-container">
           <SimpleText type={"header"} text={"Actual TODOs"} />
-          <TodoInputSearch />
+          <TodoInputSearch
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
           <SectionContainer className={"secondary-container"}>
-            <TodoItem text={"Prueba de Todoitem"} completed={true} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={true} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={true} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem text={"Prueba de Todoitem"} completed={false} />
-            <TodoItem
-              text={
-                " Texto demasiasdo grandeTexto demasiasdoTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandeTexto demasiasdo grandes grande"
-              }
-              completed={false}
-            />
+            {searchedTodos.map((todo) => (
+              <TodoItem
+                key={todo.text}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
+              />
+            ))}
           </SectionContainer>
         </SectionContainer>
       </div>
-
-      {/* <TodoList>
-        {defaultTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-          />
-        ))}
-      </TodoList> */}
     </>
     // </React.Fragment>
   );

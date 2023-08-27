@@ -5,6 +5,7 @@
   height: 4rem;
   width: 85%;
   padding: 1rem;
+  text-align: center;
 }
 
 .TodoInputSearch:focus {

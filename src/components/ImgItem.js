@@ -1,7 +1,7 @@
 import "./../css/ImgItem.css";
 
-function ImgItem({ url, className }) {
-  return <img src={`${url}`} className={`${className}`} />;
+function ImgItem({ url, className, onComplete, alt }) {
+  return <img src={`${url}`} className={`${className}`} alt={`${alt}`} />;
 }
 
 export { ImgItem };

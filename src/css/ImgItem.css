@@ -10,6 +10,7 @@
   position: absolute;
   top: -15px;
   width: 5rem;
+  cursor: default;
 }
 
 @media (max-width: 768px) {
