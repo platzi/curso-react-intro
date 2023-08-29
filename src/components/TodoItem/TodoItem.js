@@ -1,8 +1,8 @@
-import { ImgItem } from "./ImgItem";
-import { SimpleText } from "./SimpleText";
-import check from "./../img/check.svg";
+import { ImgItem } from "./../ImgItem/ImgItem.js";
+import { SimpleText } from "./../SimpleText/SimpleText.js";
+import check from "./check.svg";
 
-import "./../css/TodoItem.css";
+import "./TodoItem.css";
 
 function TodoItem({ text, completed, onComplete, onDelete }) {
   return (

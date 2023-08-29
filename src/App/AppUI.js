@@ -1,50 +1,27 @@
-import { TodoCounter } from "./components/TodoCounter";
-import { CreateTodoInput } from "./components/CreateTodoInput";
-import { TodoItem } from "./components/TodoItem";
-import { CreateTodoButton } from "./components/CreateTodoButton";
-import { SectionContainer } from "./components/SectionContainer";
-import { SimpleText } from "./components/SimpleText";
-import { ImgItem } from "./components/ImgItem";
+import { TodoCounter } from "../components/TodoCounter/TodoCounter";
+import { CreateTodoInput } from "../components/CreateTodoInput/CreateTodoInput";
+import { TodoItem } from "../components/TodoItem/TodoItem";
+import { CreateTodoButton } from "../components/CreateTodoButton/CreateTodoButton";
+import { SectionContainer } from "../components/SectionContainer/SectionContainer";
+import { SimpleText } from "../components/SimpleText/SimpleText";
+import { ImgItem } from "../components/ImgItem/ImgItem";
+import { useLocalStorage } from "./customHooks/useLocalStorage";
 import React from "react";
 import programmer from "./img/programmer.svg";
 import sendImg from "./img/send.svg";
 import "./css/body.css";
 import "./css/button-input.css";
-import { TodoInputSearch } from "./components/TodoInputSearch";
+import { TodoInputSearch } from "../components/TodoInputSearch/TodoInputSearch";
 
-const defaultTodos = [
-  { text: "Cortar Cebolla", completed: true },
-  { text: "Website en React", completed: true },
-  { text: "Website using node", completed: true },
-  { text: "SISII", completed: false },
-];
-
-function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
-  const [searchValue, setSearchValue] = React.useState("");
-
-  const completedTodos = todos.filter((todo) => !!todo.completed).length;
-  const totalTodos = todos.length;
-
-  const searchedTodos = todos.filter((todo) => {
-    const todoText = todo.text.toLowerCase();
-    const searchText = searchValue.toLowerCase();
-    return todoText.includes(searchText);
-  });
-
-  const completeTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text == text);
-    newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
-  };
-  const deleteTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text == text);
-    newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
-  };
-
+function AppUI({
+  completedTodos,
+  totalTodos,
+  searchValue,
+  setSearchValue,
+  searchedTodos,
+  completeTodo,
+  deleteTodo,
+}) {
   return (
     // <React.Fragment>
     <>
@@ -92,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export { AppUI };

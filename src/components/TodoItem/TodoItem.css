@@ -39,16 +39,18 @@
 .TodoItem--delete {
   width: 2rem;
   height: 2rem;
-  background: url("../img/cancel-black.svg");
+  background: url("./cancel-black.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.1s ease;
 }
 
 .TodoItem--delete:hover {
-  background: url("../img/cancel-red.svg");
+  background: url("./cancel-red.svg");
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  transform: scale(1.6);
 }
 
 .inactive {

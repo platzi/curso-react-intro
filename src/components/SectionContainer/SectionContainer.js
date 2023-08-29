@@ -1,4 +1,4 @@
-import "./../css/SectionContainer.css";
+import "./SectionContainer.css";
 
 function SectionContainer({ children, className }) {
   return <div className={`${className}`}>{children}</div>;
