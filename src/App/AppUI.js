@@ -21,6 +21,8 @@ function AppUI({
   searchedTodos,
   completeTodo,
   deleteTodo,
+  loading,
+  error,
 }) {
   return (
     // <React.Fragment>
@@ -51,6 +53,11 @@ function AppUI({
             searchValue={searchValue}
             setSearchValue={setSearchValue}
           />
+          {loading && <p>Loading...</p>}
+          {error && <p>An error has ocurred</p>}
+          {!loading && searchedTodos.lenght === 0 && (
+            <p>Create your first TODO!</p>
+          )}
           <SectionContainer className={"secondary-container"}>
             {searchedTodos.map((todo) => (
               <TodoItem
