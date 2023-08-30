@@ -5,29 +5,25 @@ import { CreateTodoButton } from "../components/CreateTodoButton/CreateTodoButto
 import { SectionContainer } from "../components/SectionContainer/SectionContainer";
 import { SimpleText } from "../components/SimpleText/SimpleText";
 import { ImgItem } from "../components/ImgItem/ImgItem";
-import { useLocalStorage } from "./customHooks/useLocalStorage";
 import React from "react";
 import programmer from "./img/programmer.svg";
 import sendImg from "./img/send.svg";
 import "./css/body.css";
 import "./css/button-input.css";
 import { TodoInputSearch } from "../components/TodoInputSearch/TodoInputSearch";
+import { TodosLoading } from "../components/TodosLoading/TodosLoading";
+import { TodosError } from "../components/TodosError/TodosError";
+import { EmptyTodos } from "../components/EmptyTodos/EmptyTodos";
+import { TodoContext } from "../components/TodoContext/TodoContext";
 
-function AppUI({
-  completedTodos,
-  totalTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodo,
-  deleteTodo,
-  loading,
-  error,
-}) {
+function AppUI() {
+  const { searchedTodos, completeTodo, deleteTodo, loading, error } =
+    React.useContext(TodoContext);
+
   return (
     // <React.Fragment>
     <>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoCounter />
 
       <div className="body-wrapper">
         <SectionContainer className={"principal-container"}>
@@ -49,16 +45,17 @@ function AppUI({
 
         <SectionContainer className="principal-container">
           <SimpleText type={"header"} text={"Actual TODOs"} />
-          <TodoInputSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-          {loading && <p>Loading...</p>}
-          {error && <p>An error has ocurred</p>}
-          {!loading && searchedTodos.lenght === 0 && (
-            <p>Create your first TODO!</p>
-          )}
+          <TodoInputSearch />
+
           <SectionContainer className={"secondary-container"}>
+            {loading && (
+              <>
+                <TodosLoading /> <TodosLoading /> <TodosLoading />
+                <TodosLoading /> <TodosLoading /> <TodosLoading />
+              </>
+            )}
+            {error && <TodosError />}
+            {!loading && searchedTodos.lenght === 0 && <EmptyTodos />}
             {searchedTodos.map((todo) => (
               <TodoItem
                 key={todo.text}
