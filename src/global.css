@@ -1,0 +1,6 @@
+body {
+    background: rgb(144, 34, 195);
+    background: linear-gradient(10deg, rgb(32, 32, 241) 10%, rgb(8, 190, 251) 40%) fixed; 
+    color: #fff;
+    font-family: Arial, sans-serif; /* Ejemplo de fuente de texto */
+  }

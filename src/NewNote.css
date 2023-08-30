@@ -1,0 +1,10 @@
+div {
+    border: none;
+    font-size: 50px;
+    position: fixed;
+    font-weight: 700;
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
