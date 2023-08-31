@@ -15,10 +15,19 @@ import { TodosLoading } from "../components/TodosLoading/TodosLoading";
 import { TodosError } from "../components/TodosError/TodosError";
 import { EmptyTodos } from "../components/EmptyTodos/EmptyTodos";
 import { TodoContext } from "../components/TodoContext/TodoContext";
+import { Modal } from "../components/Modal/Modal";
+import { TodoConfirmation } from "../components/TodoConfirmation/TodoConfirmation";
 
 function AppUI() {
-  const { searchedTodos, completeTodo, deleteTodo, loading, error } =
-    React.useContext(TodoContext);
+  const {
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    loading,
+    error,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
 
   return (
     // <React.Fragment>
@@ -34,6 +43,11 @@ function AppUI() {
               <CreateTodoButton>
                 <ImgItem className="send-img" url={sendImg} />
               </CreateTodoButton>
+              {openModal && (
+                <Modal>
+                  <TodoConfirmation />
+                </Modal>
+              )}
             </div>
             <SimpleText
               type={"light-text"}

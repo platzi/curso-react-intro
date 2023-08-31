@@ -1,0 +1,51 @@
+:root {
+  --darker-blue: #146c78;
+  --lighter-blue: #0e91a1;
+  --light-green: #7dce94;
+  --yelowed-white: #efede7;
+  --white: #ffffff;
+  --black: #252525;
+}
+
+.TodoConfirmation--container {
+  min-height: 10rem;
+  min-width: 25rem;
+  width: 35rem;
+  height: 20rem;
+  border: 1px solid var(--black);
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: var(--darker-blue);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.TodoConfirmation--Text {
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.TodoConfirmation--button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TodoConfirmation--button--yes,
+.TodoConfirmation--button--no {
+  width: 15rem;
+  height: 3rem;
+  border-radius: 6px;
+  border: 1px solid var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.TodoConfirmation--button--yes {
+}
+
+.TodoConfirmation--button--no {
+}
