@@ -1,0 +1,13 @@
+.TodoInputSearch {
+  outline: none;
+  border: 1px solid var(--black);
+  border-radius: 12px;
+  height: 4rem;
+  width: 85%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.TodoInputSearch:focus {
+  border: 1px solid var(--lighter-blue);
+}

@@ -1,0 +1,64 @@
+.TodoItem--Loading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  box-shadow: 0 5px 50px rgba(32, 35, 41, 0.15);
+  border-radius: 12px;
+  width: 100%;
+  min-height: 5rem;
+  height: 5rem;
+  width: 100%;
+  max-height: 30rem;
+  overflow: auto;
+}
+
+.TodoItem--checkbox--loading {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.TodoItem--textbox--loading {
+  width: 80%;
+  overflow: hidden;
+}
+
+.TodoItem--delete--loading {
+  width: 2rem;
+  height: 2rem;
+  background: url("./cancel-black.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.1s ease;
+}
+
+.TodoItem--Loading,
+.TodoItem--checkbox--loading,
+.TodoItem--delete--loading,
+.TodoItem--textbox--loading {
+  background: rgb(246, 240, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(246, 240, 240, 1) 0%,
+    rgba(215, 215, 226, 1) 53%,
+    rgba(199, 190, 190, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

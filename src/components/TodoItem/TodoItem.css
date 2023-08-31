@@ -1,0 +1,58 @@
+:root {
+  --darker-blue: #146c78;
+  --lighter-blue: #0e91a1;
+  --light-green: #7dce94;
+  --yelowed-white: #efede7;
+  --white: #ffffff;
+  --black: #252525;
+}
+
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  border: 1px solid var(--black);
+  border-radius: 12px;
+  width: 100%;
+  min-height: 5rem;
+  max-height: 30rem;
+  overflow: auto;
+}
+
+.TodoItem--checkbox {
+  border: 1px solid var(--black);
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.TodoItem--textbox {
+  width: 80%;
+  overflow: hidden;
+}
+.TodoItem--textbox p {
+  text-align: center;
+}
+
+.TodoItem--delete {
+  width: 2rem;
+  height: 2rem;
+  background: url("./cancel-black.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.1s ease;
+}
+
+.TodoItem--delete:hover {
+  background: url("./cancel-red.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transform: scale(1.6);
+}
+
+.inactive {
+  display: none !important;
+}

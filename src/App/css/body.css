@@ -1,0 +1,31 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+}
+
+.body-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin: 0 3rem;
+}
+
+.inactive {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .body-wrapper {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 2fr;
+  }
+}

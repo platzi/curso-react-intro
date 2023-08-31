@@ -1,0 +1,19 @@
+:root {
+  --darker-blue: #146c78;
+  --lighter-blue: #0e91a1;
+  --light-green: #7dce94;
+  --yelowed-white: #efede7;
+  --white: #ffffff;
+  --black: #252525;
+}
+
+.CreateTodoButton {
+  height: 4rem;
+  width: 15%;
+  position: absolute;
+  border: 0.5px solid var(--black);
+  cursor: pointer;
+  border-radius: 12px;
+  right: 10px;
+  background-color: var(--white);
+}

@@ -1,0 +1,27 @@
+.header {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+.light-text {
+  font-size: 2rem;
+}
+
+.crossed-line {
+  text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 2rem;
+  }
+}
