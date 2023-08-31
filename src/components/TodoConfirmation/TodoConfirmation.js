@@ -15,8 +15,12 @@ function TodoConfirmation() {
   };
 
   const submitNewTodoValue = () => {
-    addTodo(newTodoValue);
-    clearNewTodoValue();
+    if (newTodoValue === "") {
+      alert("You cannot save an empty TODO");
+    } else {
+      addTodo(newTodoValue);
+      clearNewTodoValue();
+    }
   };
 
   return (
