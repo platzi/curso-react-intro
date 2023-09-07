@@ -1,8 +1,8 @@
-function TodoItem() {
+function TodoItem(props) {
     return (
       <li>
         <span>[/]</span>
-        <p>Tarea a cumplir</p>
+        <p>{props.text}</p>
         <span>x</span>
       </li>
     );
