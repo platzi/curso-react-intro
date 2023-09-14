@@ -3,6 +3,8 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
+import { Nadvar } from './Nadvar';
+import { Footer } from './Footer';
 import './App.css';
 
 const defaultTodos = [
@@ -16,6 +18,7 @@ function App() {
   return (
     // Ract.Fragments = <> </>
     <> 
+      <Nadvar/>
       <TodoCounter completed={16} total={25}/>
       <TodoSearch/>
 
@@ -28,6 +31,7 @@ function App() {
       />))}
       </TodoList>
       <CreateTodoButton/>
+      <Footer/>
     </>
   );
 }
