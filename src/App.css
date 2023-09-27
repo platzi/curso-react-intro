@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSS para pantallas móviles (menos de 768px) */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px; /* Espacio entre elementos */
+  place-content: center;
+}
+
+/* CSS para pantallas más grandes (768px o más) */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    place-content: center;
+  }
+}

@@ -6,6 +6,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 import { Nadvar } from './Nadvar';
 import { Footer } from './Footer';
 import './App.css';
+import { Graficos } from './Graficos';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
@@ -22,14 +23,17 @@ function App() {
       <TodoCounter completed={16} total={25}/>
       <TodoSearch/>
 
-      <TodoList> 
-      {defaultTodos.map(todo => (
-      <TodoItem
-        key={todo.text}
-        text={todo.text}
-        completed={todo.completed}
-      />))}
-      </TodoList>
+      <div className="container">
+        <TodoList> 
+        {defaultTodos.map(todo => (
+        <TodoItem
+          key={todo.text}
+          text={todo.text}
+          completed={todo.completed}
+        />))}
+        </TodoList>
+        <Graficos/>
+      </div>
       <CreateTodoButton/>
       <Footer/>
     </>
