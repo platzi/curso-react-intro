@@ -2,3 +2,17 @@
 .rounded-custom {
     border-radius: 50%; /* Valor del radio de borde para hacerlo más redondeado */
   }
+
+  .link:link{
+    color: black;
+  }
+
+
+  .link:visited{
+    color: rgba(160, 152, 152, 0.649);
+  }
+
+  .link:hover{
+    color: #61dafa;
+  }
+

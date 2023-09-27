@@ -27,3 +27,7 @@ footer .left ul{
     color: white;
     text-decoration: none;
 }
+
+.link-footer:hover{
+    color:  #61dafa;
+}

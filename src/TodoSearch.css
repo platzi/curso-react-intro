@@ -27,3 +27,10 @@
   .TodoSearch:focus{
     outline-color:#61dafa;
   }
+.TodoSearch:hover{
+  background-color: #e6e9ea;
+}
+
+.Btn-search:hover{
+  transform: scale(1.07);
+}

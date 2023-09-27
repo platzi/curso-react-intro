@@ -37,9 +37,10 @@
 
 .Icon-delete{
     position:absolute;
-    top:-24px;right:0
+    top:-24px;right:0;
+    color: rgba(160, 152, 152, 0.649);;
 }
 
 .Icon-delete:hover{
-    color:red
+    color:black;
 }

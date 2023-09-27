@@ -7,7 +7,7 @@ function TodoSearch(){
         <div className="container-sm mb-5 ">
             <form className="d-flex" role="search">
             <input className="form-control me-2 small-input TodoSearch" type="search" placeholder="Search" aria-label="Search"/>
-            <button type="button" class="btn btn-dark">Search</button>
+            <button type="button" className="btn btn-dark Btn-search">Search</button>
             </form>
         </div>
     );
