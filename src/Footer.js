@@ -3,7 +3,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer>
+    <footer >
         <section class="left">
             <ul>
                 <li><a href="https://www.linkedin.com/in/misael-g%C3%B3mez-cuautle-5976491b9/">LinkedIn</a></li>
