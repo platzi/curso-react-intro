@@ -2,8 +2,10 @@ import React from 'react';
 import './TodoSearch.css';
 
 function TodoSearch(){
+    const [searchValue, setSearchValue] = React.useState(''); //estado inicia en '' y se va actualizar
+    console.log(searchValue);
+
     return(
-        // <input placeholder='Cortar cebolla'/>
         <div className="container-sm mb-5 ">
             <form className="d-flex" role="search">
             <input 
@@ -11,11 +13,9 @@ function TodoSearch(){
             type="search" 
             placeholder="Search" 
             aria-label="Search"
+            value={searchValue} // el valor inicia con un string vacío y se va a ir actualizando
             onChange={(event)=>{
-                console.log('Write in the TodoSearch');
-                console.log(event);
-                console.log(event.target);
-                console.log(event.target.value);
+                setSearchValue(event.target.value); //al escribir se tomará el valor y es el responsable del cambio
             }}
             />
             <button type="button" className="btn btn-dark Btn-search">Search</button>
