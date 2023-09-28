@@ -1,9 +1,10 @@
 import React from 'react';
 import './TodoSearch.css';
 
-function TodoSearch(){
-    const [searchValue, setSearchValue] = React.useState(''); //estado inicia en '' y se va actualizar
-    console.log(searchValue);
+function TodoSearch({
+    searchValue,
+    setSearchValue,
+}){
 
     return(
         <div className="container-sm mb-5 ">

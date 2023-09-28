@@ -1,3 +1,4 @@
+import React from 'react';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
@@ -5,8 +6,8 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import { Nadvar } from './Nadvar';
 import { Footer } from './Footer';
-import './App.css';
 import { Graficos } from './Graficos';
+import './App.css';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
@@ -16,12 +17,17 @@ const defaultTodos = [
 ];
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState(''); //estado inicia en '' y se va actualizar
+  console.log(searchValue);
   return (
     // Ract.Fragments = <> </>
     <> 
       <Nadvar/>
       <TodoCounter completed={16} total={25}/>
-      <TodoSearch/>
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <div className="container">
         <TodoList> 
