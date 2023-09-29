@@ -14,6 +14,7 @@ const defaultTodos = [
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
+  { text: 'LALA', completed: false },
 ];
 
 const frasesMotivacionales = [
@@ -38,11 +39,20 @@ const frasesMotivacionales = [
 ];
 
 function App() {
-  //TodoSearch
+  //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); //estado inicia en '' y se va actualizar
   console.log(searchValue);
+  
+  //TodoCounter P1 has completado N de N TODOs
+  const [todos, setTodos] = React.useState(defaultTodos);
 
-  //TodoCounter
+  const completedTodos = todos.filter(
+    todo=> !!todo.completed //me va a indicar solo si es verdadero
+    ).length; //esto solo me dara el total de los todos completados
+
+    const totalTodos = todos.length;
+
+  //TodoCounter P2 Frases random
   const [motivationalPhrase, setMotivationalPhrase] = React.useState(''); //actual y atualización
   const generateRandomMotivationalPhrase = () => {//función con la actualización la frase random
     const randomPhrase = frasesMotivacionales[Math.floor(Math.random() * frasesMotivacionales.length)];
@@ -57,7 +67,11 @@ function App() {
     // Ract.Fragments = <> </>
     <> 
       <Nadvar/>
-      <TodoCounter completed={16} total={25} motivationalPhrase={motivationalPhrase} /> {/*aqui se pasa la actualización */}
+      <TodoCounter 
+      completed={completedTodos}
+      total={totalTodos}
+      motivationalPhrase={motivationalPhrase}
+      />
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
