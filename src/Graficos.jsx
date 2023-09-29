@@ -1,12 +1,15 @@
 import React from 'react';
 
-function Graficos() {
+function Graficos({ total, completed, }) {
+
+  const res = (completed / total)*100;
+
   return (
     <section className="container mb-5">
       <div className="grafico1">Soy un círculo O</div>
 
       <div className="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-        <div className="progress-bar progress-bar-striped bg-black" style={{ width: '10%' }}>10%</div>
+        <div className="progress-bar progress-bar-striped bg-info" style={{ width: `${res.toFixed(2)}%` }}>{ res }%</div>
       </div>
       <div className="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
         <div className="progress-bar progress-bar-striped bg-black" style={{ width: '25%' }}>25%</div>

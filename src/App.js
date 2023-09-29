@@ -14,7 +14,7 @@ const defaultTodos = [
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
-  { text: 'LALA', completed: false },
+  { text: 'LALA', completed: true },
 ];
 
 const frasesMotivacionales = [
@@ -63,6 +63,7 @@ function App() {
   }, []); // Este efecto se ejecutará una vez al montar el componente
 
 
+
   return (
     // Ract.Fragments = <> </>
     <> 
@@ -86,15 +87,16 @@ function App() {
           completed={todo.completed}
         />))}
         </TodoList>
-        <Graficos/>
+        <Graficos
+          completed={completedTodos}
+          total={totalTodos}
+        />
       </div>
       <CreateTodoButton/>
       <Footer/>
     </>
   );
 }
-
-
 
 
 
