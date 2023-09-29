@@ -43,12 +43,12 @@ function App() {
   console.log(searchValue);
 
   //TodoCounter
-  const [motivationalPhrase, setMotivationalPhrase] = React.useState('');
-  const generateRandomMotivationalPhrase = () => {
+  const [motivationalPhrase, setMotivationalPhrase] = React.useState(''); //actual y atualización
+  const generateRandomMotivationalPhrase = () => {//función con la actualización la frase random
     const randomPhrase = frasesMotivacionales[Math.floor(Math.random() * frasesMotivacionales.length)];
     setMotivationalPhrase(randomPhrase);
   };
-  useEffect(() => {
+  useEffect(() => {//estado que hace posible el reenderizado
     generateRandomMotivationalPhrase();
   }, []); // Este efecto se ejecutará una vez al montar el componente
 
@@ -57,7 +57,7 @@ function App() {
     // Ract.Fragments = <> </>
     <> 
       <Nadvar/>
-      <TodoCounter completed={16} total={25} motivationalPhrase={motivationalPhrase} />
+      <TodoCounter completed={16} total={25} motivationalPhrase={motivationalPhrase} /> {/*aqui se pasa la actualización */}
       <TodoSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
