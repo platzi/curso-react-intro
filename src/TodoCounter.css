@@ -2,10 +2,18 @@
     font-size:24px;
     text-align:center;
     margin:0;
-    padding:48px;
+    padding:70px;
     font-weight: normal;
 }
 
 .TodoCounter span{
     font-weight: bold;
 }
+
+
+/*Pantalla movil*/
+@media (max-width: 768px) {
+    .TodoCounter{
+        padding:50px;
+    }
+  }

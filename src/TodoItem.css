@@ -5,7 +5,8 @@
     justify-content:center;
     align-items:center;
     margin-top:24px;
-    box-shadow:0 5px 50px rgba(32,35,41,.15)
+    box-shadow:0 5px 50px rgba(32,35,41,.15);
+    border-radius:5px;
 }
 .TodoItem-p{
     margin:24px 0 24px 24px;
@@ -41,6 +42,24 @@
     color: rgba(160, 152, 152, 0.649);;
 }
 
-.Icon-delete:hover{
-    color:black;
+.TodoItem:hover{
+    transform: scale(1.05);
+    background-color: #dddfe1;
 }
+
+.TodoItem:hover .Icon-check{
+    color:#61dafa;
+    transform: translateX(-20px);
+    transition: transform 1s;
+}
+.TodoItem:hover .Icon-delete{
+    color:black;
+    transform: translateY(30px);
+    transition: transform 1.5s; 
+}
+/*Pantalla movil*/
+@media (max-width: 768px) {
+    .TodoItem:hover{
+        transform: scale(1.000);
+    }
+  }
