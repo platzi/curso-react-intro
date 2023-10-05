@@ -53,4 +53,3 @@ function Graficos({ total, completed, }) {
 
 export { Graficos };
 
-//Vamos hacer la prueba si no funciona podemos regresar un commit atras
