@@ -9,6 +9,7 @@ import { Footer } from './Footer';
 import { Graficos } from './Graficos';
 import './App.css';
 
+
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
@@ -40,57 +41,69 @@ const frasesMotivacionales = [
 
 function App() {
   //TodoSearch input
-  const [searchValue, setSearchValue] = React.useState(''); //estado inicia en '' y se va actualizar
+  const [searchValue, setSearchValue] = React.useState('');
   console.log(searchValue);
   
   //TodoCounter P1 has completado N de N TODOs
   const [todos, setTodos] = React.useState(defaultTodos);
 
   const completedTodos = todos.filter(
-    todo=> !!todo.completed //me va a indicar solo si es verdadero
-    ).length; //esto solo me dara el total de los todos completados
+    todo=> !!todo.completed 
+    ).length;
 
     const totalTodos = todos.length;
 
+    //SearchedTodos 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    const searchedTodos = todos.filter(
+      (todo) => {
+        const todoText = todo.text.toLowerCase();
+        const searchText = searchValue.toLocaleLowerCase();
+        return todoText.includes(searchText)
+      }
+    );
+
+
   //TodoCounter P2 Frases random
-  const [motivationalPhrase, setMotivationalPhrase] = React.useState(''); //actual y atualización
-  const generateRandomMotivationalPhrase = () => {//función con la actualización la frase random
+  const [motivationalPhrase, setMotivationalPhrase] = React.useState(''); 
+  const generateRandomMotivationalPhrase = () => {
     const randomPhrase = frasesMotivacionales[Math.floor(Math.random() * frasesMotivacionales.length)];
     setMotivationalPhrase(randomPhrase);
   };
-  useEffect(() => {//estado que hace posible el reenderizado
+  useEffect(() => {
     generateRandomMotivationalPhrase();
-  }, []); // Este efecto se ejecutará una vez al montar el componente
+  }, []); 
 
 
 
   return (
     // Ract.Fragments = <> </>
     <> 
-      <Nadvar/>
-      <TodoCounter 
-      completed={completedTodos}
-      total={totalTodos}
-      motivationalPhrase={motivationalPhrase}
-      />
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-
-      <div className="container">
-        <TodoList> 
-        {defaultTodos.map(todo => (
-        <TodoItem
-          key={todo.text}
-          text={todo.text}
-          completed={todo.completed}
-        />))}
-        </TodoList>
-        <Graficos
-          completed={completedTodos}
-          total={totalTodos}
+      <div>
+        <Nadvar/>
+        <TodoCounter 
+        completed={completedTodos}
+        total={totalTodos}
+        motivationalPhrase={motivationalPhrase}
         />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
+
+        <div className="container1">
+          <TodoList> 
+          {searchedTodos.map(todo => ( //0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+          <TodoItem 
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />))}
+          </TodoList>
+          <Graficos
+            completed={completedTodos}
+            total={totalTodos}
+          />
+        </div>
       </div>
       <CreateTodoButton/>
       <Footer/>

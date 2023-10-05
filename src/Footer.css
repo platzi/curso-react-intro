@@ -13,14 +13,15 @@ footer section{
 }
 
 footer .left ul{
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1rem;
+    display: flex;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 2rem;
     list-style: none;
 }
 
 .left li{
-    margin: 10px 0;
+    margin: 10px 15px;
 }     
 
 .left a{
@@ -31,3 +32,11 @@ footer .left ul{
 .link-footer:hover{
     color:  #61dafa;
 }
+
+/*Pantalla movil*/
+@media (max-width: 768px) {
+    .left li{
+        margin: 10px 15px;
+        z-index: 1;
+    } 
+  }

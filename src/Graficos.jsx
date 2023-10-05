@@ -20,7 +20,7 @@ function Graficos({ total, completed, }) {
   };
 
   return (
-    <section className="container mb-5" >
+    <section className="container1 mb-5" >
       <div className='Circle'>
         <Doughnut data={data} />
       </div>
