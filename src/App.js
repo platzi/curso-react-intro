@@ -42,7 +42,7 @@ const frasesMotivacionales = [
 function App() {
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); 
-  console.log(searchValue);
+
   
   //TodoCounter P1 has completado N de N TODOs
   const [todos, setTodos] = React.useState(defaultTodos); //000000000000000000000000000000
@@ -53,7 +53,7 @@ function App() {
 
     const totalTodos = todos.length;
 
-    
+    //TodoList
     const searchedTodos = todos.filter(
 
       (todo) => {
@@ -62,6 +62,26 @@ function App() {
         return todoText.includes(searchText)
       }
     );
+
+    //TodoList delete & check
+    //00000000000000000000000000000000000000000000000000000000000000000
+    const completeTodo = (text) => { //se le manda text que es el iddentificador unico || esto es una funcion que espera parametros <<<<>>>>
+      const newTodos = [...todos]; //copia del array de todos
+      const todoIndex = newTodos.findIndex( //encontrar por indice cada todo
+        (todo) => todo.text === text //el todo que en su text sea = al texto clave
+      );
+      newTodos[todoIndex].completed = true; //se marca como completados
+      setTodos(newTodos); //se actualiza el estado
+    }
+
+    const deleteTodo = (text) => { //se le manda text que es el iddentificador unico || esto es una funcion que espera parametros <<<<>>>>
+      const newTodos = [...todos]; //copia del array de todos
+      const todoIndex = newTodos.findIndex( //encontrar por indice cada todo
+        (todo) => todo.text === text //el todo que en su text sea = al texto clave
+      );
+      newTodos.splice(todoIndex, 1);// del texto clave elimina solo ese, es decir 1 todo
+      setTodos(newTodos); //se actualiza el estado
+    }
 
 
   //TodoCounter P2 Frases random
@@ -95,9 +115,11 @@ function App() {
           <TodoList> 
           {searchedTodos.map(todo => (
           <TodoItem 
-            key={todo.text}
+            key={todo.text} //0000000000000000000000000000000000 recuerda el identificador único 
             text={todo.text}
             completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)} //la función se debe ejecutar al suceder el evento, por eso se encapsula en arrow function <<<<>>>>
+            onDelete={() => deleteTodo(todo.text)} //la función se debe ejecutar al suceder el evento, por eso se encapsula en arrow function <<<<>>>>
           />))}
           </TodoList>
           <Graficos

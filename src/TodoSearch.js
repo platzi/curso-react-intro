@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineSearch } from "react-icons/ai";
 import './TodoSearch.css';
 
 function TodoSearch({
@@ -19,7 +20,7 @@ function TodoSearch({
                 setSearchValue(event.target.value); //al escribir se tomará el valor y es el responsable del cambio
             }}
             />
-            <button type="button" className="btn btn-dark Btn-search">Search</button>
+            <button type="button" className="btn btn-dark Btn-search px-3"> <AiOutlineSearch className='icono'/> </button>
             </form>
         </div>
     );

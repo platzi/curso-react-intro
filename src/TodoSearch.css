@@ -34,3 +34,7 @@
 .Btn-search:hover{
   transform: scale(1.07);
 }
+
+.icono{
+  font-size: 25px;
+}
