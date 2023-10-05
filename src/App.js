@@ -12,7 +12,7 @@ import './App.css';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
-  { text: 'Tomar el Curso de Intro a React.js', completed: false },
+  { text: 'Tomar el Curso de Introcción a React.js', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
   { text: 'LALA', completed: true },
@@ -41,11 +41,11 @@ const frasesMotivacionales = [
 
 function App() {
   //TodoSearch input
-  const [searchValue, setSearchValue] = React.useState('');
+  const [searchValue, setSearchValue] = React.useState(''); 
   console.log(searchValue);
   
   //TodoCounter P1 has completado N de N TODOs
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, setTodos] = React.useState(defaultTodos); //000000000000000000000000000000
 
   const completedTodos = todos.filter(
     todo=> !!todo.completed 
@@ -53,8 +53,9 @@ function App() {
 
     const totalTodos = todos.length;
 
-    //SearchedTodos 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    
     const searchedTodos = todos.filter(
+
       (todo) => {
         const todoText = todo.text.toLowerCase();
         const searchText = searchValue.toLocaleLowerCase();
@@ -92,7 +93,7 @@ function App() {
 
         <div className="container1">
           <TodoList> 
-          {searchedTodos.map(todo => ( //0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+          {searchedTodos.map(todo => (
           <TodoItem 
             key={todo.text}
             text={todo.text}
