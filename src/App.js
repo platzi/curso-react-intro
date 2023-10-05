@@ -16,6 +16,10 @@ const defaultTodos = [
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
   { text: 'LALA', completed: true },
+  { text: "el filtro de todos || completados || faltan", completed : false },
+  { text: 'que pueda quitar el completado es decir desactivar', completed: false },
+  { text: 'reto - diga felicidades ya terminaste todo', completed: false },
+  { text: 'las leyendas e instrucciones', completed: false },
 ];
 
 const frasesMotivacionales = [
