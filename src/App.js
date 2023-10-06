@@ -7,6 +7,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 import { Nadvar } from './Nadvar';
 import { Footer } from './Footer';
 import { Graficos } from './Graficos';
+import { Filtros } from './Filtros';
 import './App.css';
 
 
@@ -110,10 +111,13 @@ function App() {
         total={totalTodos}
         motivationalPhrase={motivationalPhrase}
         />
+        <Filtros/>
+        
         <TodoSearch
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
+        
 
         <div className="container1">
           <TodoList> 
