@@ -123,7 +123,7 @@ function App() {
           <TodoList> 
           {searchedTodos.map(todo => (
           <TodoItem 
-            key={todo.text} //0000000000000000000000000000000000 recuerda el identificador único 
+            key={todo.text} //00 recuerda el identificador único 
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)} //la función se debe ejecutar al suceder el evento, por eso se encapsula en arrow function <<<<>>>>
