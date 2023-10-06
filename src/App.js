@@ -18,7 +18,6 @@ const defaultTodos = [
   { text: 'LALALALALA', completed: false },
   { text: 'LALA', completed: true },
   { text: "el filtro de todos || completados || faltan", completed : false },
-  { text: 'que pueda quitar el completado es decir desactivar', completed: false },
   { text: 'reto - diga felicidades ya terminaste todo', completed: false },
   { text: 'las leyendas e instrucciones', completed: false },
 ];
@@ -99,8 +98,16 @@ function App() {
     generateRandomMotivationalPhrase();
   }, []); 
 
-
-
+// Mi componente Filter
+  const filterTodosAll = defaultTodos;
+  const filterTodoCompleted = defaultTodos.filter(
+    todo => todo.completed === true
+  );
+ 
+  const filterTodoNoCompleted = defaultTodos.filter(
+    todo => todo.completed === false
+  );
+ 
   return (
     // Ract.Fragments = <> </>
     <> 
@@ -111,7 +118,12 @@ function App() {
         total={totalTodos}
         motivationalPhrase={motivationalPhrase}
         />
-        <Filtros/>
+        {/* Falla de filtro aquí se encuentrra */}
+        <Filtros 
+          onTodos={() => setTodos(defaultTodos)}//todos los elementos
+          onCompletados={() => setTodos(filterTodoCompleted)}//completados
+          onNoCompletados={() => setTodos(filterTodoNoCompleted)}//no completados
+        />
         
         <TodoSearch
           searchValue={searchValue}
