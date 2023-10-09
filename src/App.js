@@ -43,6 +43,9 @@ const frasesMotivacionales = [
   "Escribe código que otros amen leer.",
 ];
 
+// localStorage.setItem('TODOS_V1'), defaultTodos);
+// localStorage.removeItem('TODOS_V1');
+
 function App() {
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); 
@@ -68,24 +71,23 @@ function App() {
     );
 
     //TodoList delete & check
-    //Ahora la forma de acomodar el código, es la forma para que se pueda marcar o desmarcar 
-    const completeTodo = (text) => { //se le manda text que es el iddentificador unico || esto es una funcion que espera parametros <<<<>>>>
+    const completeTodo = (text) => {
       
-      const todoIndex = todos.findIndex( //encontrar por indice cada todo
-      (todo) => todo.text === text //el todo que en su text sea = al texto clave
+      const todoIndex = todos.findIndex( 
+      (todo) => todo.text === text
       );
-      const newTodos = [...todos]; //copia del array de todos
-      newTodos[todoIndex].completed = !newTodos[todoIndex].completed; //se marca como completados, haace que si es 0 o 1 sea su viceversa
-      setTodos(newTodos); //se actualiza el estado
+      const newTodos = [...todos]; 
+      newTodos[todoIndex].completed = !newTodos[todoIndex].completed; 
+      setTodos(newTodos); 
     }
 
-   const deleteTodo = (text) => { //se le manda text que es el iddentificador unico || esto es una funcion que espera parametros <<<<>>>>
-      const newTodos = [...todos]; //copia del array de todos
-      const todoIndex = newTodos.findIndex( //encontrar por indice cada todo
-        (todo) => todo.text === text //el todo que en su text sea = al texto clave
+   const deleteTodo = (text) => { 
+      const newTodos = [...todos];
+      const todoIndex = newTodos.findIndex( 
+        (todo) => todo.text === text 
       );
-      newTodos.splice(todoIndex, 1);// del texto clave elimina solo ese, es decir 1 todo
-      setTodos(newTodos); //se actualiza el estado
+      newTodos.splice(todoIndex, 1);
+      setTodos(newTodos); 
     }
 
   //TodoCounter P2 Frases random
@@ -109,7 +111,7 @@ function App() {
   );
  
   return (
-    // Ract.Fragments = <> </>
+    
     <> 
       <div>
         <Nadvar/>
@@ -118,11 +120,11 @@ function App() {
         total={totalTodos}
         motivationalPhrase={motivationalPhrase}
         />
-        {/* Falla de filtro aquí se encuentrra */}
+        
         <Filtros 
           onTodos={() => setTodos(defaultTodos)}//todos los elementos
-          onCompletados={() => setTodos(filterTodoCompleted)}//completados
-          onNoCompletados={() => setTodos(filterTodoNoCompleted)}//no completados
+          onCompletados={() => setTodos(filterTodoCompleted)}
+          onNoCompletados={() => setTodos(filterTodoNoCompleted)}
         />
         
         <TodoSearch
@@ -135,11 +137,11 @@ function App() {
           <TodoList> 
           {searchedTodos.map(todo => (
           <TodoItem 
-            key={todo.text} //00 recuerda el identificador único 
+            key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)} //la función se debe ejecutar al suceder el evento, por eso se encapsula en arrow function <<<<>>>>
-            onDelete={() => deleteTodo(todo.text)} //la función se debe ejecutar al suceder el evento, por eso se encapsula en arrow function <<<<>>>>
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)} 
           />))}
           </TodoList>
           <Graficos
