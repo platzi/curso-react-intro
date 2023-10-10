@@ -1,4 +1,4 @@
-import { Checkbox, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -18,12 +18,6 @@ function TodoItem({ todo, onToggle, onDelete }) {
         }}
       />
     </ListItem>
-
-    // <li>
-    //   <span>V</span>
-    //   <p>{props.text}</p>
-    //   <span>x</span>
-    // </li>
   );
 }
 

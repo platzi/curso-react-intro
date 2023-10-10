@@ -2,10 +2,10 @@ import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
-import { CreateTodoButton } from "./CreateTodoButtom";
 import { Card, Container } from "@mui/material";
 import { useState } from "react";
 import Todo from "./models/todo";
+import Button from "@mui/material/Button";
 
 const defaultTodos = [
   new Todo("Cortar cebolla", true),
@@ -45,6 +45,15 @@ function App() {
     setTodos(newTodos);
   };
 
+  const addTodo = () => {
+    console.log("Add");
+    const newTodo = new Todo(search);
+    const newTodos = [...todos];
+    newTodos.push(newTodo);
+    setTodos(newTodos);
+    setSearch("");
+  };
+
   return (
     <Container>
       <Card
@@ -66,7 +75,9 @@ function App() {
           ))}
         </TodoList>
       </Card>
-      <CreateTodoButton />
+      <Button variant="contained" fullWidth onClick={addTodo}>
+        +
+      </Button>
     </Container>
   );
 }
