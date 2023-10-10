@@ -4,6 +4,8 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButtom";
 import { Card, Container } from "@mui/material";
+import { useState } from "react";
+import { Filter } from "@mui/icons-material";
 
 const defaultTodos = [
   { text: "Cortar cebolla", completed: true },
@@ -13,6 +15,15 @@ const defaultTodos = [
 ];
 
 function App() {
+  const [search, setSearch] = useState("");
+  const [todos, setTodos] = useState(defaultTodos);
+  const filterTodos = todos.filter((todo) => todo.text.includes(search));
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
   return (
     <Container>
       <Card
@@ -21,10 +32,10 @@ function App() {
           my: 2,
         }}
       >
-        <TodoCounter completed={16} total={25} />
-        <TodoSearch />
+        <TodoCounter completed={completedTodos} total={totalTodos} />
+        <TodoSearch searchValue={search} update={handleChange} />
         <TodoList>
-          {defaultTodos.map((todo) => (
+          {filterTodos.map((todo) => (
             <TodoItem
               key={todo.text}
               text={todo.text}

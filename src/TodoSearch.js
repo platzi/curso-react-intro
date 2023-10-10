@@ -1,13 +1,7 @@
 import TextField from "@mui/material/TextField";
 import { Box } from "@mui/material";
-import { useState } from "react";
 
-function TodoSearch() {
-  const [search, setValue] = useState("");
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+function TodoSearch(props) {
   return (
     <Box
       sx={{
@@ -19,8 +13,8 @@ function TodoSearch() {
       <TextField
         label="Task"
         variant="outlined"
-        value={search}
-        onChange={handleChange}
+        value={props.searchValue}
+        onChange={props.update}
       />
     </Box>
   );
