@@ -1,0 +1,33 @@
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  height: auto; 
+  z-index: 1;
+  padding: 2.5px;
+}
+
+.rounded-custom {
+    border-radius: 50%; /* Valor del radio de borde para hacerlo más redondeado */
+  }
+
+  .link:link{
+    color: black;
+  }
+
+
+  .link:visited{
+    color: rgba(160, 152, 152, 0.649);
+  }
+
+  .link:hover{
+    color: #61dafa;
+  }
+
+/*Pantalla movil*/
+@media (max-width: 768px) {
+  .navbar{
+    position: relative;
+    height: auto;
+  }
+}
