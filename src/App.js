@@ -21,10 +21,30 @@ import './App.css';
 //   { text: 'reto - diga felicidades ya terminaste todo', completed: false },
 //   { text: 'las leyendas e instrucciones', completed: false },
 // ];
-
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('TODOS_V1');
 
+//localStorage, que va a servir pero para otras partes no para los TODOs
+function useLocalStorage (itemName, initialValue){
+
+  const localStorageItem = localStorage.getItem('TODOS_V1'); 
+  
+  let parsedItem;
+
+  if(!localStorageItem){ 
+    localStorage.setItem('TODOS_V1', JSON.stringify(initialValue)); 
+    parsedItem = initialValue;
+  }else{
+    parsedItem = JSON.parse(localStorageItem); 
+  }
+
+  const [item, setItem] = React.useState(parsedItem);
+
+  const saveItem = (newItem) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newItem));
+    setItem(newItem);
+  };
+  return [item, saveItem, parsedItem];
+};
 
 const frasesMotivacionales = [
   "Cree en ti, todo es posible.",
@@ -49,16 +69,15 @@ const frasesMotivacionales = [
 
 
 function App() {
-  //localStorage
-  const localStorageTodos = localStorage.getItem('TODOS_V1'); //00000000000000000000000
+  const localStorageTodos = localStorage.getItem('TODOS_V1'); 
   
   let parsedTodos;
 
-  if(!localStorageTodos){ //si está vacío
-    localStorage.setItem('TODOS_V1', JSON.stringify([])); //un usuario entra por primera vez a la app y hay un string vacio []
+  if(!localStorageTodos){ 
+    localStorage.setItem('TODOS_V1', JSON.stringify([])); 
     parsedTodos = [];
   }else{
-    parsedTodos = JSON.parse(localStorageTodos); //si no está vacío tendra un string con los items o tareas
+    parsedTodos = JSON.parse(localStorageTodos); 
   }
 
 
@@ -67,8 +86,7 @@ function App() {
 
   
   //TodoCounter P1 has completado N de N TODOs
-  const [todos, setTodos] = React.useState(parsedTodos); //000000000000000000000000000000 revisar si hay algo en localStorage información
-
+  const [todos, setTodos] = React.useState(parsedTodos); 
   const completedTodos = todos.filter(
     todo=> !!todo.completed 
     ).length;
@@ -85,7 +103,7 @@ function App() {
       }
     );
 
-    //función que actualiza al estado y al localStorage al mismo tiempo | nuevos TODOS que se van a guardar en el estado y en el storage
+   
     const saveTodos = (newTodos) => {
       localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
       
