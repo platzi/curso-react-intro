@@ -140,7 +140,7 @@ function App() {
   }, []); 
 
 // Mi componente Filter
-  const filterTodosAll = parsedTodos;
+  // const filterTodosAll = parsedTodos;
   const filterTodoCompleted = parsedTodos.filter(
     todo => todo.completed === true
   );
@@ -198,3 +198,5 @@ function App() {
 
 
 export default App;
+
+//:0
