@@ -25,13 +25,11 @@ import './App.css';
 
 //localStorage, que va a servir pero para otras partes no para los TODOs
 function useLocalStorage (itemName, initialValue){
-
-  const localStorageItem = localStorage.getItem('TODOS_V1'); 
-  
+  const localStorageItem = localStorage.getItem(itemName); 
   let parsedItem;
 
   if(!localStorageItem){ 
-    localStorage.setItem('TODOS_V1', JSON.stringify(initialValue)); 
+    localStorage.setItem(itemName, JSON.stringify(initialValue)); 
     parsedItem = initialValue;
   }else{
     parsedItem = JSON.parse(localStorageItem); 
@@ -40,10 +38,10 @@ function useLocalStorage (itemName, initialValue){
   const [item, setItem] = React.useState(parsedItem);
 
   const saveItem = (newItem) => {
-    localStorage.setItem('TODOS_V1', JSON.stringify(newItem));
+    localStorage.setItem(itemName, JSON.stringify(newItem));
     setItem(newItem);
   };
-  return [item, saveItem, parsedItem];
+  return [item, saveItem];
 };
 
 const frasesMotivacionales = [
@@ -80,13 +78,14 @@ function App() {
     parsedTodos = JSON.parse(localStorageTodos); 
   }
 
+  //TodoCounter P1 has completado N de N TODOs
+  const [todos, setTodos] = React.useState(parsedTodos); 
+  //const [todos, setTodos] = useLocalStorage('TODOS_V1', []);  //se usara een caso de emergencia pero tendrss que borrar los filtros
 
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); 
 
   
-  //TodoCounter P1 has completado N de N TODOs
-  const [todos, setTodos] = React.useState(parsedTodos); 
   const completedTodos = todos.filter(
     todo=> !!todo.completed 
     ).length;
