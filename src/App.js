@@ -47,34 +47,19 @@ const frasesMotivacionales = [
   "Escribe código que otros amen leer.",
 ];
 
-//custom hook
-function useLocalStorage(itemName, initialValue){
-
-  //code //localStorage
-  const localStorageItem = localStorage.getItem(itemName); //00000000000000000000000
-  
-  let parsedItem;
-
-  if(!localStorageItem){ //si está vacío
-    localStorage.setItem(itemName, JSON.stringify(initialValue)); //un usuario entra por primera vez a la app y hay un string vacio initialValue
-    parsedItem = initialValue;
-  }else{
-    parsedItem = JSON.parse(localStorageItem); //si no está vacío tendra un string con los items o tareas
-  }
-
-  const [item, setItem ] = React.useState(parsedItem);
-
-    //función que actualiza al estado y al localStorage al mismo tiempo | nuevos TODOS que se van a guardar en el estado y en el storage
-    const saveItem = (newItem) => {
-      localStorage.setItem(itemName, JSON.stringify(newItem));
-      
-      setItem(newItem);
-    };
-    return[item, saveItem]//actualiza al estado y a localStorage
-}
-
 
 function App() {
+  //localStorage
+  const localStorageTodos = localStorage.getItem('TODOS_V1'); //00000000000000000000000
+  
+  let parsedTodos;
+
+  if(!localStorageTodos){ //si está vacío
+    localStorage.setItem('TODOS_V1', JSON.stringify([])); //un usuario entra por primera vez a la app y hay un string vacio []
+    parsedTodos = [];
+  }else{
+    parsedTodos = JSON.parse(localStorageTodos); //si no está vacío tendra un string con los items o tareas
+  }
 
 
   //TodoSearch input
@@ -82,7 +67,7 @@ function App() {
 
   
   //TodoCounter P1 has completado N de N TODOs
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []); //revisar si hay algo en localStorage información
+  const [todos, setTodos] = React.useState(parsedTodos); //000000000000000000000000000000 revisar si hay algo en localStorage información
 
   const completedTodos = todos.filter(
     todo=> !!todo.completed 
@@ -100,7 +85,12 @@ function App() {
       }
     );
 
-
+    //función que actualiza al estado y al localStorage al mismo tiempo | nuevos TODOS que se van a guardar en el estado y en el storage
+    const saveTodos = (newTodos) => {
+      localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
+      
+      setTodos(newTodos);
+    };
     //TodoList delete & check
     const completeTodo = (text) => {
       
@@ -132,12 +122,12 @@ function App() {
   }, []); 
 
 // Mi componente Filter
-  //const filterTodosAll = parsedTodos;
-  const filterTodoCompleted = todos.filter(
+  const filterTodosAll = parsedTodos;
+  const filterTodoCompleted = parsedTodos.filter(
     todo => todo.completed === true
   );
  
-  const filterTodoNoCompleted = todos.filter(
+  const filterTodoNoCompleted = parsedTodos.filter(
     todo => todo.completed === false
   );
  
@@ -153,9 +143,9 @@ function App() {
         />
         
         <Filtros 
-          onTodos={() => saveTodos(todos)}//todos los elementos
-          onCompletados={() => saveTodos(filterTodoCompleted)}
-          onNoCompletados={() => saveTodos(filterTodoNoCompleted)}
+          onTodos={() => setTodos(parsedTodos)}//todos los elementos
+          onCompletados={() => setTodos(filterTodoCompleted)}
+          onNoCompletados={() => setTodos(filterTodoNoCompleted)}
         />
         
         <TodoSearch
