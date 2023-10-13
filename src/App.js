@@ -80,7 +80,7 @@ function App() {
 
   //TodoCounter P1 has completado N de N TODOs
   const [todos, setTodos] = React.useState(parsedTodos); 
-  //const [todos, setTodos] = useLocalStorage('TODOS_V1', []);  //se usara een caso de emergencia pero tendrss que borrar los filtros
+  //const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);  //se usara een caso de emergencia pero tendrss que borrar los filtros
 
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); 
