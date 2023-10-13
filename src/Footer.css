@@ -1,0 +1,42 @@
+footer{
+    display: flex;
+    width: 100%;
+    min-height: 150px;
+    background: black;
+}
+
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .left ul{
+    display: flex;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 2rem;
+    list-style: none;
+}
+
+.left li{
+    margin: 10px 15px;
+}     
+
+.left a{
+    color: white;
+    text-decoration: none;
+}
+
+.link-footer:hover{
+    color:  #61dafa;
+}
+
+/*Pantalla movil*/
+@media (max-width: 768px) {
+    .left li{
+        margin: 10px 15px;
+        z-index: 1;
+    } 
+  }
