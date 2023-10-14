@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
-import { Nadvar } from './Nadvar';
-import { Footer } from './Footer';
-import { Graficos } from './Graficos';
-import { Filtros } from './Filtros';
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { TodoItem } from '../TodoItem';
+import { CreateTodoButton } from '../CreateTodoButton';
+import { Nadvar } from '../Nadvar';
+import { Footer } from '../Footer';
+import { Graficos } from '../Graficos';
+import { Filtros } from '../Filtros';
+import { useLocalStorage } from './useLocalStorage';
 import './App.css';
 
 
@@ -24,25 +25,8 @@ import './App.css';
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 
 //localStorage, que va a servir pero para otras partes no para los TODOs
-function useLocalStorage (itemName, initialValue){
-  const localStorageItem = localStorage.getItem(itemName); 
-  let parsedItem;
 
-  if(!localStorageItem){ 
-    localStorage.setItem(itemName, JSON.stringify(initialValue)); 
-    parsedItem = initialValue;
-  }else{
-    parsedItem = JSON.parse(localStorageItem); 
-  }
 
-  const [item, setItem] = React.useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-  return [item, saveItem];
-};
 
 const frasesMotivacionales = [
   "Cree en ti, todo es posible.",

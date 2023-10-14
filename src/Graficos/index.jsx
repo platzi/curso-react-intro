@@ -2,7 +2,7 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { BsFillDashCircleFill, BsCheckSquareFill } from "react-icons/bs";
 import 'chart.js/auto';
-import './Graficos'
+import '.'
 
 function Graficos({ total, completed, }) {
 
