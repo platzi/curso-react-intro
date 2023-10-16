@@ -51,7 +51,7 @@ function AppUI({
               </TodoList>
               {loading && <p>Estamos cargando</p> }
               {error && <p>Hubo un error</p> }
-              {(!loading && searchedTodos.length == 0) && <p>Crea tu primer TODO!</p>}
+              {(!loading && searchedTodos.length === 0) && <p>Crea tu primer TODO!</p>}
               <Graficos
                 completed={completedTodos}
                 total={totalTodos}

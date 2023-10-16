@@ -3,8 +3,8 @@ import './Nadvar.css';
 
 function Nadvar(){
     return(
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src="https://pbs.twimg.com/profile_images/1534067141519069184/AyYQAI1b_400x400.jpg" alt="Misael" width="40" height="40" className="rounded-custom"/>
                 </a>
