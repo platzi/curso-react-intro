@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocalStorage } from './useLocalStorage';
 import { AppUI } from './AppUI';
+import { useLocalStorage } from './useLocalStorage';
 import './App.css';
 
 
@@ -16,7 +16,7 @@ import './App.css';
 // ];
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 
-//localStorage, que va a servir pero para otras partes no para los TODOs
+// localStorage, que va a servir pero para otras partes no para los TODOs
 
 
 
@@ -43,20 +43,15 @@ const frasesMotivacionales = [
 
 
 function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1'); 
-  
-  let parsedTodos;
-
-  if(!localStorageTodos){ 
-    localStorage.setItem('TODOS_V1', JSON.stringify([])); 
-    parsedTodos = [];
-  }else{
-    parsedTodos = JSON.parse(localStorageTodos); 
-  }
 
   //TodoCounter P1 has completado N de N TODOs
-  const [todos, setTodos] = React.useState(parsedTodos); 
-  //const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);  //se usara een caso de emergencia pero tendrss que borrar los filtros
+  const {
+         item: todos,
+         saveItem: saveTodos,
+         loading,
+         error
+        } = useLocalStorage('TODOS_V1', []);
+
 
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState(''); 
@@ -78,22 +73,18 @@ function App() {
       }
     );
 
-   
-    const saveTodos = (newTodos) => {
-      localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
-      
-      setTodos(newTodos);
-    };
     //TodoList delete & check
     const completeTodo = (text) => {
       
       const todoIndex = todos.findIndex( 
       (todo) => todo.text === text
       );
+
       const newTodos = [...todos]; 
+
       newTodos[todoIndex].completed = !newTodos[todoIndex].completed; 
       saveTodos(newTodos); 
-    }
+    };
 
    const deleteTodo = (text) => { 
       const newTodos = [...todos];
@@ -113,31 +104,20 @@ function App() {
   useEffect(() => {
     generateRandomMotivationalPhrase();
   }, []); 
+ 
 
-// Mi componente Filter
-  // const filterTodosAll = parsedTodos;
-  const filterTodoCompleted = parsedTodos.filter(
-    todo => todo.completed === true
-  );
- 
-  const filterTodoNoCompleted = parsedTodos.filter(
-    todo => todo.completed === false
-  );
- 
   return(
     <AppUI 
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       motivationalPhrase={motivationalPhrase}
-      parsedTodos={parsedTodos}
-      filterTodoCompleted={filterTodoCompleted}
-      filterTodoNoCompleted={filterTodoNoCompleted}
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       searchedTodos={searchedTodos}
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
-      setTodos={setTodos}
     />
   );
 }

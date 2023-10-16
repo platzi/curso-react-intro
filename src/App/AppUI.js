@@ -7,22 +7,19 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { Nadvar } from '../Nadvar';
 import { Footer } from '../Footer';
 import { Graficos } from '../Graficos';
-import { Filtros } from '../Filtros';
 
 
 function AppUI({ 
+    loading,
+    error,
     completedTodos,
     totalTodos,
     motivationalPhrase,
-    parsedTodos,
-    filterTodoCompleted,
-    filterTodoNoCompleted,
     searchValue,
     setSearchValue,
     searchedTodos,
     completeTodo,
     deleteTodo,
-    setTodos,
  }){
     return (
     
@@ -33,12 +30,6 @@ function AppUI({
             completed={completedTodos}
             total={totalTodos}
             motivationalPhrase={motivationalPhrase}
-            />
-            
-            <Filtros 
-              onTodos={() => setTodos(parsedTodos)}//todos los elementos
-              onCompletados={() => setTodos(filterTodoCompleted)}
-              onNoCompletados={() => setTodos(filterTodoNoCompleted)}
             />
             
             <TodoSearch
@@ -58,6 +49,9 @@ function AppUI({
                 onDelete={() => deleteTodo(todo.text)} 
               />))}
               </TodoList>
+              {loading && <p>Estamos cargando</p> }
+              {error && <p>Hubo un error</p> }
+              {(!loading && searchedTodos.length == 0) && <p>Crea tu primer TODO!</p>}
               <Graficos
                 completed={completedTodos}
                 total={totalTodos}
