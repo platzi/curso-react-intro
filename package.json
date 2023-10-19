@@ -32,7 +32,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": ".",
+  "homepage": "https://github.com/Sanjuly/curso-react-intro-1.git/",
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }
