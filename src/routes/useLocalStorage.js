@@ -26,7 +26,7 @@ function useLocalStorage(itemName, initialValue) {
             } catch(error) {
             setError(error)
             }
-        }, 3000)
+        }, 10)
     }, [sincronizedItem,itemName,initialValue])
 
 

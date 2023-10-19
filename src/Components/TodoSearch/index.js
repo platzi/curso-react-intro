@@ -10,7 +10,7 @@ return (
       onChange={(event) => {
         setSearchValue(event.target.value)  
       }}
-      disable={loading}
+      disable="true"
     />
   )
 }

@@ -4,7 +4,7 @@ import './TodoList.css'
 function TodoList(props) {
   const renderFunc = props.children || props.render
 
-   return (
+    return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
     <ul className='TodoList'>
         {props.error && props.onError()}
@@ -12,7 +12,7 @@ function TodoList(props) {
         {(!props.loading && !props.totalTodos) && props.onCreate()}
         {(!!props.totalTodos && !props.filteredTodos.length) && props.onEmptySearchResults(props.searchText)}      
         
-        {(!props.loading && !props.error) && props.filteredTodos.map(renderFunc)} 
+        {(!props.loading && !props.error) && props.filteredTodos?.map(renderFunc)} 
     </ul>
   )
 }
