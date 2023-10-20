@@ -1,0 +1,22 @@
+li{
+    background-color: thistle;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 10% 0 11%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.ToDoItem-p{
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+} 
+
+.ToDoItem-p--complete{
+    text-decoration: line-through;
+}

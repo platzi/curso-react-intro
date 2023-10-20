@@ -1,0 +1,17 @@
+input {
+    width: calc(100% - 200px);
+    max-width: 500px;
+    /* width: 60%; */
+    height: 32px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.ToDoSearch:focus{
+    outline-color: rgb(116, 74, 137);
+}

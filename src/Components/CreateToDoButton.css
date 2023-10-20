@@ -1,0 +1,24 @@
+.CreateToDoButton{
+    background-color: whitesmoke;
+    border: none;
+    font-size: 48px;
+    display: flex;
+    margin: 0 auto;
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+    right: 25px;
+    bottom: 25px;
+
+    transform: rotate (0);
+    transition: .3s ease;
+}
+
+.CreateToDoButton:hover{
+    transform: rotate(224deg);
+}
+
+.add-icon{
+    fill: rgb(118, 0, 118);
+    
+}

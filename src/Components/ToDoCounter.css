@@ -1,0 +1,12 @@
+.ToDoCounter{
+    width: calc(100% - 140px);
+    font-size: 24px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 48px;
+}
+
+.ToDoCounter span{
+    font-weight: bold;
+    color: rgb(118, 0, 118);
+}
