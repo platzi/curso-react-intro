@@ -35,7 +35,11 @@ function AppUI({
             total={totalTodos}
             motivationalPhrase={motivationalPhrase}
             />
-            
+            {loading && 
+            <>
+              <p>cargando...</p>
+            </>
+               }
             <TodoSearch
               searchValue={searchValue}
               setSearchValue={setSearchValue}
@@ -56,7 +60,6 @@ function AppUI({
               {loading && 
                 <>
                 <TodosLoading/>
-                {/* circle grafich skeleton */}
                 </>
                }
               {error && <TodosError/> }
