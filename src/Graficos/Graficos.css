@@ -1,2 +1,41 @@
 
+.containerCircle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 40%;
+    margin-left: 100px;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.Circle{
+    width:400px;
+    height: 400px;
+}
+
+.barra-circle{
+    margin: 25px 0px;
+    min-width: 400px;
+}
+
+
+@media (max-width: 768px) {
+    .containerCircle{
+        width: 100%;
+        justify-content: center;
+        margin: 0px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .Circle{
+        width:300px;
+        height: 300px;
+    }
+    
+    .barra-circle{
+        min-width: 300px;
+    }
+    
+  }

@@ -39,23 +39,19 @@
  /* A quí está mi código CSS */
 /* CSS para pantallas móviles (menos de 768px) */
 .container1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px; /* Espacio entre elementos */
-  place-content: center;
-  /* background-color: black;  */
+  display: flex;
+  justify-content: center;
 }
+
 
 .darkmode{
   /* background-color: black; */
 }
 
-/* CSS para pantallas más grandes (768px o más) */
-@media (min-width: 768px) {
+/* CSS para pantallas más pequeñas(768px o menos) */
+
+@media (max-width: 768px) {
   .container1  {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    place-content: center;
+    flex-direction: column;
   }
 }

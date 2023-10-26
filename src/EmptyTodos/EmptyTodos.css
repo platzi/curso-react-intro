@@ -1,0 +1,24 @@
+.test{
+    background: rgba(255, 255, 255, 0.685);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.copilot{
+    font-size:100px;
+    color: black;
+}
+
+.first-Todo{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(5, 0, 4);
+    /* margin: 0 auto; */
+}

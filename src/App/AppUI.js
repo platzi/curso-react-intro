@@ -7,6 +7,10 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { Nadvar } from '../Nadvar';
 import { Footer } from '../Footer';
 import { Graficos } from '../Graficos';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
+import { EmptyTodos } from '../EmptyTodos';
+
 
 
 function AppUI({ 
@@ -37,7 +41,7 @@ function AppUI({
               setSearchValue={setSearchValue}
             />
             
-    
+{/* Arreglar los estilos */}
             <div className="container1">
               <TodoList> 
               {searchedTodos.map(todo => (
@@ -49,14 +53,22 @@ function AppUI({
                 onDelete={() => deleteTodo(todo.text)} 
               />))}
               </TodoList>
-              {loading && <p>Estamos cargando</p> }
-              {error && <p>Hubo un error</p> }
-              {(!loading && searchedTodos.length === 0) && <p>Crea tu primer TODO!</p>}
+              {loading && 
+                <>
+                <TodosLoading/>
+                <TodosLoading/>
+                <TodosLoading/>
+                </>
+               }
+              {error && <TodosError/> }
+              {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
               <Graficos
                 completed={completedTodos}
                 total={totalTodos}
               />
             </div>
+
+{/* Arreglar los estilos */}
           </div>
           <CreateTodoButton/>
           <Footer/>

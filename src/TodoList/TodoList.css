@@ -3,5 +3,13 @@
     margin: 0;
     padding: 0 0 56px 0;
     list-style: none;
+    width: 45%;
 }
 
+
+@media (max-width: 768px) {
+    .TodoList {
+      width: 100%;
+    }
+  }
+  
