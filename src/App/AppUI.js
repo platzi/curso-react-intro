@@ -56,8 +56,7 @@ function AppUI({
               {loading && 
                 <>
                 <TodosLoading/>
-                <TodosLoading/>
-                <TodosLoading/>
+                {/* circle grafich skeleton */}
                 </>
                }
               {error && <TodosError/> }

@@ -7,6 +7,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "react-loading-skeleton": "^3.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
