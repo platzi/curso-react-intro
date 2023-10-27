@@ -11,7 +11,7 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoSearchLoading } from '../TodoSearchLoading';
-
+import { TodoCounterLoading } from '../TodoCounterLoading';
 
 
 function AppUI({ 
@@ -26,18 +26,25 @@ function AppUI({
     completeTodo,
     deleteTodo,
     showSearch,
+    showCounter,
  }){
     return (
     
         <> 
-          <div>
+          <div className='SuperiorContainerAll'>
             <Nadvar/>
-            <TodoCounter 
+
+            {loading &&
+                <>
+                <TodoCounterLoading/>
+                </>
+            }
+            {showCounter && <TodoCounter 
             completed={completedTodos}
             total={totalTodos}
             motivationalPhrase={motivationalPhrase}
-            />
-            {loading && 
+            />}
+            {loading &&
                 <>
                 <TodoSearchLoading/>
                 </>

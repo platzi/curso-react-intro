@@ -1,0 +1,25 @@
+.CounterLoading-container{
+    background: rgba(255, 255, 255, 0.685);
+    opacity: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 30%;
+    height: 200px;
+    padding-top: 10px;
+}
+
+
+/* CSS para pantallas más pequeñas(768px o menos) */
+
+@media (max-width: 768px) {
+    .CounterLoading-container  {
+        width: 60%;
+        height: 150px;
+    }
+  }

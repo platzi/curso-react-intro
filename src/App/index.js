@@ -50,7 +50,8 @@ function App() {
          saveItem: saveTodos,
          loading,
          error,
-         showSearch
+         showSearch,
+         showCounter,
         } = useLocalStorage('TODOS_V1', []);
 
 
@@ -120,6 +121,7 @@ function App() {
       searchedTodos={searchedTodos}
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
+      showCounter={showCounter}
     />
   );
 }

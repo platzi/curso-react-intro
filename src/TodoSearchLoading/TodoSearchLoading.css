@@ -1,9 +1,13 @@
-article{
+#SearchLoading-containerID{
     background: rgba(250,250,250,0.15);
     border-radius: 20px;
-    height: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 50px;
+    height: auto;
+    margin-bottom: 25px;
 }
-
+ 
 .SearchLoading-container{
     position: relative;
     display: flex;
