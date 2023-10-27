@@ -5,7 +5,8 @@ function useLocalStorage (itemName, initialValue){
   const [item, setItem] = React.useState(initialValue);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  
+  const [showSearch, setShowSearch] = React.useState(false);
+
   React.useEffect(()=>{
     setTimeout(() =>{
       try{
@@ -29,7 +30,13 @@ function useLocalStorage (itemName, initialValue){
     }, 2000);
   }, []);
 
-  
+  React.useEffect(() => {
+    if(!loading){
+      setShowSearch(true);
+    }
+  }, [loading]);
+
+
     const saveItem = (newItem) => {
       localStorage.setItem(itemName, JSON.stringify(newItem));
       setItem(newItem);
@@ -38,7 +45,8 @@ function useLocalStorage (itemName, initialValue){
             item, 
             saveItem, 
             loading, 
-            error
+            error,
+            showSearch
           };
   };
 

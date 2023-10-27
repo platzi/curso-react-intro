@@ -10,6 +10,7 @@ import { Graficos } from '../Graficos';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
+import { TodoSearchLoading } from '../TodoSearchLoading';
 
 
 
@@ -24,6 +25,7 @@ function AppUI({
     searchedTodos,
     completeTodo,
     deleteTodo,
+    showSearch,
  }){
     return (
     
@@ -36,14 +38,14 @@ function AppUI({
             motivationalPhrase={motivationalPhrase}
             />
             {loading && 
-            <>
-              <p>cargando...</p>
-            </>
-               }
-            <TodoSearch
+                <>
+                <TodoSearchLoading/>
+                </>
+            }
+            { showSearch && <TodoSearch
               searchValue={searchValue}
               setSearchValue={setSearchValue}
-            />
+            />}
             
 {/* Arreglar los estilos */}
             <div className="container1">

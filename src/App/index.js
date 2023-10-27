@@ -49,7 +49,8 @@ function App() {
          item: todos,
          saveItem: saveTodos,
          loading,
-         error
+         error,
+         showSearch
         } = useLocalStorage('TODOS_V1', []);
 
 
@@ -110,6 +111,7 @@ function App() {
     <AppUI 
       loading={loading}
       error={error}
+      showSearch={showSearch}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       motivationalPhrase={motivationalPhrase}
