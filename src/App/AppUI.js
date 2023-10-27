@@ -12,6 +12,7 @@ import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoSearchLoading } from '../TodoSearchLoading';
 import { TodoCounterLoading } from '../TodoCounterLoading';
+import { TodoGraphicLoading } from '../TodoGraphicLoading';
 
 
 function AppUI({ 
@@ -27,6 +28,7 @@ function AppUI({
     deleteTodo,
     showSearch,
     showCounter,
+    showGraphic,
  }){
     return (
     
@@ -73,10 +75,16 @@ function AppUI({
                }
               {error && <TodosError/> }
               {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
-              <Graficos
+
+              {loading && 
+                <>
+                <TodoGraphicLoading/>
+                </>
+               }
+              { showGraphic && <Graficos
                 completed={completedTodos}
                 total={totalTodos}
-              />
+              />}
             </div>
 
 {/* Arreglar los estilos */}

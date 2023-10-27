@@ -7,6 +7,7 @@ function useLocalStorage (itemName, initialValue){
   const [error, setError] = React.useState(false);
   const [showSearch, setShowSearch] = React.useState(false);
   const [showCounter, setShowCounter] = React.useState(false);
+  const [showGraphic, setShowGraphic] = React.useState(false);
 
   React.useEffect(()=>{
     setTimeout(() =>{
@@ -35,6 +36,7 @@ function useLocalStorage (itemName, initialValue){
     if(!loading){
       setShowSearch(true);
       setShowCounter(true);
+      setShowGraphic(true);
     }
   }, [loading]);
 
@@ -50,6 +52,7 @@ function useLocalStorage (itemName, initialValue){
             error,
             showSearch,
             showCounter,
+            showGraphic,
           };
   };
 

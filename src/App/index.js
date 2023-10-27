@@ -52,6 +52,7 @@ function App() {
          error,
          showSearch,
          showCounter,
+         showGraphic,
         } = useLocalStorage('TODOS_V1', []);
 
 
@@ -122,6 +123,7 @@ function App() {
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
       showCounter={showCounter}
+      showGraphic={showGraphic}
     />
   );
 }
