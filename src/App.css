@@ -1,16 +1,7 @@
 .App {
+  place-items: center;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: grid;
 }
 
 .App-header {
@@ -28,11 +19,25 @@
   color: #97ca3f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  transition: all .3s ease-in;
+  background-color: #c0bdbd;
+}
+
+.button:hover{
+  box-shadow: 0 0 10px 0 black;
+  cursor: pointer;
+  border: 2px solid gray;
+}
+
+.button-svg{
+  width: 100%;
 }

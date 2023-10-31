@@ -1,16 +1,28 @@
-function TodoItem() {
+function TodoItem(props) {
+  const listToDo = [
+    {
+      id: 1,
+      name: "Hacer curso",
+      completed: false
+    },
+    {
+      id: 2,
+      name: "Jugar al futbol",
+      completed: false
+    },
+    {
+      id: 3,
+      name: "Aprender aleman",
+      completed: false
+    }
+  ]
   return (
     <>
-      <li style={{ listStyle: "none" }}>
-        <span>V</span>
-        <p>Hacer el curso</p>
-        <span>X</span>
-      </li>
-      {/* Podemos crear un padre y podemos añadirle un hijo con con {props.childre} */}
-      {/* <ul>
-            {props.childre}
-            {props.childre}
-          </ul> */}
+      <ul>
+        {listToDo.map(item => (
+          <li style={{listStyle:"none"}} key={item.id}>{item.name}</li>
+        ))}
+      </ul>
     </>
   );
 }
