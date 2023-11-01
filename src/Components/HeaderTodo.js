@@ -1,7 +1,9 @@
-function HeaderTodo() {
+import { TodoItem } from "./ItemTodo";
+
+function HeaderTodo({total, completed}) {
   return (
     <>
-      <h1>Completaste 3 de 5 ToDo</h1>
+      <h1>Completaste {completed} de {total} ToDo</h1>
       <input type="search" placeholder="Terminar Curso" />
     </>
   );

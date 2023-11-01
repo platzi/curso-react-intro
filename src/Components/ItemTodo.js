@@ -1,28 +1,36 @@
-function TodoItem(props) {
-  const listToDo = [
-    {
-      id: 1,
-      name: "Hacer curso",
-      completed: false
-    },
-    {
-      id: 2,
-      name: "Jugar al futbol",
-      completed: false
-    },
-    {
-      id: 3,
-      name: "Aprender aleman",
-      completed: false
-    }
-  ]
+const listToDo = [
+  {
+    id: 1,
+    name: "Hacer curso",
+    completed: false
+  },
+  {
+    id: 2,
+    name: "Jugar al futbol",
+    completed: false
+  },
+  {
+    id: 3,
+    name: "Aprender aleman",
+    completed: false
+  },
+  {
+    id: 4,
+    name: "Hacer tarea",
+    completed: false
+  }
+]
+
+function TodoItem() {
   return (
     <>
-      <ul>
-        {listToDo.map(item => (
-          <li style={{listStyle:"none"}} key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      {listToDo.map((item) => (
+        <ul key={item.id} style={{listStyle: "none"}}>
+          <span>V</span>
+          <li>{item.name}</li>
+          <span>X</span>
+        </ul>
+      ))}
     </>
   );
 }

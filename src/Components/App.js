@@ -7,10 +7,10 @@ function App() {
   return (
     <>
       <main className="App">
-        <HeaderTodo />
-        <ul>
+        <HeaderTodo completed={16} total={20} />
+        <section>
           <TodoItem />
-        </ul>
+        </section>
         <div>
           <ButtonAdd />
         </div>
