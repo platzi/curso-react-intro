@@ -16,25 +16,22 @@ import { TodoGraphicLoading } from "../TodoGraphicLoading";
 import { TodoContext } from "../TodoContext";
 
 function AppUI() {
+  const {
+    loading,
+    error,
+    completedTodos,
+    totalTodos,
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    showSearch,
+    showCounter,
+    showGraphic,
+    } = React.useContext(TodoContext);
   return (
     <>
       <Nadvar />
-      <TodoContext.Consumer>
-        {({
-        loading,
-        error,
-        completedTodos,
-        totalTodos,
-        motivationalPhrase,
-        searchValue,
-        setSearchValue,
-        searchedTodos,
-        completeTodo,
-        deleteTodo,
-        showSearch,
-        showCounter,
-        showGraphic,
-        }) => (
+
           <div className="SuperiorContainerAll">
           {loading && (
             <>
@@ -82,8 +79,7 @@ function AppUI() {
 
           {/* Arreglar los estilos */}
         </div>
-        )}
-      </TodoContext.Consumer>
+
       <CreateTodoButton />
       <Footer />
     </>

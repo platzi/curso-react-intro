@@ -86,7 +86,7 @@ function TodoProvider({ children }) {
         error,
         completedTodos,
         totalTodos,
-        motivationalPhrase,
+        motivationalPhrase, 
         searchValue,
         setSearchValue,
         searchedTodos,
