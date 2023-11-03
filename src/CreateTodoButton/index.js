@@ -10,7 +10,7 @@ function CreateTodoButton(){
         <button
          className="CreateTodoButton"
          onClick={
-            (event) =>{
+            () =>{
                 setOpenModal((abrirModal) => !abrirModal)
             }
          }

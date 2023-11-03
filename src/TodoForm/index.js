@@ -1,15 +1,16 @@
 import React from "react";
 import './TodoForm.css'
+import { AiTwotoneEdit } from "react-icons/ai";
 
 function TodoForm() {
   return (
     <form className="formModal">
       {" "}
       {/* conecta con el submi */}
-      <label>Escribe tu nueva tarea</label>
+      <label>Escribe tu nueva tarea <AiTwotoneEdit/></label>
       <textarea
         
-        placeholder="Actividad por hacer"
+        placeholder="Actividad por hacer 🚀"
       />
       <div className="TodoForm-buttonContainer">
         <button
