@@ -70,6 +70,7 @@ function TodoProvider({ children }) {
     "Escribe código que otros amen leer.",
   ];
   const [motivationalPhrase, setMotivationalPhrase] = React.useState("");
+
   const generateRandomMotivationalPhrase = () => {
     const randomPhrase =
       frasesMotivacionales[
@@ -80,6 +81,15 @@ function TodoProvider({ children }) {
   useEffect(() => {
     generateRandomMotivationalPhrase();
   }, []);
+
+  const addTodo = (text) =>{
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  };
 
   
   return (
@@ -99,7 +109,8 @@ function TodoProvider({ children }) {
         showCounter,
         showGraphic,
         openModal,
-        setOpenModal
+        setOpenModal,
+        addTodo,
       }}
     >
       {children}
