@@ -13,7 +13,9 @@ import { EmptyTodos } from "../EmptyTodos";
 import { TodoSearchLoading } from "../TodoSearchLoading";
 import { TodoCounterLoading } from "../TodoCounterLoading";
 import { TodoGraphicLoading } from "../TodoGraphicLoading";
+import { Modal } from "../Modal";
 import { TodoContext } from "../TodoContext";
+import { TodoForm } from "../TodoForm";
 
 function AppUI() {
   const {
@@ -27,6 +29,8 @@ function AppUI() {
     showSearch,
     showCounter,
     showGraphic,
+    openModal,
+    setOpenModal
     } = React.useContext(TodoContext);
   return (
     <>
@@ -81,6 +85,11 @@ function AppUI() {
         </div>
 
       <CreateTodoButton />
+      {openModal && (
+        <Modal>
+        <TodoForm/>
+      </Modal>
+      )}
       <Footer />
     </>
   );
