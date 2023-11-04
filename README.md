@@ -14,14 +14,17 @@
 
 ## Interfaz
 - Móvil
+
  ![image](https://pbs.twimg.com/media/F-CgMBpaEAAk4rF?format=png&name=900x900)
 - Escritorio
+
   ![image](https://pbs.twimg.com/media/F-CgQyPaAAAWnpR?format=jpg&name=large)
   ![image](https://pbs.twimg.com/media/F-CgO7Xa0AAmkfQ?format=jpg&name=large)
   
 ## Instrucciones de instalación
 - Usuarios: Aplicación web
-   ![image](https://twitter.com/MisaelG51069440/status/1720563725760114958/photo/1)
+  
+   ![image]([https://twitter.com/MisaelG51069440/status/1720563725760114958/photo/1](https://pbs.twimg.com/media/F-CrlqUaIAAw9cR?format=jpg&name=large))
 
   - Developers
     Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
@@ -31,15 +34,61 @@
 - Eliminar: Cuando necesites borrar una tarea puedes dar click a este icono (-)
 - Completado: Cuando hayas finalizado una tarea da click al icono con una paloma.
 - En el apartado de búsqueda podemos filtrar las tareas por la coincidencia de texto
-- El gráfico te va midiendo las tareas completadas y las faltantes 
+- El gráfico te va midiendo las tareas completadas y las faltantes
+
+
   ![image](https://pbs.twimg.com/media/F-CuaKyaYAAXhtV?format=png&name=small)
 
+## Autores
+- [@Misael-GC](https://github.com/Misael-GC)
+- [@juandc](https://github.com/juandc)
 
-## Getting Started with Create React App
+## Contacto
+###🌏🔭  Find me  around the web:
+* Sharing my learnings in [Twitter](https://twitter.com/MisaelG51069440)
+* Sharing my work in [LinkedIn](https://www.linkedin.com/in/misael-g%C3%B3mez-cuautle-5976491b9/)
+* Writing in my [Blog](https://misael-gmez-cuautle.super.site/)
+
+## Estado del proyecto
+Es una primera versión, el estado es Beta, ya que se agregará más funcionalidades como filtros por categoría, Editar las tareas, darck mode, entre otras funcionalidades
+
+## Aprendizajes del proyecto
+1. Dibujar un boceto del diseño: Creación visual de diseño esquemático para planificar la interfaz.
+
+2. Creación de componentes: Desarrollo modular de elementos funcionales para la aplicación.
+
+3. Comunicar componentes: Establecer interacción y transferencia de datos entre diferentes partes de la aplicación.
+
+4. Estilos CSS en React: Aplicación de estilos y diseño a componentes React.
+
+5. Importación de Bootstrap por medio de un CDN: Inclusión de Bootstrap usando una red de distribución de contenido.
+
+6. Eventos en React onClick, onChange: Detectar acciones del usuario en interaccioón con nuestra aplicación
+
+7. Estados de React: interactividad, useState, useEffect: Administración de estados y efectos en aplicaciones React.
+
+8. Implementación del gráfico dinámico: Desarrollo de gráficos que cambian con datos en tiempo real.
+
+9. Uso del LocalStorage: Almacenamiento de datos local en el navegador del usuario.
+
+10. Custom Hooks: Creación de funciones personalizadas reutilizables para lógica en React.
+
+11. Estados de carga y error: Manejo de estados de carga y errores para una mejor experiencia del usuario.
+
+12. Loadings Skeletons: Representación visual de cargas en curso en forma de esqueletos.
+
+13. useContext: Administración del contexto global de la aplicación en React.
+
+14. React Portals: Renderizado de componentes en un nodo DOM diferente, útil para superposiciones.
+ 
+
+
+## Documentación
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -71,7 +120,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
