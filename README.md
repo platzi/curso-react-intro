@@ -24,7 +24,7 @@
 ## Instrucciones de instalación
 - Usuarios: Aplicación web
   
-   ![image]([https://twitter.com/MisaelG51069440/status/1720563725760114958/photo/1](https://pbs.twimg.com/media/F-CrlqUaIAAw9cR?format=jpg&name=large))
+   ![image](https://pbs.twimg.com/media/F-CrlqUaIAAw9cR?format=jpg&name=large)
 
   - Developers
     Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
