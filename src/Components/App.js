@@ -1,19 +1,21 @@
 import { HeaderTodo } from "./HeaderTodo";
 import { TodoItem } from "./ItemTodo";
-import { ButtonAdd } from "./ButtonIcon";
+import { SectionAddTodo } from "./ButtonIcon";
 import "../App.css";
 
 function App() {
   return (
     <>
       <main className="App">
-        <HeaderTodo completed={16} total={20} />
-        <section>
-          <TodoItem />
+        <section className="todoApp">
+          <HeaderTodo completed={16} total={20} />
+          <div>
+            <TodoItem />
+          </div>
         </section>
-        <div>
-          <ButtonAdd />
-        </div>
+        <section className="addTodo">
+          <SectionAddTodo />
+        </section>
       </main>
     </>
   );

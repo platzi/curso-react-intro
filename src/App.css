@@ -1,7 +1,64 @@
+:root{
+  --Main-font: 'Helvetica', Arial;
+}
+
+ul{
+  padding-inline-start: 0;
+}
+
+label{
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
 .App {
+  grid-template-columns: 400px 400px;
+  justify-content: center;
   place-items: center;
   text-align: center;
+  margin: 10px;
   display: grid;
+  font-family: var(--Main-font);
+}
+
+.header .header-title {
+  font-weight: 500;
+  color: black;
+  font-size: 32px;
+}
+
+.header-title span{
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.input {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all .3s ease-in;
+  border: 1px solid #424242;
+  background-color: #424242;
+  font-family: var(--Main-font);
+  box-shadow: 0 0 10px 0 #424242;
+}
+
+.input:hover{
+  cursor: text;
+  background-color: #618fdf;
+  border: 1px solid #424242;
+  box-shadow: 0 0 10px 0 #233553; 
+}
+
+.input:focus{
+  outline-color: #fff;
+  color: #fff;
+  background-color: #618fdf;
+}
+
+.input::placeholder{
+  color: #ffffff64;  
 }
 
 .App-header {
@@ -20,13 +77,14 @@
 }
 
 .button{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 50px;
+  justify-content: space-between;
+  place-items: center;
+  display: flex;
+  width: 100%;
   height: 50px;
-  padding: 8px;
-  border-radius: 50%;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 28px;
   border: 2px solid #000;
   transition: all .3s ease-in;
   background-color: #c0bdbd;
@@ -38,6 +96,31 @@
   border: 2px solid gray;
 }
 
-.button-svg{
+.form{
+  grid-template-rows: repeat(3, 1fr);
+  display: grid;
   width: 100%;
+}
+
+.form-group{
+  width: 100%;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
+
+.time-todo, .name-todo, .description-todo{
+  padding: 0 12px;
+  text-align: left;
+  color: #ffffff64;  
+}
+
+.time-todo:focus{
+  outline-color: #fff; 
+  color: #fff;
+}
+
+.buttonSend{
+  justify-content: center;
+  display: flex;
 }
