@@ -1,6 +1,6 @@
-import { TodoItem } from "./ItemTodo";
+/* import { TodoItem } from "./ItemTodo"; */
 
-function HeaderTodo({total, completed}) {
+const HeaderTodo = ({total, completed}) => {
   return (
     <>
       <div className="header">

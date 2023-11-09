@@ -3,7 +3,7 @@ import { TodoItem } from "./ItemTodo";
 import { SectionAddTodo } from "./ButtonIcon";
 import "../App.css";
 
-function App() {
+const App =() => {
   return (
     <>
       <main className="App">

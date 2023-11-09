@@ -41,6 +41,7 @@ label{
   border: 1px solid #424242;
   background-color: #424242;
   font-family: var(--Main-font);
+  color: #ffffff64;
   box-shadow: 0 0 10px 0 #424242;
 }
 
@@ -48,7 +49,7 @@ label{
   cursor: text;
   background-color: #618fdf;
   border: 1px solid #424242;
-  box-shadow: 0 0 10px 0 #233553; 
+  box-shadow: 0 0 10px 0 #233553;
 }
 
 .input:focus{
@@ -58,7 +59,7 @@ label{
 }
 
 .input::placeholder{
-  color: #ffffff64;  
+  color: #ffffff64;
 }
 
 .App-header {
@@ -100,13 +101,14 @@ label{
   grid-template-rows: repeat(3, 1fr);
   display: grid;
   width: 100%;
+  gap: 18px;
 }
 
 .form-group{
-  width: 100%;
-  display: flex;
-  text-align: left;
   flex-direction: column;
+  text-align: left;
+  display: flex;
+  width: 100%;
 }
 
 .time-todo, .name-todo, .description-todo{
@@ -123,4 +125,51 @@ label{
 .buttonSend{
   justify-content: center;
   display: flex;
+}
+
+.list{
+  grid-template-columns: 45px 1fr 45px;
+  display: grid;
+  width: auto;
+  row-gap: 10px;
+  padding: 12px;
+  list-style: none;
+  border-radius: 12px;
+  border: 2px solid #000;
+  transition: all .3s ease-in;
+  background-color: #c0bdbd;
+}
+
+.list li{
+  margin: auto 0;
+}
+
+.list__description{
+  grid-column: 1 / 4;
+}
+
+.icon{
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  fill: none;
+  stroke-width: 2px;
+  border-radius: 50%;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  border: 2px solid #000;
+  transition: all .3s ease-in;
+}
+
+.icon-check:hover{
+  cursor: pointer;
+  background-color: rgb(67, 217, 22);
+  border: 2px solid rgb(22, 94, 0);
+}
+
+.icon-closed:hover{
+  cursor: pointer;
+  background-color: #d70000;
+  border: 2px solid rgb(137, 3, 3);
 }
