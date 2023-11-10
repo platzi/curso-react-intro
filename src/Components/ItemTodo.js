@@ -3,7 +3,7 @@ const listToDo = [
     id: 1,
     name: "Hacer curso",
     description:"Terminar el curso de programacion con React",
-    completed: false
+    completed: true
   },
   {
     id: 2,
@@ -25,21 +25,36 @@ const listToDo = [
   }
 ];
 
+
 const TodoItem = () => {
   return (
     <>
       {listToDo.map((item) => (
         <ul className="list" key={item.id}>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-check" viewBox="0 0 24 24">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M5 12l5 5l10 -10"></path>
-          </svg>
+          <div 
+          className="icon icon-check" 
+          onClick={(e)=>{
+            console.log(e);
+            console.log("check");
+          }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12l5 5l10 -10"></path>
+            </svg>
+          </div>
           <li>{item.name}</li>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-closed" viewBox="0 0 24 24">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M18 6l-12 12"></path>
-            <path d="M6 6l12 12"></path>
-          </svg>
+          <div 
+          className="icon icon-closed" 
+          onClick={(e)=>{
+            console.log(e);
+            console.log("closed"); 
+          }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M18 6l-12 12"></path>
+              <path d="M6 6l12 12"></path>
+            </svg>
+          </div>
           <div className="list__description inactive">
             <p>{item.description}</p>
           </div>
@@ -49,4 +64,4 @@ const TodoItem = () => {
   );
 }
 
-export {TodoItem};
+export {TodoItem , listToDo};
