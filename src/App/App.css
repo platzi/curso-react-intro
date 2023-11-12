@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+ /* A quí está mi código CSS */
+/* CSS para pantallas móviles (menos de 768px) */
+
+.SuperiorContainerAll{
+  background-color: #203A43;
+  color: white; 
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  /* background-color: black;
+  color: white; */
+}
+
+
+.darkmode{
+  /* background-color: black; */
+}
+
+/* CSS para pantallas más pequeñas(768px o menos) */
+
+@media (max-width: 768px) {
+  .container1  {
+    flex-direction: column;
+  }
+}

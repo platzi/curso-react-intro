@@ -1,0 +1,23 @@
+.error-container{
+    background: rgba(255, 255, 255, 0.685);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.ErrorIcon{
+font-size:100px;
+color: black;
+}
+
+.hubo-error{
+font-size: 1.2rem;
+font-weight: bold;
+color: rgb(5, 0, 4);
+/* margin: 0 auto; */
+}

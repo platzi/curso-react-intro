@@ -1,0 +1,59 @@
+.TodoGraphicContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 10px 50px;
+    background: rgba(250,250,250,0.15);
+    border-radius: 20px;
+    margin: 0px 150px;
+    margin-bottom: 25px;
+}
+
+.Graphic{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* animation */
+    background: linear-gradient(90deg, rgba(250,250,250,0.15), rgb(200, 199, 199)); /*rgba(32, 35, 41, 0.15)*/
+    background-size: 400% 400%;
+    
+    animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+
+@keyframes loadingAnimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+/* CSS para pantallas más pequeñas(768px o menos) */
+
+@media (max-width: 1024px) {
+    .TodoGraphicContainer  {
+        margin: 0px 1px;
+        margin-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .TodoGraphicContainer  {
+        flex-direction: row;
+        width: 70%;
+        margin: 15px auto; /*centrarlo*/ 
+        /* margin-bottom: 25px; */
+    }
+  }
+
+  @media (max-width: 425px) {
+    .Graphic{
+        width: 250px;
+        height: 250px;
+    }
+  }
