@@ -17,9 +17,9 @@ function TodoProvider({ children }) {
   //TodoSearch input
   const [searchValue, setSearchValue] = React.useState("");
 
-  //open Modal
   const [openModal, setOpenModal] = React.useState(false);
 
+//
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
 
   const totalTodos = todos.length;
@@ -91,7 +91,10 @@ function TodoProvider({ children }) {
     saveTodos(newTodos);
   };
 
-  
+  // Filtros
+  const filterTodosAll = () => todos;
+  const filterTodoCompleted = () => todos.filter((todo) => !!todo.completed);
+  const filterTodoUncompleted = () => todos.filter((todo) =>!todo.completed);
   return (
     <TodoContext.Provider
       value={{
@@ -111,6 +114,9 @@ function TodoProvider({ children }) {
         openModal,
         setOpenModal,
         addTodo,
+        filterTodosAll,
+        filterTodoCompleted,
+        filterTodoUncompleted,
       }}
     >
       {children}
@@ -119,3 +125,5 @@ function TodoProvider({ children }) {
 }
 
 export { TodoContext, TodoProvider };
+
+//https://github.com/Misael-GC/curso-react-intro/commit/cdb14fac71c1ccb139528501ecc3147f14ba91d9

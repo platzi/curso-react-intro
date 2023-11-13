@@ -16,6 +16,7 @@ import { TodoGraphicLoading } from "../TodoGraphicLoading";
 import { Modal } from "../Modal";
 import { TodoContext } from "../TodoContext";
 import { TodoForm } from "../TodoForm";
+import { Filtros } from "../Filtros"
 
 function AppUI() {
   const {
@@ -30,7 +31,9 @@ function AppUI() {
     showCounter,
     showGraphic,
     openModal,
-    setOpenModal
+    filterTodosAll,
+    filterTodoCompleted,
+    filterTodoUncompleted,
     } = React.useContext(TodoContext);
   return (
     <>
@@ -48,6 +51,12 @@ function AppUI() {
               <TodoSearchLoading />
             </>
           )}
+          {showSearch &&
+          (<Filtros
+            filterTodosAll={filterTodosAll}
+            filterTodoCompleted={filterTodoCompleted}
+            filterTodoUncompleted={filterTodoUncompleted}
+           />)}
           {showSearch && <TodoSearch />}
 
           {/* Arreglar los estilos */}
