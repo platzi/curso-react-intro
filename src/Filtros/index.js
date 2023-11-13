@@ -7,13 +7,6 @@ function Filtros({
   filterTodoUncompleted,
 }) {
   const [filtroSeleccionado, setFiltroSeleccionado] = useState("todos");
-  const [filteredTodos, setFilteredTodos] = useState([]);
-
-  const updateFilter = (filterFunction) => {
-    setFiltroSeleccionado(filterFunction);
-    const result = filterFunction();
-    setFilteredTodos(result);
-  };
 
   return (
     <section className="filter">
@@ -22,38 +15,30 @@ function Filtros({
           className={`filter__option ${
             filtroSeleccionado === "todos" && "filter__option--active"
           }`}
-          // onClick={() => {
-          //   setFiltroSeleccionado("todos");
-          //   filterTodosAll();
-          // }}
-          onClick={() => updateFilter(filterTodosAll)}
+          onClick={() => {
+            setFiltroSeleccionado("todos");
+          }}
         >
-          Todos 
-          {/* ({filterTodosAll.length}) */}
+          Total tareas
+          ({filterTodosAll.length})
         </span>
 
         <span
           className={`filter__option filter__option--completed ${filtroSeleccionado === 'completados' && 'filter__option--active'}`}
-          // onClick={() => {
-          //   setFiltroSeleccionado('completados');
-          //   filterTodoCompleted();
-          // }}
-          onClick={() => updateFilter(filterTodoCompleted)}
+          onClick={() => {
+            setFiltroSeleccionado('completados');
+          }}
         >
-          Completados 
-          {/* ({filterTodoCompleted.length}) */}
+          Completados ({filterTodoCompleted.length})
         </span>
 
         <span
          className={`filter__option filter__option--no-completed ${filtroSeleccionado === 'pendientes' && 'filter__option--active'}`}
-          // onClick={() => {
-          //   setFiltroSeleccionado('pendientes');
-          //   filterTodoUncompleted();
-          // }}
-          onClick={() => updateFilter(filterTodoUncompleted)}
+          onClick={() => {
+            setFiltroSeleccionado('pendientes');
+          }}
         >
-          No completados
-           {/* ({filterTodoUncompleted.length}) */}
+          Incompletados ({filterTodoUncompleted.length})
         </span>
       </div>
     </section>

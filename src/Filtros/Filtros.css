@@ -23,11 +23,7 @@
 }
 
 
-.filter__option:hover{
-    color: #a5c6c4;
-    border: 4px solid black;
-    font-size: 16px;
-}
+
 
 /*hover*/
 /* CSS para pantallas pequeñas(768px o menos) */

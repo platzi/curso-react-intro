@@ -92,9 +92,10 @@ function TodoProvider({ children }) {
   };
 
   // Filtros
-  const filterTodosAll = () => todos;
-  const filterTodoCompleted = () => todos.filter((todo) => !!todo.completed);
-  const filterTodoUncompleted = () => todos.filter((todo) =>!todo.completed);
+  const filterTodosAll = todos;
+  const filterTodoCompleted = todos.filter((todo) => !!todo.completed);
+  const filterTodoUncompleted = todos.filter((todo) =>!todo.completed);
+
   return (
     <TodoContext.Provider
       value={{
