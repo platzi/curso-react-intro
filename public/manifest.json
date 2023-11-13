@@ -1,25 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ToDos App v2.0.0",
+  "name": "ToDos App v2.0.0",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "mgc.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "react192.png",
+      "src": "mgc.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "react512.png",
+      "src": "mgc.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#97ca3f",
+  "theme_color": "#2C5364",
   "background_color": "#233553"
 }
