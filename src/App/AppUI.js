@@ -74,7 +74,7 @@ function AppUI() {
             </TodoList>
             {loading && (
               <>
-                <TodosLoading />
+                <TodosLoading /> 
               </>
             )}
             {error && <TodosError />}
