@@ -1,0 +1,18 @@
+.searchBar{
+    width: 279px;
+    height: 64px;
+    border-radius: 10px;
+    border: solid 1px gray
+}
+
+.searchBar::placeholder{
+    color: silver;
+    font-family: "Montserrat";
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+}
+
+.searchBar:focus{
+    outline-color: rgb(49, 49, 112);
+}
