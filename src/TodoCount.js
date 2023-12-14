@@ -1,6 +1,6 @@
-function TodoCount(){
+function TodoCount({total, completed}){
     return(
-        <h1>Ya completaste 3 de 5 TODO's</h1>
+        <h1>Ya completaste {completed} de {total} TODO's</h1>
     )
 }
 

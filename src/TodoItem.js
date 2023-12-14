@@ -1,8 +1,8 @@
-function TodoItem(){ //componente
+function TodoItem(props){ //componente
     return( //elemento
         <li>
             <span>V</span>
-            <p>Llorar con la llorona</p>
+            <p>{props.text}</p>
             <span>X</span>
         </li>
     );
