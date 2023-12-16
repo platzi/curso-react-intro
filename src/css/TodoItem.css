@@ -1,0 +1,45 @@
+li{
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #3b3434;
+    justify-content: space-evenly;
+}
+
+
+.icon{cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:48px;
+    width:48px;
+    font-size:xx-large;color: #afa4ab;
+    font-weight:700}
+.icon-check--active{color:#9262f78c}
+
+.parrafo{
+    width: 85%;
+    font-family: monospace;
+    color: #f3e1f7;
+    font-size: 22px;
+} .list-parrafo--tachado{
+    text-decoration: line-through;
+}
+
+.icon-delete{
+    font-size: x-large;
+    color: #ffffff8a;
+    font-family: ui-monospace;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 3px 6px;
+    position: relative;
+}
+.icon-delete:hover {
+    color: #ff4747;
+    text-shadow: 0 0 10px red;
+}

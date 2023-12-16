@@ -1,0 +1,15 @@
+.Buscar {
+    width: 50%;
+    height: 50px;
+    display: block;
+    font-size: x-large;
+    padding: 2px 20px;
+    margin: 5px auto;
+    color: darkgrey;
+    border-style: none;
+    background-color: #544e42;
+    box-shadow: 0 4px 5px #6b6456c2;
+    border-radius: 10px;
+    border-bottom-style: groove;
+    font-family: ui-monospace;
+}
