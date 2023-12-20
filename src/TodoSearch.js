@@ -1,9 +1,11 @@
 import './css/TodoSearch.css';
 import React from 'react'
 
-function TodoSearch(){
-    const [searchValue, setSearchValue] = React.useState('');
-    console.log('Los usuarios buscan todos de ' + searchValue)//concatenacion de un console.log, se mostaa el codigo ejecutado gacias a la linea 19
+function TodoSearch({
+    searchValue,
+    setSearchValue
+}){
+    //seelimina el codigo del estado searchValue para colocarlo en el componente App, pero para que esto siga  teniendon su funcion; se llaman los estados como parametros en esta funcion
     return(
         <input 
             className='Buscar'
