@@ -1,0 +1,13 @@
+//abstracts
+@import 'abstracts/variables';
+
+//base
+@import 'base/fonts';
+
+//pages
+    //home
+    @import 'pages/home/TodoCounter';
+    @import 'pages/home/CreateTodoButton';
+    @import 'pages/home/TodosLoading.scss';
+    @import 'pages/home/modal.scss';
+    @import 'pages/home/TodoForm.scss';

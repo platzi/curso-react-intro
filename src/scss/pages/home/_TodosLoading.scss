@@ -1,0 +1,67 @@
+
+ul{
+    width: 327px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-inline-start: 0px;
+    .LoadingTodo-container{
+        width: 307px;
+        height: 100px;
+        margin-top: 20px;
+        border-radius: 2px;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        align-items: center;
+        background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out infinite;
+        .LoadingTodo-text{
+        font-size: 18px;
+        color: #1e1e1f;
+        font-family: montserrat;
+        }
+        .LoadingTodo-deleteIcon{
+            position: relative;
+            top: -45px;
+            right: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            height: 48px;
+            width: 48px;
+            background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out infinite;
+        }
+        .LoadingTodo-completeIcon{
+            position: relative;
+            left: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            height: 48px;
+            width: 48px;
+            background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
