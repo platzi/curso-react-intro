@@ -2,6 +2,11 @@
   "name": "platzi-intro-react-base",
   "version": "0.1.0",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18",
     "react-dom": "^18",
     "react-scripts": "5.0.1",
@@ -9,8 +14,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "eject": "react-scripts eject",
+    "sass": "sass --style=compressed src/scss:src/css",
+    "prefix": "npm run sass && postcss src/css/**/*.css --use=autoprefixer --dir src/css --map",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
   "eslintConfig": {
     "extends": [
@@ -28,5 +38,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "https://Iaramirez88.github.io/curso-react-platzi",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.1.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5"
   }
 }
