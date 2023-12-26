@@ -9,21 +9,20 @@ import { TodoButton } from './TodoButton';
 import React from 'react';
 
 const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true },
+  { text: 'Cortar cebolla', completed: false },
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { text: 'Usar estados derivados', completed: true },
-  { text: 'Cortar berenjena', completed: true },
+  { text: 'Usar estados derivados', completed: false },
+  { text: 'Cortar berenjena', completed: false },
   { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
-  {text: 'cortarte las uñas', completed: true},
+  {text: 'cortarte las uñas', completed: false},
 ]
 
 function App() {
   const [todos, setTodos] = React.useState(defaultTodos); //nuevo estado
   
   const [searchValue, setSearchValue] = React.useState('');
-  console.log('Los usuarios buscan todos de ' + searchValue) //concatenacion de un console.log, se mostaa el codigo ejecutado gacias a la linea 20 del componente TodoSearch
 
   const completedTodos = todos.filter(todo => !!todo.completed).length; 
         //Para filtrar un elemento de un array (manipulacion de arrays) existen dos formas: find y filter. Find te permite filtrar un elemento, UN solo eelemento lo cual va a ser el primero de una lista, en cambio del filter; te filtrara TODOS los elemntos de una lista 
@@ -57,6 +56,18 @@ function App() {
     setTodos(newTodos); //Actualiza el estado de todos con la nueva matriz de tareas donde la tarea indicada se marca como completada.
   }
 
+  const deleteTodo = (text) => { 
+    console.log('click delete') 
+
+    const newTodos = [...todos]; 
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+
+    newTodos.splice(todoIndex, 1);  //Utiliza splice para eliminar un elemento en el índice todoIndex de la matriz newTodos. En este caso, se elimina un solo elemento a partir de ese índice.
+    setTodos(newTodos); 
+  }
+
   return ( // a partir de aqui no estamos incorporando html, sino JSX
     <> {/* → este "codigo" sin declaracion alguna es igual o hace la misma funcion que React.Fragment*/}
       {/* ¿ Cómo llamo a un componente? Escribiendo su nombre con la siguiente sintáxis < Componente1 />  */}
@@ -73,6 +84,7 @@ function App() {
               text={todo.text}
               completed={todo.completed}
               onComplete={() => completeTodo(todo.text)} //evento del onClick del archivo TodoItem
+              onDelete={() => deleteTodo(todo.text)} //evento del onClick del archivo TodoItem
             />
           ))}
         </TodoList>
