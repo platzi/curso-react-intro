@@ -1,45 +1,45 @@
-li{
-    display: flex;
-    align-items: center;
-    height: auto;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    background-color: #3b3434;
-    justify-content: space-evenly;
+.TodoItem{
+    background-color:#fafafa;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:24px;
+    box-shadow:0 5px 50px rgba(32,35,41,.15)
 }
 
+.TodoItem-p{
+    margin:24px 0 24px 24px;
+    width:calc(100% - 120px);
+    font-size:18px;
+    line-height:24px;
+    font-weight:400
+}
 
-.icon{cursor:pointer;
+.TodoItem-p--complete{
+    text-decoration:line-through
+}
+
+.Icon{
+    cursor:pointer;
     display:flex;
     justify-content:center;
     align-items:center;
     height:48px;
     width:48px;
-    font-size:xx-large;color: #afa4ab;
-    font-weight:700}
-.icon-check--active{color:#9262f78c}
-
-.parrafo{
-    width: 85%;
-    font-family: monospace;
-    color: #f3e1f7;
-    font-size: 22px;
-} .list-parrafo--tachado{
-    text-decoration: line-through;
+    font-size:24px;
+    font-weight:700
 }
-
-.icon-delete{
-    font-size: x-large;
-    color: #ffffff8a;
-    font-family: ui-monospace;
-    font-weight: 700;
-    border-radius: 50px;
-    padding: 3px 6px;
-    position: relative;
+.Icon-check{
+    position:absolute;
+    left:12px
 }
-.icon-delete:hover {
-    color: #ff4747;
-    text-shadow: 0 0 10px red;
+.Icon-check--active{
+    color:#4caf50
 }
+.Icon-delete{
+    position:absolute;
+    top:-24px;
+    right:0
+}
+.Icon-delete:hover{color:red}

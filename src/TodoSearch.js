@@ -9,7 +9,7 @@ function TodoSearch({
     return(
         <input 
             className='Buscar'
-            placecholder='corta algo'
+            placecholder='Escribe algo'
             // onChange = {(event) => {
             //     console.log('escribiste algo en el search ') //mensjae que aparece cuadno escriba algo
             //     console.log(event) // mensaje que aparece y dice que tipo de evento es

@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 // eslint-disable-next-line no-unused-vars
 import logo from './platzi.webp';
 import { TodoCount } from './TodoCount';
@@ -11,8 +12,8 @@ const defaultTodos = [
   { text: 'Cortar cebolla', completed: true },
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
   { text: 'Usar estados derivados', completed: true },
-  { text: 'Cortar cebolla', completed: true },
-  { text: 'Tomar el Curso de Intro a React.js', completed: false },
+  { text: 'Cortar berenjena', completed: true },
+  { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },
   { text: 'Llorar con la Llorona', completed: false },
   { text: 'LALALALALA', completed: false },
   {text: 'cortarte las uñas', completed: true},
@@ -44,6 +45,17 @@ function App() {
     }
   );
 
+  const completeTodo = (text) => { // text que representa el texto de la tarea que se va a completar.
+    console.log('click') //Esta línea imprime 'click' en la consola cada vez que se llama a la función completeTodo. Esto podría ser útil para depurar o entender cuándo se activa esta función.
+
+    const newTodos = [...todos]; //Crea una copia de la matriz todos utilizando el operador de propagación (...). Esto es importante para no mutar directamente la matriz original.
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );//Encuentra el índice en el arreglo newTodos donde el texto de la tarea coincide con el argumento text proporcionado.
+
+    newTodos[todoIndex].completed = true; //Cambia la propiedad completed de la tarea encontrada en el paso anterior a true, lo que indica que la tarea ha sido completada.
+    setTodos(newTodos); //Actualiza el estado de todos con la nueva matriz de tareas donde la tarea indicada se marca como completada.
+  }
 
   return ( // a partir de aqui no estamos incorporando html, sino JSX
     <> {/* → este "codigo" sin declaracion alguna es igual o hace la misma funcion que React.Fragment*/}
@@ -60,6 +72,7 @@ function App() {
               key={todo.text} 
               text={todo.text}
               completed={todo.completed}
+              onComplete={() => completeTodo(todo.text)} //evento del onClick del archivo TodoItem
             />
           ))}
         </TodoList>

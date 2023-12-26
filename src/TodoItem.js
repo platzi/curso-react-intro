@@ -4,9 +4,15 @@ import './css/TodoItem.css';
 
 function TodoItem(props){ //componente
     return( //elemento
-        <li>
-            <span type='checkbox' className={`icon icon-check ${props.completed && 'icon-check--active'}`}>*</span>
-            <p className={`parrafo ${props.completed && 'list-parrafo--tachado'}`}>{props.text}</p>
+        <li className = 'TodoItem'>
+            <span 
+                className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
+                onClick={props.onComplete}>
+                    *
+            </span>
+            <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+                {props.text}
+            </p>
             <span className={`icon icon-delete`}>X</span>
         </li>
     );
