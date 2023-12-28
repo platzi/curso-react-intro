@@ -9,7 +9,7 @@ import React from 'react';
 
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: false },
-  { text: 'Tomar el Curso de Intro a React.js', completed: false },
+  { text: 'Tomar el Curso de Intro a React.js', completed: true },
   { text: 'Usar estados derivados', completed: false },
   { text: 'Cortar berenjena', completed: false },
   { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },

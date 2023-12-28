@@ -1,0 +1,40 @@
+/*estilos css SOLAMENTE paar los icons*/
+.Icon-container{
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:48px;
+    width:48px;
+    font-size:24px;
+    font-weight:700
+}
+
+.Icon-container-check{
+    position:absolute;
+    left:12px
+}.Icon-container-check--active{
+    color:#4caf50
+}
+
+.Icon-container-delete{
+    position:absolute;
+    top:-24px;
+    right:0
+}.Icon-container-delete:hover{color:red}
+
+
+.Icon-svg{
+    width: 20px;
+    height: 20px;
+}
+
+/*pdemos camviarle el color de los icons creados o aplicados en react, desde css
+para que se vean como si estuvieramos usando un propiedad "color" pero en realidad se lo estamos modificando.
+En este caso le estamos cambiando el color de los icons cuando el cursor este por encima de ellos*/
+.Icon-container-check:hover .Icon-svg {
+    fill:green;
+}
+.Icon-container-delete:hover .Icon-svg {
+    fill:red;
+}

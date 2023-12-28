@@ -7,13 +7,16 @@ import {DeleteIcon} from './DeleteIcon';
 function TodoItem(props){ //componente
     return( //elemento
         <li className = 'TodoItem'>
-            <CompleteIcon />
+            <CompleteIcon 
+                completed={props.completed}
+                onComplete={props.onComplete}/>
 
             <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
                 {props.text}
             </p>
-            
-            <DeleteIcon />
+
+            <DeleteIcon 
+                onDelete={props.onDelete}/>
         </li>
     );
 }
