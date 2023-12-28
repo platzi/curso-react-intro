@@ -1,6 +1,5 @@
 /* eslint-disable eqeqeq */
 // eslint-disable-next-line no-unused-vars
-import logo from './platzi.webp';
 import { TodoCount } from './TodoCount';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
