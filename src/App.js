@@ -7,20 +7,36 @@ import { TodoItem } from './TodoItem';
 import { TodoButton } from './TodoButton';
 import React from 'react';
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: false },
-  { text: 'Tomar el Curso de Intro a React.js', completed: true },
-  { text: 'Usar estados derivados', completed: false },
-  { text: 'Cortar berenjena', completed: false },
-  { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },
-  { text: 'Llorar con la Llorona', completed: false },
-  { text: 'LALALALALA', completed: false },
-  {text: 'cortarte las uñas', completed: false},
-]
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: false },
+//   { text: 'Tomar el Curso de Intro a React.js', completed: true },
+//   { text: 'Usar estados derivados', completed: false },
+//   { text: 'Cortar berenjena', completed: false },
+//   { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },
+//   { text: 'Llorar con la Llorona', completed: false },
+//   { text: 'LALALALALA', completed: false },
+//   {text: 'cortarte las uñas', completed: false},
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))   //añadir o crear un objeto
+//localStorage.removeItem('TODOS_V1', defaultTodos)                 //borrar ese objeto en especifico
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos); //nuevo estado
+  const localStorageTodos = localStorage.getItem('TODOS_V1');  // Obtiene los datos de 'TODOS_V1' almacenados en el localStorage
+
+  let parsedTodos;
+
+  // Comprueba si no hay datos en el localStorage
+  if (!localStorageTodos){
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));// Establece datos iniciales si no existen en el localStorage
+    parsedTodos = []; // Inicializa como un arreglo vacío
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);// Si hay datos en el localStorage, los convierte de formato string a formato de arreglo usando JSON.parse()
+  }
+
   
+  const [todos, setTodos] = React.useState(parsedTodos);// Inicializa el estado 'todos' con los datos obtenidos del localStorage o un arreglo vacío si no hay datos
+
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => !!todo.completed).length; 
@@ -43,30 +59,35 @@ function App() {
     }
   );
 
-  const completeTodo = (text) => { // text que representa el texto de la tarea que se va a completar.
-    console.log('click') //Esta línea imprime 'click' en la consola cada vez que se llama a la función completeTodo. Esto podría ser útil para depurar o entender cuándo se activa esta función.
-
-    const newTodos = [...todos]; //Crea una copia de la matriz todos utilizando el operador de propagación (...). Esto es importante para no mutar directamente la matriz original.
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));// Almacena la lista actualizada de tareas en el localStorage y actualiza la lista de tareas
+    setTodos(newTodos); // Actualiza la lista de tareas
+  };
+  
+  const completeTodo = (text) => {
+    console.log('click'); // Imprime 'click' en la consola cada vez que se llama a la función
+  
+    const newTodos = [...todos]; // Crea una copia de la matriz todos
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
-    );//Encuentra el índice en el arreglo newTodos donde el texto de la tarea coincide con el argumento text proporcionado.
-
-    newTodos[todoIndex].completed = true; //Cambia la propiedad completed de la tarea encontrada en el paso anterior a true, lo que indica que la tarea ha sido completada.
-    setTodos(newTodos); //Actualiza el estado de todos con la nueva matriz de tareas donde la tarea indicada se marca como completada.
-  }
-
-  const deleteTodo = (text) => { 
-    console.log('click delete') 
-
-    const newTodos = [...todos]; 
+    ); // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
+  
+    newTodos[todoIndex].completed = true; // Marca la tarea encontrada como completada
+    saveTodos(newTodos); // Guarda y actualiza la lista de tareas
+  };
+  
+  const deleteTodo = (text) => {
+    console.log('click delete'); // Imprime 'click delete' en la consola
+  
+    const newTodos = [...todos]; // Crea una copia de la matriz todos
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
-    );
-
-    newTodos.splice(todoIndex, 1);  //Utiliza splice para eliminar un elemento en el índice todoIndex de la matriz newTodos. En este caso, se elimina un solo elemento a partir de ese índice.
-    setTodos(newTodos); 
-  }
-
+    ); // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
+  
+    newTodos.splice(todoIndex, 1); // Elimina la tarea en el índice todoIndex de la matriz newTodos
+    saveTodos(newTodos); // Guarda y actualiza la lista de tareas
+  };
+  
   return ( // a partir de aqui no estamos incorporando html, sino JSX
     <> {/* → este "codigo" sin declaracion alguna es igual o hace la misma funcion que React.Fragment*/}
       {/* ¿ Cómo llamo a un componente? Escribiendo su nombre con la siguiente sintáxis < Componente1 />  */}
