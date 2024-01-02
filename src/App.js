@@ -21,21 +21,40 @@ import React from 'react';
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))   //añadir o crear un objeto
 //localStorage.removeItem('TODOS_V1', defaultTodos)                 //borrar ese objeto en especifico
 
-function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1');  // Obtiene los datos de 'TODOS_V1' almacenados en el localStorage
+// Esta función maneja el uso del localStorage para un elemento específico
+function useLocalStorage(itemName, initialValue) {
+  // Extrae el elemento del localStorage
+  const localStorageItem = localStorage.getItem(itemName);
 
-  let parsedTodos;
+  let parsedItem;
 
   // Comprueba si no hay datos en el localStorage
-  if (!localStorageTodos){
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));// Establece datos iniciales si no existen en el localStorage
-    parsedTodos = []; // Inicializa como un arreglo vacío
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);// Si hay datos en el localStorage, los convierte de formato string a formato de arreglo usando JSON.parse()
-  }
+    if (!localStorageItem) {
+      // Si no hay datos, establece el valor inicial y lo almacena en el localStorage
+      localStorage.setItem(itemName, JSON.stringify(initialValue));
+      parsedItem = initialValue; // Establece el valor inicial
+    } else {
+      // Si hay datos en el localStorage, los convierte de formato string a formato de arreglo usando JSON.parse()
+      parsedItem = JSON.parse(localStorageItem);
+    }
 
-  
-  const [todos, setTodos] = React.useState(parsedTodos);// Inicializa el estado 'todos' con los datos obtenidos del localStorage o un arreglo vacío si no hay datos
+    // Usa React.useState para manejar el estado del item y su actualización
+    const [item, setItem] = React.useState(parsedItem);
+
+    // Función para guardar un nuevo item en el localStorage y actualizar el estado
+    const saveItem = (newItem) => {
+      localStorage.setItem(itemName, JSON.stringify(newItem));
+      setItem(newItem);
+    };
+
+    return [item, saveItem]; // Devuelve el estado actual del item y la función para actualizarlo
+}
+
+function App() {
+  // Usa la función useLocalStorage para gestionar un elemento llamado 'TODOS_V1' en el localStorage
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []); // Los corchetes vacíos indican que el valor inicial es un arreglo vacío
+  // 'todos' almacena el estado actual del elemento 'TODOS_V1' en el localStorage
+  // 'saveTodos' es la función que permite actualizar el estado de 'todos' y el localStorage
 
   const [searchValue, setSearchValue] = React.useState('');
 
@@ -58,11 +77,6 @@ function App() {
       return todoText.includes(searchText);
     }
   );
-
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));// Almacena la lista actualizada de tareas en el localStorage y actualiza la lista de tareas
-    setTodos(newTodos); // Actualiza la lista de tareas
-  };
   
   const completeTodo = (text) => {
     console.log('click'); // Imprime 'click' en la consola cada vez que se llama a la función
