@@ -1,6 +1,4 @@
-import './css/TodoCount.css';
-
-
+import './TodoCount.css';
 function TodoCount({total, completed}){
     return(
         <h1 style={{

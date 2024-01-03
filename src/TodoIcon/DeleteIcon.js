@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoIcon } from './TodoIcon' //Se importa React y el componente TodoIcon desde un archivo llamado TodoIcon.js.
+import { TodoIcon } from '../TodoIcon' //Se importa React y el componente TodoIcon desde un archivo llamado TodoIcon.js.
 
 function DeleteIcon({onDelete}) {  //Define el componente DeleteIcon. Este componente renderiza el componente TodoIcon con las propiedades type='delete' y color='red'
     return (

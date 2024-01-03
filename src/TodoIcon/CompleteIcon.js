@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoIcon } from './TodoIcon' //Importa React y el componente TodoIcon desde un archivo llamado TodoIcon.js.
+import { TodoIcon } from './index.js' //Importa React y el componente TodoIcon desde un archivo llamado TodoIcon.js.
 
 function CompleteIcon({completed, onComplete}) {
     return (

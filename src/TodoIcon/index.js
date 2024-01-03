@@ -1,7 +1,7 @@
 import {ReactComponent as CheckSVG} from './svg/check.svg';
 import {ReactComponent as DeleteSVG} from './svg/delete.svg';
     // → Aquí se importan dos imágenes SVG usando la sintaxis de ReactComponent. Estas imágenes se usan como íconos para la lista de tareas.
-import './css/TodoIcon.css'
+import './TodoIcon.css'
 
 const iconType = {
 
