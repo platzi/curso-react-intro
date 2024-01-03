@@ -1,11 +1,8 @@
 /* eslint-disable eqeqeq */
 // eslint-disable-next-line no-unused-vars
-import { TodoCount } from './TodoCount';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { TodoButton } from './TodoButton';
 import React from 'react';
+import { useLocalStorage } from './useLocalStorage'
+import { AppUI } from './AppUX'
 
 // const defaultTodos = [
 //   { text: 'Cortar cebolla', completed: false },
@@ -20,35 +17,6 @@ import React from 'react';
 
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))   //añadir o crear un objeto
 //localStorage.removeItem('TODOS_V1', defaultTodos)                 //borrar ese objeto en especifico
-
-// Esta función maneja el uso del localStorage para un elemento específico
-function useLocalStorage(itemName, initialValue) {
-  // Extrae el elemento del localStorage
-  const localStorageItem = localStorage.getItem(itemName);
-
-  let parsedItem;
-
-  // Comprueba si no hay datos en el localStorage
-    if (!localStorageItem) {
-      // Si no hay datos, establece el valor inicial y lo almacena en el localStorage
-      localStorage.setItem(itemName, JSON.stringify(initialValue));
-      parsedItem = initialValue; // Establece el valor inicial
-    } else {
-      // Si hay datos en el localStorage, los convierte de formato string a formato de arreglo usando JSON.parse()
-      parsedItem = JSON.parse(localStorageItem);
-    }
-
-    // Usa React.useState para manejar el estado del item y su actualización
-    const [item, setItem] = React.useState(parsedItem);
-
-    // Función para guardar un nuevo item en el localStorage y actualizar el estado
-    const saveItem = (newItem) => {
-      localStorage.setItem(itemName, JSON.stringify(newItem));
-      setItem(newItem);
-    };
-
-    return [item, saveItem]; // Devuelve el estado actual del item y la función para actualizarlo
-}
 
 function App() {
   // Usa la función useLocalStorage para gestionar un elemento llamado 'TODOS_V1' en el localStorage
@@ -103,28 +71,15 @@ function App() {
   };
   
   return ( // a partir de aqui no estamos incorporando html, sino JSX
-    <> {/* → este "codigo" sin declaracion alguna es igual o hace la misma funcion que React.Fragment*/}
-      {/* ¿ Cómo llamo a un componente? Escribiendo su nombre con la siguiente sintáxis < Componente1 />  */}
-        <TodoCount completed={completedTodos} total={totalTodos}/>
-        <TodoSearch
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-
-        <TodoList>
-          {searchedTodos.map(todo =>(
-            <TodoItem 
-              key={todo.text} 
-              text={todo.text}
-              completed={todo.completed}
-              onComplete={() => completeTodo(todo.text)} //evento del onClick del archivo TodoItem
-              onDelete={() => deleteTodo(todo.text)} //evento del onClick del archivo TodoItem
-            />
-          ))}
-        </TodoList>
-        
-        <TodoButton/>
-    </>
+    <AppUI 
+      completeTodo={completeTodo}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completedTodos={completedTodos}
+      deleteTodo={deleteTodo}
+    />
   );
 }
 
