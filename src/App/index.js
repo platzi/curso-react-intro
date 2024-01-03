@@ -4,20 +4,6 @@ import React from 'react';
 import { useLocalStorage } from './useLocalStorage'
 import { AppUI } from './AppUX'
 
-// const defaultTodos = [
-//   { text: 'Cortar cebolla', completed: false },
-//   { text: 'Tomar el Curso de Intro a React.js', completed: true },
-//   { text: 'Usar estados derivados', completed: false },
-//   { text: 'Cortar berenjena', completed: false },
-//   { text: 'Tomar la ruta de JavaScript a pronfundidad', completed: false },
-//   { text: 'Llorar con la Llorona', completed: false },
-//   { text: 'LALALALALA', completed: false },
-//   {text: 'cortarte las uñas', completed: false},
-// ]
-
-// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))   //añadir o crear un objeto
-//localStorage.removeItem('TODOS_V1', defaultTodos)                 //borrar ese objeto en especifico
-
 function App() {
   // Usa la función useLocalStorage para gestionar un elemento llamado 'TODOS_V1' en el localStorage
   const [todos, saveTodos] = useLocalStorage('TODOS_V1', []); // Los corchetes vacíos indican que el valor inicial es un arreglo vacío
@@ -33,8 +19,8 @@ function App() {
   const totalTodos = todos.length; //contador de todos en total
         
   
-  const searchedTodos = todos.filter( //estado derivado de buscar todos
-    (todo) => { //arrow futsion
+  const searchedTodos = todos.filter(           //estado derivado de buscar todos
+    (todo) => {                                 //arrow futsion
       //return todo.text.toLowerCase().includes(searchValue.toLowerCase()) 
           //aqui estamos preguntando si por cada 'todo'; si el texto (text) de ese todo incluye (includes) en alñguna parte ese texto que forma parte del searchValue
           //el  codigo '.toLowerCase()' convuerte toda aquellas minusculas a mayusculas y viceversa, o mejor dicho hace mas facil la busqueda de todos
@@ -47,40 +33,41 @@ function App() {
   );
   
   const completeTodo = (text) => {
-    console.log('click'); // Imprime 'click' en la consola cada vez que se llama a la función
+    console.log('click');                       // Imprime 'click' en la consola cada vez que se llama a la función
   
-    const newTodos = [...todos]; // Crea una copia de la matriz todos
+    const newTodos = [...todos];                // Crea una copia de la matriz todos con '...'
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
-    ); // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
+    );                                          // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
   
-    newTodos[todoIndex].completed = true; // Marca la tarea encontrada como completada
-    saveTodos(newTodos); // Guarda y actualiza la lista de tareas
+    newTodos[todoIndex].completed = true;       // Marca la tarea encontrada como completada
+    saveTodos(newTodos);                        // Guarda y actualiza la lista de tareas
   };
   
   const deleteTodo = (text) => {
-    console.log('click delete'); // Imprime 'click delete' en la consola
+    console.log('click delete');                // Imprime 'click delete' en la consola
   
-    const newTodos = [...todos]; // Crea una copia de la matriz todos
+    const newTodos = [...todos];                // Crea una copia de la matriz todos
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
-    ); // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
+    );                                          // Encuentra el índice en la matriz newTodos donde el texto de la tarea coincide con el argumento text proporcionado
   
-    newTodos.splice(todoIndex, 1); // Elimina la tarea en el índice todoIndex de la matriz newTodos
-    saveTodos(newTodos); // Guarda y actualiza la lista de tareas
+    newTodos.splice(todoIndex, 1);              // Elimina la tarea en el índice todoIndex de la matriz newTodos
+    saveTodos(newTodos);                        // Guarda y actualiza la lista de tareas
   };
   
-  return ( // a partir de aqui no estamos incorporando html, sino JSX
+  return (                                      // Devuelve un elemento JSX
     <AppUI 
-      completeTodo={completeTodo}
-      totalTodos={totalTodos}
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      searchedTodos={searchedTodos}
-      completedTodos={completedTodos}
-      deleteTodo={deleteTodo}
+      completeTodo={completeTodo}               // Prop completeTodo se asigna a la función completeTodo
+      totalTodos={totalTodos}                   // Prop totalTodos se asigna a la variable totalTodos
+      searchValue={searchValue}                 // Prop searchValue se asigna a la variable searchValue
+      setSearchValue={setSearchValue}           // Prop setSearchValue se asigna a la función setSearchValue
+      searchedTodos={searchedTodos}             // Prop searchedTodos se asigna a la variable searchedTodos
+      completedTodos={completedTodos}           // Prop completedTodos se asigna a la variable completedTodos
+      deleteTodo={deleteTodo}                   // Prop deleteTodo se asigna a la función deleteTodo
     />
   );
+
 }
 
 export default App;
