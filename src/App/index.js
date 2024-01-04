@@ -17,7 +17,18 @@ function App() {
         //segundo; se hace una arrowFutsion; '(todo => todo.completed)' se llama -todo- a aquellos todos que tengan el estado -completed- como true. Pero a simple vista se ve que va a llamar es a un valor, y nosotros necesitamos un buleano, por lo tanto se escribe con doble explamacion, para que esos valores se transformen en boleano '(todo => !!todo.completed)'
         //tercero; se pone la propiedad 'lwngth' para recibir las cantidades del array que se quiere filtrar
   const totalTodos = todos.length; //contador de todos en total
-        
+
+  console.log('Log 1')
+
+  // React.useEffect(() => {
+  //   console.log('Log 2')
+  // });                                        // Esto se relaciona y asi la misma funcion de ASINCRONISMO DE JAVASCRIPT, primero apar4ece en la consola 'log1' 'log 3', y por ultimo apoarece el 'log 2'
+
+  // React.useEffect(() => {
+  //   console.log('Log 2')                     
+  // }, []);                                    // hace exactamente la misma funcion 
+
+  console.log('Log 3')
   
   const searchedTodos = todos.filter(           //estado derivado de buscar todos
     (todo) => {                                 //arrow futsion
