@@ -2,11 +2,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage'
-import { AppUI } from './AppUX'
+import { AppUI } from './AppUI'
 
 function App() {
   // Usa la función useLocalStorage para gestionar un elemento llamado 'TODOS_V1' en el localStorage
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []); // Los corchetes vacíos indican que el valor inicial es un arreglo vacío
+  const {
+    item: todos,//se renombran
+    saveItem: saveTodos,//se renombran
+    loading,
+    error} = useLocalStorage('TODOS_V1', []); // Los corchetes vacíos indican que el valor inicial es un arreglo vacío
   // 'todos' almacena el estado actual del elemento 'TODOS_V1' en el localStorage
   // 'saveTodos' es la función que permite actualizar el estado de 'todos' y el localStorage
 
@@ -18,17 +22,7 @@ function App() {
         //tercero; se pone la propiedad 'lwngth' para recibir las cantidades del array que se quiere filtrar
   const totalTodos = todos.length; //contador de todos en total
 
-  console.log('Log 1')
 
-  // React.useEffect(() => {
-  //   console.log('Log 2')
-  // });                                        // Esto se relaciona y asi la misma funcion de ASINCRONISMO DE JAVASCRIPT, primero apar4ece en la consola 'log1' 'log 3', y por ultimo apoarece el 'log 2'
-
-  // React.useEffect(() => {
-  //   console.log('Log 2')                     
-  // }, []);                                    // hace exactamente la misma funcion 
-
-  console.log('Log 3')
   
   const searchedTodos = todos.filter(           //estado derivado de buscar todos
     (todo) => {                                 //arrow futsion
@@ -69,6 +63,8 @@ function App() {
   
   return (                                      // Devuelve un elemento JSX
     <AppUI 
+      loading={loading}
+      error={error}
       completeTodo={completeTodo}               // Prop completeTodo se asigna a la función completeTodo
       totalTodos={totalTodos}                   // Prop totalTodos se asigna a la variable totalTodos
       searchValue={searchValue}                 // Prop searchValue se asigna a la variable searchValue
