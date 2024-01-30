@@ -3,7 +3,7 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
-import './App.css';
+
 import React from 'react';
 
 const defaultTodos = [
@@ -15,8 +15,8 @@ const defaultTodos = [
 
 function App() {
   return (
-    
-<React.Fragment>
+<div className='container flex flex-col border-2 border-teal-500 bg-teal-400'>
+  <>
 
       <TodoCounter completed={16} total= {25} />
       <TodoSearch/>
@@ -32,7 +32,8 @@ function App() {
 
         <CreateTodoButton/>
 
-</React.Fragment>
+  </>
+</div>
   );
 }
 

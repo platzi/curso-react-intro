@@ -1,9 +1,9 @@
 function TodoItem(props){
     return(
-      <li>
-        <span>V {props.completed}</span>
-        <p>{props.text}</p>
-        <span>X</span>
+      <li className="justify-items-center">
+        <span className="text-center">V {props.completed}</span>
+        <p className="text-center">{props.text}</p>
+        <span className="text-center">X</span>
       </li>
     );
   }
