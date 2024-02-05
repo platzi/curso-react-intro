@@ -15,8 +15,9 @@ const defaultTodos = [
 
 function App() {
   return (
-<div className='container flex flex-col border-2 border-teal-500 bg-teal-400'>
+<div className='flex justify-center'>
   <>
+    <div className='container flex flex-col justify-center border-2 border-teal-500 bg-teal-400'>
 
       <TodoCounter completed={16} total= {25} />
       <TodoSearch/>
@@ -31,7 +32,7 @@ function App() {
       </TodoList>
 
         <CreateTodoButton/>
-
+    </div>
   </>
 </div>
   );

@@ -1,6 +1,6 @@
 function CreateTodoButton(){
     return(
-      <button>Add</button>
+      <button className="cursor-pointer">Add</button>
     );
   }
 
