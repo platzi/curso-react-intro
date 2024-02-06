@@ -14,13 +14,18 @@ const defaultTodos = [
 ]
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState('')
+  console.log(searchValue) 
   return (
 <div className='flex justify-center'>
   <>
     <div className='container flex flex-col justify-center border-2 border-teal-500 bg-teal-400'>
 
       <TodoCounter completed={16} total= {25} />
-      <TodoSearch/>
+      <TodoSearch
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      />
 
       <TodoList>
         {defaultTodos.map(todo=>(
