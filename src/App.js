@@ -29,6 +29,24 @@ function App() {
       return todoText.includes(searchText)
     }
   )
+
+  const completeTodo = (text) => {
+    const updatedTodos =[...todos]
+    const todoIndex = updatedTodos.findIndex(
+      (todo) => todo.text == text 
+    );
+    updatedTodos[todoIndex].completed = true;
+     setTodos(updatedTodos) 
+  }
+
+  const deleteTodo = (text) => {
+    const updatedTodos = [...todos]
+    const todoIndex = updatedTodos.findIndex(
+      (todo) => todo.text == text 
+    )
+    updatedTodos.splice(todoIndex, 1)
+    setTodos(updatedTodos)
+  }
   
   return (
 <div className='flex justify-center'>
@@ -46,7 +64,10 @@ function App() {
           <TodoItem 
           key={todo.text}
           text={todo.text}
-          completed={todo.completed}/>
+          completed={todo.completed}
+          onComplete={() => completeTodo(todo.text)}
+          onDelete={()=> deleteTodo(todo.text)}
+          />
         ))}
       </TodoList>
 
