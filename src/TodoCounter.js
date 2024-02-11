@@ -1,9 +1,13 @@
 import './TodoCounter.css'
 function TodoCounter({total, completed}){
     return(
-      <h1 className='text-3xl font-bold underline text-center'>
+
+      <>
+      <h1 className={`${total > 0 && "grow text-center"}`}>
         Has completado {completed} de {total} TODOS
       </h1>
+      
+      </>
     )
   }
 export { TodoCounter }
