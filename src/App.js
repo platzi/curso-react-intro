@@ -49,9 +49,10 @@ function App() {
   }
   
   return (
-<div className='flex justify-center'>
+<div className='flex bg-violet-500 h-screen justify-center items-center'>
   <>
-    <div className='container flex flex-col justify-center border-2 border-teal-500 bg-teal-400'>
+    <div className='container flex flex-col justify-center 
+    border-2 rounded-lg bg-violet-500	'>
 
       <TodoCounter completed={CompletedTodos} total= {totalTodos} />
       <TodoSearch

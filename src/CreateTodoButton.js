@@ -1,6 +1,6 @@
 function CreateTodoButton(){
     return(
-      <button className="cursor-pointer"
+      <button className=" text-white cursor-pointer"
       onClick={
         (event)=>{
         console.log('click')
