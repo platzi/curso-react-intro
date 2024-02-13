@@ -13,9 +13,18 @@ const defaultTodos = [
 {text: 'Aprender Next.js', completed:false},
 ]
 
+
 function App() {
+  const localStorageTodos = localStorage.getItem('TODOS_V1')
+  let parsedTodos = JSON.parse(localStorageTodos);
+  const stringTodos = JSON.stringify(defaultTodos)
+  
+  localStorage.setItem('TODOS_V1', stringTodos)
+
+
+
   const [todos, setTodos] = React.useState
-  (defaultTodos)
+  (parsedTodos)
   const [searchValue, setSearchValue] = React.useState('')
   console.log(searchValue) 
 
