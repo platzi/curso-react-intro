@@ -13,13 +13,34 @@ const defaultTodos = [
 {text: 'Aprender Next.js', completed:false},
 ]
 
+function useLocalStorage(itemName, initialValue){
+
+  const [item,setItem] = React.useState();
+
+  const localStorageItem = localStorage.getItem
+  (itemName)
+  let parsedTodos;
+    if (!localStorageItem){
+    localStorage.setItem(itemName,JSON.stringify(initialValue))
+    parsedTodos = initialValue;
+
+} else {
+  parsedTodos = JSON.parse(localStorageItem);
+}
+
+
+const saveItem = (newItem) =>{
+  localStorage.setItem(itemName,
+  JSON.stringify(newItem))
+  
+  setItem(newItem)
+}
+}
 
 function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1')
-  let parsedTodos = JSON.parse(localStorageTodos);
-  const stringTodos = JSON.stringify(defaultTodos)
   
-  localStorage.setItem('TODOS_V1', stringTodos)
+
+  
 
 
 
@@ -39,13 +60,15 @@ function App() {
     }
   )
 
+
+  
   const completeTodo = (text) => {
     const updatedTodos =[...todos]
     const todoIndex = updatedTodos.findIndex(
       (todo) => todo.text == text 
     );
     updatedTodos[todoIndex].completed = true;
-     setTodos(updatedTodos) 
+    saveTodos(updatedTodos) 
   }
 
   const deleteTodo = (text) => {
@@ -54,7 +77,7 @@ function App() {
       (todo) => todo.text == text 
     )
     updatedTodos.splice(todoIndex, 1)
-    setTodos(updatedTodos)
+    saveTodos(updatedTodos)
   }
   
   return (
