@@ -13,21 +13,23 @@ const defaultTodos = [
 {text: 'Aprender Next.js', completed:false},
 ]
 
-function useLocalStorage(itemName, initialValue){
+function useLocalStorage(itemName,
+   initialValue){
 
-  const [item,setItem] = React.useState();
 
   const localStorageItem = localStorage.getItem
   (itemName)
-  let parsedTodos;
+  let parsedItem;
     if (!localStorageItem){
-    localStorage.setItem(itemName,JSON.stringify(initialValue))
-    parsedTodos = initialValue;
+    localStorage.setItem(itemName,
+      JSON.stringify(initialValue))
+    parsedItem = initialValue;
 
 } else {
-  parsedTodos = JSON.parse(localStorageItem);
+  parsedItem = JSON.parse(localStorageItem);
 }
 
+const [item,setItem] = React.useState(parsedItem);
 
 const saveItem = (newItem) =>{
   localStorage.setItem(itemName,
@@ -35,17 +37,15 @@ const saveItem = (newItem) =>{
   
   setItem(newItem)
 }
+
+return [item, saveItem]
 }
 
 function App() {
   
 
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1',defaultTodos)
   
-
-
-
-  const [todos, setTodos] = React.useState
-  (parsedTodos)
   const [searchValue, setSearchValue] = React.useState('')
   console.log(searchValue) 
 
