@@ -17,8 +17,7 @@ function useLocalStorage(itemName,
    initialValue){
 
 
-  const localStorageItem = localStorage.getItem
-  (itemName)
+  const localStorageItem = localStorage.getItem(itemName)
   let parsedItem;
     if (!localStorageItem){
     localStorage.setItem(itemName,
@@ -47,7 +46,7 @@ function App() {
   const [todos, saveTodos] = useLocalStorage('TODOS_V1',defaultTodos)
   
   const [searchValue, setSearchValue] = React.useState('')
-  console.log(searchValue) 
+  
 
   const CompletedTodos = todos.filter(todo => todo.completed).length
   const totalTodos = todos.length
@@ -60,7 +59,12 @@ function App() {
     }
   )
 
-
+  console.log('1')
+  React.useEffect(()=>{
+    console.log(' 3')
+  },[totalTodos])
+  console.log('4')
+  
   
   const completeTodo = (text) => {
     const updatedTodos =[...todos]
@@ -74,7 +78,7 @@ function App() {
   const deleteTodo = (text) => {
     const updatedTodos = [...todos]
     const todoIndex = updatedTodos.findIndex(
-      (todo) => todo.text == text 
+      (todo) => todo.text === text 
     )
     updatedTodos.splice(todoIndex, 1)
     saveTodos(updatedTodos)
