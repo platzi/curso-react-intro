@@ -3,15 +3,13 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
-
+import {TodosCreate} from './TodosCreate'
+import {TodosError} from './TodosError'
+import {TodosLoading} from './TodosLoading'
+import {TodosCounterLoading} from './TodosCounterLoading'
 import React from 'react';
 
-const defaultTodos = [
-  {text: 'Cortar Cebolla', completed:false},
-  {text: 'Tomar El curso de React', completed:true},
-  {text: 'Mandar Cvs', completed:true},
-  {text: 'Aprender Next.js', completed:false},
-  ]
+
 
 function useLocalStorage(itemName,
    initialValue){
@@ -44,8 +42,6 @@ function useLocalStorage(itemName,
   },2000)
   },[])
 
-
-
 const saveItem = (newItem) =>{
   localStorage.setItem(itemName,
   JSON.stringify(newItem))
@@ -65,7 +61,7 @@ function App() {
     item: todos,
     saveItem:saveTodos,
     loading,
-    error} = useLocalStorage('TODOS_V1',defaultTodos)
+    error} = useLocalStorage('TODOS_V1',[])
   
   const [searchValue, setSearchValue] = React.useState('')
   
@@ -105,17 +101,18 @@ function App() {
   <>
     <div className='container flex flex-col justify-center 
     border-2 rounded-lg bg-violet-500	'>
-
-      <TodoCounter completed={CompletedTodos} total= {totalTodos} />
+      <TodoCounter completed={CompletedTodos} total= {totalTodos}>
+      {loading && <TodosCounterLoading/>}
+      </TodoCounter>
       <TodoSearch
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       />
 
       <TodoList>
-        {loading && <p>Estamos cargando</p>}
-        {error && <p>error</p>}
-        {(!loading && searchedTodos.length === 0) && <p>agrega todos</p>}
+        {loading && <TodosLoading/>}
+        {error && <TodosError/>}
+        {(!loading && searchedTodos.length === 0) && <TodosCreate/>}
         
         {searchedTodos.map(todo=>(
           <TodoItem 
