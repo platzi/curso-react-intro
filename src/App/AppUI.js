@@ -6,8 +6,8 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import {TodosCreate} from '../TodosCreate'
 import {TodosError} from '../TodosError'
+import { Modal } from './Modal';
 import {TodosLoading} from '../TodosLoading'
-
 import {TodoContext} from '../TodoContext'
 
 function AppUI()
@@ -16,7 +16,11 @@ function AppUI()
         error,
         searchedTodos,
         completeTodo,
-        deleteTodo }= React.useContext(TodoContext)
+        deleteTodo,
+        openModal,
+        setOpenModal
+        
+      }= React.useContext(TodoContext)
     return (
         <div className='flex bg-violet-500 h-screen justify-center items-center'>
           <>
@@ -41,8 +45,15 @@ function AppUI()
    />
  ))}
 </TodoList>
-                <CreateTodoButton/>
+                <CreateTodoButton
+                setOpenModal={setOpenModal}/>
+                
             </div>
+            {openModal && (
+                  <Modal>
+                    add todo
+                  </Modal>
+                )}
           </>
         </div>
           );
