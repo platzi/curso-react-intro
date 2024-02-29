@@ -9,7 +9,7 @@ import {TodosError} from '../TodosError'
 import { Modal } from './Modal';
 import {TodosLoading} from '../TodosLoading'
 import {TodoContext} from '../TodoContext'
-
+import {TodoForm} from '../TodoForm'
 function AppUI()
 {
     const {loading,
@@ -45,16 +45,16 @@ function AppUI()
    />
  ))}
 </TodoList>
-                <CreateTodoButton
-                setOpenModal={setOpenModal}/>
                 
             </div>
             {openModal && (
                   <Modal>
-                    add todo
+                    <TodoForm/>
                   </Modal>
                 )}
           </>
+          <CreateTodoButton setOpenModal={setOpenModal}/>
+
         </div>
           );
 }
