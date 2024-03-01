@@ -47,7 +47,7 @@ onSubmit={onSubmit}>
             <textarea
             value={newTodoValue}
             onChange={onChange}
-            className="block p-2.5 w-full text-sm text-gray-900 outline-none rounded-lg border border-violet-300 focus:ring-violet-300 focus:border-violet-500 bg-violet-100 border-violet-300 placeholder-gray-400 text-black focus:ring-violet-500 focus:border-violet-500" placeholder="Your todo...">
+            className="block h-52 w-80 p-2.5 w-full text-lg text-gray-900 outline-none rounded-lg border border-violet-300 focus:ring-violet-300 focus:border-violet-500 bg-violet-100 border-violet-300 placeholder-gray-400 text-black focus:ring-violet-500 focus:border-violet-500" placeholder="Your todo...">
               
             </textarea>
           </div>

@@ -10,7 +10,7 @@ function TodoCounter(){
       <>
       
       <h1 className=" text-2xl p-2 text-white text-center">
-        Has completado {CompletedTodos} de {totalTodos} TODOS
+        You have completed {CompletedTodos} of {totalTodos} TODOS
       </h1>
       
       
