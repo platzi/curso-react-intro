@@ -7,16 +7,20 @@ import { CreateTodoButton } from '../Components/CreateTodoButton';
 import { EmptyTodos } from '../Components/EmptyTodos';
 import { TodosLoading } from '../Components/TodosLoading';
 import { TodosError } from '../Components/TodosError';
-import { useLocalStorage } from '../App/useLocalStorage';
+import { TodoContext } from '../Components/Context';
+import { TodoForm } from '../Components/TodoForm';
+import { Modal } from '../Components/Modal';
 import '../Styles/App.css';
-import { TodoContext, TodoProvider } from '../Components/Context';
 
 function App() {
   const {loading,
     error,
     searchedTodos,
     entireTodo,
-    deleteTodo} = useContext(TodoContext)
+    deleteTodo,
+    openModal,
+    setOpenModal
+  } = useContext(TodoContext)
 
   return (
     <>
@@ -42,7 +46,12 @@ function App() {
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton openModal={openModal} setOpenModal={setOpenModal}/>
+      {openModal && (
+        <Modal>
+          <TodoForm/>
+        </Modal>
+      )}
     </>
   );
 }

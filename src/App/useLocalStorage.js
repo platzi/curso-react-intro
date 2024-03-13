@@ -32,7 +32,6 @@ function useLocalStorage(itemName, initialValue){
     localStorage.setItem(itemName, JSON.stringify(newItem))
     setItem(newItem)
   }
-  console.log(`todos: ${item}`)
   return {
     item, 
     saveItem, 
