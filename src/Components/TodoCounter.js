@@ -10,7 +10,7 @@ function TodoCounter() {
     completedTodos=acu;
   }
   return(
-    <h1 className="TodoCounter">
+    <h1 className={!(totalTodos === completedTodos)? "TodoCounter": "TodoCounter--completed"}>
       {totalTodos === completedTodos? 
         `¡Tareas completadas!`: 
         `Has completado ${completedTodos} de ${totalTodos} tareas`}
