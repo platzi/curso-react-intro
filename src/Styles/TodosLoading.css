@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  height: 2.5rem;
+  padding: 1rem;
+  margin: 24px 0 24px 0;
+  text-align: center;
+  background-color: white;
+}
+
+.card__skeleton {
+  background-image: linear-gradient(
+		90deg,
+		#ccc 0px,
+		rgb(229 229 229 / 90%) 40px,
+		#ccc 80px
+	);
+  background-size: 300%;
+  background-position: 100% 0;
+  border-radius: .2rem;
+  animation: shimmer 1.5s infinite;
+}
+
+.card__title {
+  width: 80%;
+  height: 15px;
+  margin: 0 0 0 2rem;
+}
+
+.card__checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+}
+
+.card__x {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  margin: 0 0 5.5% 96%;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -100% 0;
+  }
+}
