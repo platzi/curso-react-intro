@@ -15,7 +15,7 @@ const emptyMessage ={
 function EmptyTodos() {
   
   return(
-    <p style={emptyMessage}>Crea tu primer Tarea</p>
+    <p style={emptyMessage}>Create your first Task</p>
   )
 }
 
