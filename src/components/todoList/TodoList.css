@@ -1,0 +1,7 @@
+.todo-list {
+    max-width: 650px;
+    /* controla qué tan angosto */
+    margin: 0 auto;
+    /* centra */
+    padding: 0 16px;
+}

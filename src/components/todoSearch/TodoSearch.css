@@ -1,0 +1,65 @@
+.todo-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 18px;
+    width: 22px;
+    height: 22px;
+    color: #FFFFFF;
+    opacity: 0.9;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.todo-search {
+    width: 100%;
+    height: 54px;
+    padding: 0 20px 0 56px;
+    background: rgba(26, 22, 37, 0.4);
+    border: 2px solid rgba(255, 30, 86, 0.8);
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 30, 86, 0.3), inset 0 0 5px rgba(255, 30, 86, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.todo-search::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+.todo-search:focus {
+    background: rgba(26, 22, 37, 0.6);
+    box-shadow: 0 0 20px rgba(255, 30, 86, 0.6), 0 0 40px rgba(255, 30, 86, 0.2);
+    border-color: #FF1E56;
+}
+
+.todo-search:focus+.search-icon,
+.search-input-wrapper:hover .search-icon {
+    color: #FFAC41;
+}
+
+.search-container {
+    height: auto !important;
+    margin: 0 !important;
+}

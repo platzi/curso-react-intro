@@ -1,20 +1,61 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Proyecto React – Curso de Introducción a React.js
 
-¡Hola, Platzinauta!
+Este repositorio corresponde a mi proyecto de aprendizaje mientras realizo el Curso de Introducción a React.js en Platzi.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+El objetivo de este proyecto es practicar los fundamentos de React, entender su estructura, componentes, estado y flujo de datos, siguiendo las clases del curso y realizando los ejercicios propuestos.
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+Instalación y uso
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+Este proyecto se trabaja a partir de un fork del repositorio original del curso, con fines educativos.
 
-## Getting Started with Create React App
+Para ejecutarlo en tu entorno local:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Realiza un fork del repositorio original desde GitHub.
 
-## Available Scripts
+Clona tu fork en tu máquina:
 
-In the project directory, you can run:
+git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+
+
+Entra al directorio del proyecto:
+
+cd nombre-del-repositorio
+
+
+Instala las dependencias:
+
+npm install
+
+
+Inicia el servidor de desarrollo:
+
+npm start
+
+
+La aplicación se abrirá automáticamente en:
+👉 http://localhost:3000
+Objetivo del proyecto
+
+Comprender la base de React
+
+Aprender a crear y reutilizar componentes
+
+Manejar estado y props
+
+Entender el flujo de una aplicación React
+
+Preparar el camino para cursos más avanzados
+
+Curso de referencia
+
+Este proyecto está basado en el curso:
+
+ Curso de Introducción a React.js – Platzi
+
+Todos los derechos del contenido educativo pertenecen a Platzi.
+
+
+
 
 ### `npm start`
 

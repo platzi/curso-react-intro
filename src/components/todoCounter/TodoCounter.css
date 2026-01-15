@@ -1,0 +1,161 @@
+.todo-counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.circular-progress {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 30, 86, 0.2) 0%, rgba(26, 22, 37, 0) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 30, 86, 0.15);
+}
+
+.circular-progress svg {
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 8px rgba(255, 30, 86, 0.5));
+}
+
+.circle-background {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+}
+
+.circle-progress {
+    fill: none;
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.counter-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.percentage {
+    font-size: 72px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 30, 86, 0.8),
+        0 0 40px rgba(255, 172, 65, 0.4);
+    font-family: 'Outfit', sans-serif;
+}
+
+.label {
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #FFD700;
+    font-weight: 600;
+    margin-top: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 172, 65, 1);
+}
+
+/* More Particles / Fire Embers */
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, #ffac41 0%, #ff1e56 40%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+    animation: fireUp 5s infinite ease-out;
+}
+
+.p1 {
+    width: 6px;
+    height: 6px;
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.p2 {
+    width: 4px;
+    height: 4px;
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 1.2s;
+}
+
+.p3 {
+    width: 8px;
+    height: 8px;
+    top: 20%;
+    right: 10%;
+    animation-delay: 2.5s;
+}
+
+.p4 {
+    width: 5px;
+    height: 5px;
+    top: 10%;
+    left: 30%;
+    animation-delay: 0.8s;
+}
+
+.p5 {
+    width: 7px;
+    height: 7px;
+    bottom: 30%;
+    right: 5%;
+    animation-delay: 1.8s;
+}
+
+.p6 {
+    width: 4px;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    animation-delay: 3s;
+}
+
+@keyframes fireUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(20px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Base adjustment for the app container if needed */
+.todo-counter {
+    margin: 0 !important;
+}
+h2 {
+    color: #ffffff;
+}

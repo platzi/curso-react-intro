@@ -1,0 +1,92 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background: #0b0b14;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 0 12px rgba(255, 46, 147, 0.25),
+        0 0 30px rgba(0, 245, 212, 0.15);
+}
+
+.todo-item::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg,
+            #640D5F,
+            #D91656,
+            #EE66A6,
+            #FFEB55);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.Icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #4C585B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fefefe;
+    background: #7E99A3;
+    position: relative;
+}
+
+.Icon-check {
+    left: 12px;
+}
+
+.Icon-check--active {
+    background: linear-gradient(90deg,
+            #640D5F,
+            #D91656,
+            #EE66A6,
+            #FFEB55);
+    color: #fefefe;
+    border: 2px solid #D91656;
+}
+
+.todo-delete {
+    position: absolute;
+    right: 22px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: #00F5D4;
+    transition: transform 0.2s ease;
+}
+
+.todo-delete:hover {
+    transform: scale(1.5);
+}
+
+.todo-text {
+    font-size: 16px;
+    color: #B6B0C3;
+    align-items: center;
+    margin: 10px 24px 10px 24px;
+
+
+}
+
+.todo-text--complete {
+    text-decoration: line-through;
+}
