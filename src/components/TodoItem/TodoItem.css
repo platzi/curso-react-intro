@@ -1,0 +1,35 @@
+/* TodoItem.css */
+.TodoItem {
+     display: flex;
+     align-items: center;
+     gap: 14px;
+     padding: 16px 20px;
+     border-radius: 16px;
+     border: 2px solid #F0F0F0;
+     background-color: #FAFAFA;
+     transition: border-color 0.2s;
+}
+
+.TodoItem:hover {
+     border-color: #D0D0D0;
+}
+
+.TodoItem--completed {
+     opacity: 0.6;
+}
+
+.TodoItem__check {
+     font-size: 1.3rem;
+     flex-shrink: 0;
+}
+
+.TodoItem__text {
+     font-size: 1rem;
+     font-weight: 500;
+     color: var(--color-black);
+}
+
+.TodoItem--completed .TodoItem__text {
+     text-decoration: line-through;
+     color: var(--color-text-secondary);
+}

@@ -1,0 +1,38 @@
+/* TodoCounter.css */
+.TodoCounter {
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+     margin-bottom: 28px;
+}
+
+.TodoCounter__card {
+     border-radius: 24px;
+     padding: 28px;
+     min-height: 160px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+.TodoCounter__card--yellow {
+     background-color: var(--color-yellow);
+}
+
+.TodoCounter__card--blue {
+     background-color: var(--color-blue);
+}
+
+.TodoCounter__number {
+     font-size: 4.5rem;
+     font-weight: 700;
+     line-height: 1;
+     color: var(--color-black);
+}
+
+.TodoCounter__label {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: var(--color-black);
+     line-height: 1.2;
+}
