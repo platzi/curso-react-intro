@@ -1,0 +1,17 @@
+/* TodoSearch.css */
+.TodoSearch {
+     width: 100%;
+     padding: 14px 20px;
+     border-radius: 50px;
+     border: 2px solid #EEEEEE;
+     font-family: var(--font-main);
+     font-size: 1rem;
+     color: var(--color-black);
+     outline: none;
+     margin-bottom: 20px;
+     transition: border-color 0.2s;
+}
+
+.TodoSearch:focus {
+     border-color: var(--color-green);
+}

@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+/* ==============================
+   ESTILOS GLOBALES — App.css
+   Aquí solo van: variables, reset y estilos del body/root.
+   Cada componente tiene su propio CSS.
+============================== */
+
+/* Variables de diseño (disponibles en toda la app) */
+:root {
+  --color-yellow: #F5E642;
+  --color-blue: #87D7F5;
+  --color-green: #5CF0A0;
+  --color-black: #111111;
+  --color-text-secondary: #888888;
+  --color-bg: #FFFFFF;
+  --font-main: 'Space Grotesk', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #233553;
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-black);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
 }
 
-.App-link {
-  color: #97ca3f;
+#root {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 24px 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ==============================
+   HEADER (parte de App.js, no un componente separado)
+============================== */
+.AppHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.AppHeader__text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.AppHeader__text p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.AppHeader__dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  flex-shrink: 0;
+  margin-top: 4px;
 }
