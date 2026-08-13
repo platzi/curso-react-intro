@@ -1,0 +1,18 @@
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.todo-list-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+@media (max-width: 991px) {
+  .dashboard-container {
+    padding-bottom: 80px; /* Space for the floating button */
+  }
+}

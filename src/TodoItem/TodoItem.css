@@ -1,0 +1,168 @@
+.TodoItem {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: var(--text-primary) !important;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  gap: 16px;
+}
+
+.TodoItem--dragging {
+  opacity: 0.4;
+  border: 1px dashed var(--primary) !important;
+  background: rgba(255, 255, 255, 0.01) !important;
+}
+
+.TodoItem--drag-over {
+  border: 1.5px dashed var(--primary) !important;
+  transform: scale(1.01) translateY(-2px);
+  background: rgba(97, 218, 250, 0.04) !important;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.TodoItem:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(97, 218, 250, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(97, 218, 250, 0.08);
+}
+
+.TodoItem-p {
+  margin: 0;
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.TodoItem-p--complete {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.Icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.Icon-check {
+  color: var(--text-muted);
+}
+
+.Icon-check:hover {
+  color: var(--success);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.Icon-check--active {
+  color: var(--success) !important;
+}
+
+.Icon-delete {
+  color: var(--text-muted);
+}
+
+.Icon-delete:hover {
+  color: var(--secondary);
+  background: rgba(233, 64, 87, 0.1);
+}
+
+.Icon-edit {
+  color: var(--text-muted);
+}
+
+.Icon-edit:hover {
+  color: var(--primary);
+  background: var(--primary-glow);
+}
+
+.TodoItem--focused {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 15px var(--primary-glow) !important;
+}
+
+.Icon-focus {
+  color: var(--text-muted);
+}
+
+.Icon-focus:hover {
+  color: var(--primary);
+  background: var(--primary-glow);
+}
+
+.Icon-focus--active {
+  color: var(--primary) !important;
+  animation: pulseIcon 1.5s infinite alternate;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.Icon-drag {
+  color: var(--text-muted);
+  cursor: grab;
+  user-select: none;
+}
+
+.Icon-drag:active {
+  cursor: grabbing;
+  color: var(--primary);
+}
+
+.Icon-drag:hover {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.TodoItem-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .TodoItem {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .TodoItem {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .TodoItem-p {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .TodoItem-actions {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}

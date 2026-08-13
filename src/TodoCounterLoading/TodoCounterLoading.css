@@ -1,0 +1,30 @@
+.CounterLoading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  gap: 12px;
+}
+
+.CounterLoading-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  animation: pulseLoading 1.5s infinite;
+}
+
+@keyframes pulseLoading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

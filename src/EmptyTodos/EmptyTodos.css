@@ -1,0 +1,39 @@
+.EmptyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  width: 100%;
+  padding: 48px 24px;
+  text-align: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.EmptyContainer h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.copilot {
+  font-size: 80px;
+  color: var(--primary);
+  filter: drop-shadow(0 0 15px var(--primary-glow));
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.first-Todo {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}

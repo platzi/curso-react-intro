@@ -1,0 +1,92 @@
+.containerCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.Circle {
+  width: 100%;
+  max-width: 220px;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.barra-circle {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 10px;
+  height: 20px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: width 0.5s ease-in-out;
+}
+
+.instructions-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.instructions-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.instruction-item:last-child {
+  margin-bottom: 0;
+}
+
+.instruction-icon {
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.instruction-icon.check {
+  color: var(--success);
+}
+
+.instruction-icon.delete {
+  color: var(--secondary);
+}
+
+.instruction-icon.create {
+  color: var(--primary);
+}
+
+.instruction-icon.edit {
+  color: var(--primary);
+}
+
+.instruction-icon.focus {
+  color: var(--primary);
+}
+
+.instruction-icon.drag {
+  color: var(--text-muted);
+}

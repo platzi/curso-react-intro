@@ -1,0 +1,104 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto; 
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.rounded-custom {
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  transition: var(--transition-smooth);
+}
+
+.rounded-custom:hover {
+  transform: rotate(360deg);
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px var(--secondary-glow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.link {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+  margin-right: 1.5rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--primary) !important;
+  text-shadow: 0 0 8px var(--primary-glow);
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 6px 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+.navbar-toggler-icon {
+  filter: var(--toggler-invert);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+  
+  .navbar-collapse {
+    background: var(--modal-bg);
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--primary);
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.theme-toggle-icon {
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-icon.sun {
+  color: #fbbf24;
+}
+
+.theme-toggle-icon.moon {
+  color: #3b82f6;
+}

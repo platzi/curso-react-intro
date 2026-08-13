@@ -1,0 +1,46 @@
+.TodoCounter {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.TodoCounter span {
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.TodoCounter-phrase {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 12px;
+  line-height: 1.6;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.TodoCounter-phrase::before,
+.TodoCounter-phrase::after {
+  content: '"';
+  font-family: serif;
+  font-size: 1.5rem;
+  position: absolute;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+.TodoCounter-phrase::before {
+  left: 4px;
+  top: -8px;
+}
+
+.TodoCounter-phrase::after {
+  right: 4px;
+  bottom: -18px;
+}
