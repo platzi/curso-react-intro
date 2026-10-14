@@ -1,75 +1,143 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# Tasklist React Intro
 
-¡Hola, Platzinauta!
+Este proyecto es una aplicación de lista de tareas construida con React usando Create React App. La idea principal es practicar los conceptos básicos de React, como componentes, estado, eventos, renderizado dinámico y almacenamiento local en el navegador.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+## ¿De qué trata la aplicación?
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+La app permite:
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+- crear nuevas tareas
+- marcar tareas como completadas
+- eliminar tareas
+- buscar tareas por texto
+- mostrar cuántas tareas están hechas y cuántas faltan por completar
+- guardar los datos en el navegador con localStorage
 
-## Getting Started with Create React App
+Es una pequeña práctica realista de una app de productividad, similar a una lista de compras o un gestor de pendientes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ¿Cómo se hizo?
 
-## Available Scripts
+Se construyó con React y se estructuró en componentes para separar responsabilidades:
 
-In the project directory, you can run:
+1. El punto de entrada de la aplicación se encuentra en `src/index.js`.
+2. La lógica principal vive en `src/App/index.js`.
+3. La vista principal se organiza desde `src/App/AppUI.js`.
+4. La persistencia de datos se maneja con `src/App/useLocalStorage.js`.
+5. Cada bloque visual se divide en componentes individuales como contador, buscador, lista y cada tarea.
 
-### `npm start`
+La aplicación usa estados para controlar:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- la lista de tareas
+- el texto de búsqueda
+- si el modal está abierto o cerrado
+- cuántas tareas están completadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Además, cada cambio en la lista se guarda en localStorage para que no se pierda al recargar la página.
 
-### `npm run build`
+## Estructura de archivos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+src/
+├── index.css
+├── index.js
+├── App/
+│   ├── AppUI.js
+│   ├── app.css
+│   ├── index.js
+│   └── useLocalStorage.js
+├── CreateTodoButton/
+│   ├── CreateTodoButton.css
+│   └── index.js
+├── Modal/
+│   ├── Modal.css
+│   └── index.js
+├── TodoCounter/
+│   ├── TodoCounter.css
+│   └── index.js
+├── TodoItem/
+│   ├── TodoItem.css
+│   └── index.js
+├── TodoList/
+│   └── index.js
+├── TodoSearch/
+│   ├── Todosearch.css
+│   └── index.js
+└── ...
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Descripción de las principales carpetas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `src/index.js`
+  - es el archivo principal que inicializa la app en el navegador.
 
-### `npm run eject`
+- `src/App/`
+  - contiene la lógica central de la aplicación, como estados, búsqueda y funciones para agregar, completar y eliminar tareas.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `src/App/AppUI.js`
+  - organiza la interfaz: contador, buscador, lista y botón para crear nuevas tareas.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `src/App/useLocalStorage.js`
+  - encapsula la lectura y escritura de datos en `localStorage`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `src/TodoCounter/`
+  - muestra cuántas tareas hay en total y cuántas están completadas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `src/TodoSearch/`
+  - permite filtrar tareas con texto escrito por el usuario.
 
-## Learn More
+- `src/TodoList/`
+  - renderiza la colección de tareas.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `src/TodoItem/`
+  - representa cada tarea individual y permite completarla o borrarla.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `src/CreateTodoButton/`
+  - botón para abrir un modal donde se agregan nuevas tareas.
 
-### Code Splitting
+- `src/Modal/`
+  - formulario para crear la nueva tarea.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Flujo de la aplicación
 
-### Analyzing the Bundle Size
+El flujo de la app es bastante simple:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. El usuario escribe en el buscador.
+2. El valor del campo cambia en el estado.
+3. La lista se filtra según el texto ingresado.
+4. El usuario puede marcar una tarea como hecha o eliminarla.
+5. El estado se actualiza y se guarda en localStorage.
+6. Cuando la página se vuelve a cargar, la app recupera la información guardada y la muestra de nuevo.
 
-### Making a Progressive Web App
+## Cómo ejecutar el proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm install
+npm start
+```
 
-### Advanced Configuration
+Esto abrirá la aplicación en el navegador en:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```text
+http://localhost:3000
+```
 
-### Deployment
+## Despliegue
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+El proyecto está preparado para ser desplegado en GitHub Pages con la ruta del repositorio correspondiente, por ejemplo:
 
-### `npm run build` fails to minify
+```text
+https://anyelo85.github.io/Tasklist-react-intro/
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tecnologías usadas
+
+- React
+- JavaScript
+- CSS
+- localStorage
+- Create React App
+
+## Resumen
+
+Este proyecto es una práctica básica pero completa de React: aprendemos a manejar estado, crear componentes, trabajar con eventos y guardar datos en el navegador. La estructura modular hace que el código sea más fácil de entender, mantener y ampliar en el futuro.
+

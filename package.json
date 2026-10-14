@@ -1,5 +1,6 @@
 {
-  "name": "platzi-intro-react-base",
+  "name": "curso-react-intro",
+  "homepage": "https://anyelo85.github.io/Tasklist-react-intro",
   "version": "0.1.0",
   "dependencies": {
     "react": "^18",

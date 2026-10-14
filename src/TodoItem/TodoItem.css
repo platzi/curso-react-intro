@@ -1,0 +1,79 @@
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.item-container {
+    display: flex;                  /* Flexbox para disposición horizontal */
+    justify-content: center;        /* Centrar horizontalmente los elementos */
+    align-items: center;            /* Alinear verticalmente los elementos */
+    padding: 10px;
+    margin: 20px auto;              /* Centrar el li en la pantalla */
+    list-style-type: none;          /* Quitar estilo de lista */
+    border: 1px solid #ccc;         /* Solo para visualización */
+    width: 100%;                     /* Ajustar el tamaño del contenedor */
+    background-color: #0000004d;     /* Fondo claro */
+    border-radius: 8px;           /* Esquinas redondeadas */
+    height: 30px;
+  }
+  
+  .text-item-p {
+    margin: 24px 0 24px 24px;
+    width: calc(100% -120px);
+    font-size: 18px;
+    line-height: 24px;                 
+    flex: 1;
+    color: cornsilk;
+    font-family: monospace;
+    font-weight: 400;
+  }
+
+  .item-p-complete{
+    text-decoration: line-through;
+    text-decoration-color: #adff2f;
+  }
+
+.icon{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: cornsilk;
+  background: #ffffff14;
+  border: 2px solid #ffffff42;
+  border-radius: 100px;
+}
+
+.icon-active{
+  background: transparent;
+  border:none;
+}
+
+.icon-active:hover{
+  color: rgb(173, 255, 47, 1) !important;
+}
+
+
+.icon-check-active{
+  color: greenyellow;
+  font-size: 25px;
+}
+
+.icon-delete{
+  position: absolute;
+  right: 25%;
+}
+
+.icon-delete:hover{
+  color: rgb(252, 93, 35);
+  border: 3px solid rgb(252, 93, 35); 
+}
+

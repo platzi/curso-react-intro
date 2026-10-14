@@ -1,0 +1,21 @@
+.button-posision{
+    position: fixed;
+    right: 50px;
+    top: 50px;
+}
+
+.button-add{
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    border-radius: 100px;
+    color: greenyellow;
+    background: #736c6c3b;
+    border-color: cornsilk;
+    cursor: pointer;
+}
+
+
+.button-add:hover{
+    border-color: greenyellow;
+}
